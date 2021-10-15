@@ -1,0 +1,91 @@
+.btn {
+
+    /* AILogic/Blue4 */
+
+    background: #48ABC5;
+    border-radius: 6px;    
+}
+
+.nav-link {
+    /* Medium/lg */
+    position: absolute;
+    width: 72px;
+    height: 22px;
+    left: 1235px;
+    top: 26px;
+
+    /* Medium/lg */
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+
+
+    /* Base/Black */
+    color: #000000;
+}
+
+.nav-link1 {
+    /* Medium/lg */
+    position: absolute;
+    width: 72px;
+    height: 22px;
+    left: 1335px;
+    top: 26px;
+
+    /* Medium/lg */
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+
+
+    /* Base/Black */
+    color: #000000;
+}
+
+.nav-link2 {
+    /* Medium/lg */
+    position: absolute;
+    width: 72px;
+    height: 22px;
+    left: 1435px;
+    top: 26px;
+
+    /* Medium/lg */
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+
+
+    /* Base/Black */
+    color: #000000;
+}
+
+.nav-link3 {
+    /* Medium/lg */
+    position: absolute;
+    width: 72px;
+    height: 22px;
+    left: 1535px;
+    top: 26px;
+
+    /* Medium/lg */
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+
+
+    /* Base/Black */
+    color: #000000;
+}
