@@ -12,10 +12,8 @@
     justify-content: flex-end;
     align-items: center;
     padding: 0px;
-
     width: 327px;
     height: 40px;
-
 }
 
 .btn1 {
@@ -24,13 +22,10 @@
     justify-content: center;
     align-items: center;
     padding: 8px 14px;
-
     width: 224px;
     height: 35px;
-
     background: #48ABC5;
     border-radius: 6px;
-    
 }
 
 .btn2 {
@@ -39,9 +34,18 @@
     justify-content: center;
     align-items: center;
     padding: 8px 0px;
-
     width: 60px;
     height: 35px;
-
     border-radius: 6px;
+}
+
+.my-4 {
+    background: #1568e4;
+}
+
+body {
+    background-image: url(../img/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
