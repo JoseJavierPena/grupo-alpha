@@ -1,0 +1,18 @@
+body {
+    background-image: url(../img/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.container {
+    text-align: center;
+}
+
+.hr {
+    background-color: aqua;
+}
+
+.main {
+    text-align: center;
+}
