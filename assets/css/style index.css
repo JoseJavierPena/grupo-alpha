@@ -1,91 +1,57 @@
+.body {
+    margin: auto;
+    width: 60%;
+    border: 5px;
+    padding: 10px;
+    text-align: center;
+    
+    background-image: url('../img/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.main, .about {
+    line-height: 2em;
+    margin-top: 50px;
+}
+
+.footer {
+    line-height: 5em;
+    margin: 100px;
+}
+
+.nav-masthead .nav-link {
+    padding: .25rem 0;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+    border-bottom-color: rgb(124, 124, 124);
+}
+
+.nav-masthead .nav-link + .nav-link {
+    margin-left: 1rem;
+}
+
+.nav-masthead .active {
+    color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+}
+
 .btn {
-
-    /* AILogic/Blue4 */
-
+    display: flexbox;
     background: #48ABC5;
-    border-radius: 6px;    
+    border-radius: 6px;   
 }
 
-.nav-link {
-    /* Medium/lg */
-    position: absolute;
-    width: 72px;
-    height: 22px;
-    left: 1235px;
-    top: 26px;
-
-    /* Medium/lg */
-    font-family: Inter;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
-    /* identical to box height */
-
-
-    /* Base/Black */
-    color: #000000;
-}
-
-.nav-link1 {
-    /* Medium/lg */
-    position: absolute;
-    width: 72px;
-    height: 22px;
-    left: 1335px;
-    top: 26px;
-
-    /* Medium/lg */
-    font-family: Inter;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
-    /* identical to box height */
-
-
-    /* Base/Black */
-    color: #000000;
-}
-
-.nav-link2 {
-    /* Medium/lg */
-    position: absolute;
-    width: 72px;
-    height: 22px;
-    left: 1435px;
-    top: 26px;
-
-    /* Medium/lg */
-    font-family: Inter;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
-    /* identical to box height */
-
-
-    /* Base/Black */
-    color: #000000;
-}
-
-.nav-link3 {
-    /* Medium/lg */
-    position: absolute;
-    width: 72px;
-    height: 22px;
-    left: 1535px;
-    top: 26px;
-
-    /* Medium/lg */
-    font-family: Inter;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
-    /* identical to box height */
-
-
-    /* Base/Black */
-    color: #000000;
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #000000;
+  text-shadow: none; /* Prevent inheritance from `body` */
 }
