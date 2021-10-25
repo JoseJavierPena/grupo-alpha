@@ -1,3 +1,42 @@
+
+
+
+    <?php 
+           
+            include '../assets/php/ayuda/utilidad.php';
+            
+            session_start();
+
+            $_SESSION['estudiantes'] = isset($_SESSION['estudiantes'])? $_SESSION['estudiantes']: array();
+            
+            $listadoEstudiantes = $_SESSION['estudiantes'];
+            
+            if(!empty($listadoEstudiantes)){
+            
+            if(isset($_GET['$CarreraId'])){
+            
+            
+              $listadoEstudiantes = searchProperty ($listadoEstudiantes,'carrera',$_GET['CarreraId']);   
+            
+            }
+            }
+            
+            if(!empty($listadoEstudiantes)){
+            
+              if(isset($_GET['$EstatusId'])){
+              
+              
+                $listadoEstudiantes = searchProperty ($listadoEstudiantes,'estatus',$_GET['EstatusId']);   
+              
+              }
+              }
+            
+            
+            ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,7 +101,7 @@
 
 
                         <li class="nav-item">
-                            <a class="nav-link" href="asignaciones administrador.html">
+                            <a class="nav-link" href="asignaciones administrador.php">
                                 <span data-feather="layers"></span>Asignaciones
                             </a>
                         </li>
@@ -82,16 +121,88 @@
                     <h1 class="h2">Asignaciones</h1>
 
                 </div>
-                <div class="col-sm-6">
-                    <label for="First_name" class="form-label">Asignaciones:</label>
-                    <p>Crear asignaciones: </p>
-                    <input type="file" class="form-control" id="Shipping" placeholder="" value="" required="">
-                    <input type="submit" class="form-control2" value="Subir Asignacion">
+           
+
+
+        
+
+            
+
+            <main role="main">
+
+              
+                        <p>
+                            <a href="../assets/php/Estudiantes/add.php" class="btn btn-primary my-2">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Crear asignacion </font>
+                                </font>
+                            </a>
+
+                        </p>
+              
+
+
+
+
+
+                        <div class="row">
+
+                            <?php if(empty($listadoEstudiantes)): ?>
+
+
+                            <?php  else:?>
+
+
+
+
+                            <?php   foreach($listadoEstudiantes as $estudiante):  ?>
+
+
+
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <?php echo $estudiante['nombre'];?>
+                                    </h5>
+
+                                    <p class="card-text">
+                                        <?php echo $estudiante['apellido']; ?>
+                                    </p>
+
+                                    <h6 class="card-subtitle mb-2 text-muted">
+                                        <?php echo getEstatusName($estudiante['estatus']); ?>
+                                    </h6>
+
+                                    <h6 class="card-subtitle mb-2 text-muted">
+                                        <?php echo  getCarreraName($estudiante['carrera']); ?>
+                                    </h6>
+
+                                    <a href="../assets/php/Estudiantes/edit.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Editar</a>
+
+                                    <a href="../assets/php/Estudiantes/borrar.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Borrar</a>
+
+                                </div>
+                            </div>
+
+
+                            <?php endforeach; ?>
+
+
+
+                            <?php   endif;?>
+
+
+                        </div>
+                    </div>
                 </div>
-            </main>
-
-
         </div>
+
+        </main>
+
+  
+
+    </div>
     </div>
 
 </body>

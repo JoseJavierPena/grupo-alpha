@@ -1,5 +1,5 @@
 <?php 
-include '../layout/layout.php';
+
 include '../ayuda/utilidad.php';
 
 session_start();
@@ -30,13 +30,13 @@ if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['estatus
 
     $_SESSION['estudiantes']=$estudiantes; 
 
- header("Location:../index.php");
+ header("Location:../../../admin/asignaciones administrador.php");
  exit();
 }
 
 ?>
 
-<?php printHeader(true);?>
+
 
 <main role="main">
     <div style="margin-top: 2%;">
@@ -50,16 +50,16 @@ if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['estatus
   <div class="card-body">
   <form action="add.php" method="POST">
   <div class="form-group">
-    <label for="nombre">Nombre del estudiante:</label>
+    <label for="nombre">Nombre de la asignacion:</label>
     <input type="text" class="form-control" id="nombre" name="nombre">
   </div>
   <div class="form-group">
-    <label for="apellido">Apellido del estudiante:</label>
+    <label for="apellido">Descripcion de la asignacion:</label>
     <input type="text" class="form-control" id="apellido" name="apellido">
   </div>
   
   <div class="form-group">
-    <label for="estatus">Estatus del estudiante:</label>
+    <label for="estatus">Estatus de la asignacion:</label>
     <select class="form-control" id="estatus" name="estatus">
 
    <?php   foreach($estatus as $id => $text):?>
@@ -71,7 +71,7 @@ if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['estatus
     </div>
 
   <div class="form-group">
-    <label for="carrera">Carrera del estudiante:</label>
+    <label for="carrera">Grupo encargado de la asignacion:</label>
     <select class="form-control" id="carrera" name="carrera">
 
     <?php   foreach($carrera as $id => $text):?>
@@ -93,4 +93,3 @@ if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['estatus
   
 </main>
 
-<?php printFooter(true);?>
