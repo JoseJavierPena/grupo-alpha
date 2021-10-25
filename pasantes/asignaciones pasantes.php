@@ -1,5 +1,40 @@
+<?php 
+
+include '../assets/php/ayuda/utilidad.php';
+
+session_start();
+
+$_SESSION['estudiantes'] = isset($_SESSION['estudiantes'])? $_SESSION['estudiantes']: array();
+
+$listadoEstudiantes = $_SESSION['estudiantes'];
+
+if(!empty($listadoEstudiantes)){
+
+if(isset($_GET['$CarreraId'])){
+
+
+  $listadoEstudiantes = searchProperty ($listadoEstudiantes,'carrera',$_GET['CarreraId']);   
+
+}
+}
+
+if(!empty($listadoEstudiantes)){
+
+  if(isset($_GET['$EstatusId'])){
+  
+  
+    $listadoEstudiantes = searchProperty ($listadoEstudiantes,'estatus',$_GET['EstatusId']);   
+  
+  }
+  }
+
+
+?>
+
 <!DOCTYPE html>
+
 <html lang="en">
+
 
 <head>
     <meta charset="utf-8">
@@ -72,9 +107,57 @@
                     <input type="file" class="form-control" id="Shipping" placeholder="" value="" required="">
                     <input type="submit" class="form-control2" value="Subir Asignacion">
                 </div>
+
+
+
+                <div class="row">
+
+                    <?php if(empty($listadoEstudiantes)): ?>
+
+
+                    <?php  else:?>
+
+
+
+
+                    <?php   foreach($listadoEstudiantes as $estudiante):  ?>
+
+
+
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <?php echo $estudiante['nombre'];?>
+                            </h5>
+
+                            <p class="card-text">
+                                <?php echo $estudiante['apellido']; ?>
+                            </p>
+
+                            <h6 class="card-subtitle mb-2 text-muted">
+                                <?php echo getEstatusName($estudiante['estatus']); ?>
+                            </h6>
+
+                            <h6 class="card-subtitle mb-2 text-muted">
+                                <?php echo  getCarreraName($estudiante['carrera']); ?>
+                            </h6>
+
+                            <a href="../assets/php/Estudiantes/edit.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Mas acerca de la asignacion</a>
+
+                        </div>
+                    </div>
+
+
+                    <?php endforeach; ?>
+
+
+
+                    <?php   endif;?>
+
             </main>
+            </div>
         </div>
-    </div>
 
 
 </body>
