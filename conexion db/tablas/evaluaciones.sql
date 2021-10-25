@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3310
--- Tiempo de generación: 22-10-2021 a las 18:26:19
+-- Tiempo de generación: 25-10-2021 a las 17:51:24
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.3.9
 
@@ -30,10 +30,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `evaluaciones` (
   `Id` int(11) NOT NULL,
-  `Curriculum` varchar(250) NOT NULL,
-  `Repositorio` varchar(250) NOT NULL,
-  `LinkedIn` varchar(250) NOT NULL,
-  `Portfolio` varchar(250) NOT NULL
+  `Curriculum` text NOT NULL,
+  `Repositorio` text NOT NULL,
+  `LinkedIn` text NOT NULL,
+  `Portfolio` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
