@@ -1,10 +1,9 @@
 <?php
-
-if(isset($_POST['subir'])){
+if(isset($_FILES['subir'])){
     $nombre=$_FILES['archivo'] ['name'];
     $tipo = $_FILES['archivo']['type'];
     $tamanio = $_FILES['archivo']['size'];
-    $ruta = $_FILES['archivo']['tmp_name']
+    $ruta = $_FILES['archivo']['tmp_name'];
     $destino = "archivos/".$nombre;
     if($nombre !=""){
         if(copy($ruta,$destino)){
@@ -14,7 +13,7 @@ if(isset($_POST['subir'])){
             //base de datos
             $conexion=mysqli_connect("localhost:3310","root","","pasantes alpha db");
             //insercion de los datos
-            $sql = "INSERT INTO  evaluaciones('repositorio','linkedIn','portfolio','curriculum') values('$repo','$linkedin','$nombre')";
+            $sql = "INSERT INTO  evaluaciones('repositorio','linkedIn','portfolio','curriculum') values('$repo','$linkedin','$cuv','$nombre')";
             $query=$conexion->execute($sql);
             if($query){
                 echo "guardado correctamente";
