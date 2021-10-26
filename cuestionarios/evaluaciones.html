@@ -26,48 +26,45 @@
             </div>
 
             <div class="evaluaciones">
-                <div class="evaluaciones">
-                    <h4 class="evaluaciones">Evaluacion</h4>
+                <h4 class="evaluaciones">Evaluacion</h4>
 
-                   <!-- <div class="evaluaciones">
-                        <label for="cv" class="form-label">Curriculum: </label>
-                        <input type="file" class="form-cv" id="cv" name="cv" placeholder="" value="" required="">
+
+
+                <hr class="my-4">
+                <form method="POST" action="evaluaciones.php" enctype="multipart/form-data">
+
+
+                    <div class="evaluaciones">
+                        <label for="repositorio" class="form-label">Repositorio: </label>
+                        <input type="url" class="form-repo" name="repositorio" placeholder="Agregue el enlace" required>
+                    </div>
+
+                    <div class="evaluaciones">
+                        <label for="linkedin" class="form-label">LinkedIn: </label>
+                        <input type="url" class="form-linkedin" name="linkedin" placeholder="Agregue el enlace " required>
+                    </div>
+
+                    <div class="evaluaciones">
+                        <label for="portfolio" class="form-label">Portafolio: </label>
+                        <input type="url" class="form-portfolio" name="portafolio" placeholder="Agregue el enlace " required>
+                    </div>
+
+                    <div class="evaluaciones">
+                        <label for="curriculum" class="form-label">Curriculum: </label>
+                        <input type="file" class="form-cv" name="curriculum" required>
                         <div class="invalid-feedback">
                             Un archivo .pdf es requerido.
-                        </div>-->
-                    </div>
-                    <form action="evaluaciones.php" method="post" name="evaluation" id="evaluation" action="evaluaciones individuales.html">
-                        
-                        <div class="evaluaciones">
-                            <label for="cv" class="form-label">Curriculum: </label>
-                            <input type="file" class="form-cv" id="cv" name="cv" placeholder="" value="" required="">
-                            <div class="invalid-feedback">
-                                Un archivo .pdf es requerido.
-                            </div>
-                        <div class="evaluaciones">
-                            <label for="repo" class="form-label">Repositorios: </label>
-                            <input type="url" class="form-repo" id="repo" name="repo" placeholder="" value="">
-                        </div>
-
-                        <div class="evaluaciones">
-                            <label for="linkedin" class="form-label">LinkedIn: </label>
-                            <input type="url" class="form-linkedin" id="linkedin" name="Linkedin" placeholder="" value="">
-                        </div>
-
-                        <div class="evaluaciones">
-                            <label for="portfolio" class="form-label">Portfolio: </label>
-                            <input type="url" class="form-portfolio" id="cuv" name="cuv" placeholder="" value="">
                         </div>
                         <hr class="my-4">
                         <div class="btn">
-                            <button class="btn2" type="submit">Back</button>
-                            <button class="btn1" type="submit" name="subir">Evaluaciones individuales</button>
+
+                            <button class="w-100 btn btn-primary btn-lg" type="submit">Enviar y continuar</button>
 
                         </div>
-
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
+
         </main>
 
         <footer class="my-5 pt-5 text-muted text-center text-small">
@@ -86,5 +83,7 @@
         </footer>
     </div>
 </body>
+
+</html>
 
 </html>
