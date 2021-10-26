@@ -1,8 +1,7 @@
 .btn {
     background: #48ABC5;
     border-radius: 6px;
-    position: relative;
-    left: 200px;
+    position: center;
 }
 
 .my-4 {
@@ -14,4 +13,9 @@ body {
     background-repeat: no-repeat;
     background-position: fixed;
     background-size: cover;
+}
+
+.individuales {
+    text-align: center;
+    position: center;
 }
