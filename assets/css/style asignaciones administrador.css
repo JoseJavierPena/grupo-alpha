@@ -8,3 +8,7 @@ body {
     background-position: fixed;
     background-size: cover;
 }
+
+.my-4 {
+    background: #300999;
+}
