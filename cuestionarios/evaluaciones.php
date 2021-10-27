@@ -23,7 +23,7 @@ echo "<script> alert('Se enviaron los datos');</script>";
 header("location:evaluaciones individuales.html");
 }else{
     print("Errormessage: %s\n". mysqli_error($conexion));
-    header("location:evaluaciones.html");
+
 }
     }
   }
