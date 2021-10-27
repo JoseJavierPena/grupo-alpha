@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conexion=mysqli_connect("localhost:3310","root","","pasantes alpha db");
+$conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
 if(isset($_POST['enviar'])){
 $question1 = $_POST['question1'];
 $question2 = $_POST['question2'];
