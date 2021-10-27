@@ -11,26 +11,8 @@
             
             $listadoEstudiantes = $_SESSION['estudiantes'];
             
-            if(!empty($listadoEstudiantes)){
-            
-            if(isset($_GET['$CarreraId'])){
-            
-            
-              $listadoEstudiantes = searchProperty ($listadoEstudiantes,'carrera',$_GET['CarreraId']);   
-            
-            }
-            }
-            
-            if(!empty($listadoEstudiantes)){
-            
-              if(isset($_GET['$EstatusId'])){
-              
-              
-                $listadoEstudiantes = searchProperty ($listadoEstudiantes,'estatus',$_GET['EstatusId']);   
-              
-              }
-              }
-            
+           
+    
             
             ?>
 
@@ -124,9 +106,10 @@
            
 
 
+
         
 
-            
+      
 
             <main role="main">
 
@@ -139,7 +122,7 @@
                             </a>
 
                         </p>
-              
+                        <hr class="my-4">
 
 
 
@@ -167,7 +150,7 @@
                                     </h5>
 
                                     <p class="card-text">
-                                        <?php echo $estudiante['apellido']; ?>
+                                        <?php echo $estudiante['descripcion']; ?>
                                     </p>
 
                                     <h6 class="card-subtitle mb-2 text-muted">
@@ -175,7 +158,7 @@
                                     </h6>
 
                                     <h6 class="card-subtitle mb-2 text-muted">
-                                        <?php echo  getCarreraName($estudiante['carrera']); ?>
+                                        <?php echo  getGrupoName($estudiante['grupo']); ?>
                                     </h6>
 
                                     <a href="../assets/php/Estudiantes/edit.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Editar</a>
