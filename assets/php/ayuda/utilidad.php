@@ -1,7 +1,7 @@
 <?php
-$estatus =[1=>"Seleccione",2=>"Activo",3=>"Inactivo"];
+$estatus =[1=>"Seleccione",2=>"Sin hacer",3=>"Haciendo",4=>"Hecho"];
 
-$carrera =[1=>"Seleccione",2=>"Redes",3=>"Software",4=>"Multimedia",5=>"Mecatronica",
+$grupo =[1=>"Seleccione",2=>"Redes",3=>"Software",4=>"Multimedia",5=>"Mecatronica",
 6=>"Seguridad informática"];
 
 
@@ -18,8 +18,8 @@ function getEstatusName($EstatusId){
     return $GLOBALS['estatus'] [$EstatusId];
 }
 
-function getCarreraName($CarreraId){
-    return $GLOBALS['carrera'] [$CarreraId];
+function getGrupoName($grupoId){
+    return $GLOBALS['grupo'] [$grupoId];
 }
 
 function searchProperty($list,$property,$value){

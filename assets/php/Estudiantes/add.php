@@ -4,7 +4,7 @@ include '../ayuda/utilidad.php';
 
 session_start();
 
-if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['estatus']) && isset($_POST['carrera'])){
+if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['estatus']) && isset($_POST['grupo'])){
 
 
     $_SESSION['estudiantes'] = isset($_SESSION['estudiantes'])? $_SESSION['estudiantes']: array();
@@ -25,7 +25,7 @@ if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['estatus
 
 
     array_push($estudiantes,[ 'id'=>$estudianteid , 'nombre'=> $_POST['nombre'],
-    'apellido'=>$_POST['apellido'],'estatus'=>$_POST['estatus'], 'carrera'=>$_POST['carrera']]);
+    'descripcion'=>$_POST['descripcion'],'estatus'=>$_POST['estatus'], 'grupo'=>$_POST['grupo']]);
 
 
     $_SESSION['estudiantes']=$estudiantes; 
@@ -54,8 +54,8 @@ if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['estatus
     <input type="text" class="form-control" id="nombre" name="nombre">
   </div>
   <div class="form-group">
-    <label for="apellido">Descripcion de la asignacion:</label>
-    <input type="text" class="form-control" id="apellido" name="apellido">
+    <label for="descripcion">Descripcion de la asignacion:</label>
+    <input type="text" class="form-control" id="descripcion" name="descripcion">
   </div>
   
   <div class="form-group">
@@ -71,10 +71,10 @@ if(isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['estatus
     </div>
 
   <div class="form-group">
-    <label for="carrera">Grupo encargado de la asignacion:</label>
-    <select class="form-control" id="carrera" name="carrera">
+    <label for="grupo">Grupo encargado de la asignacion:</label>
+    <select class="form-control" id="grupo" name="grupo">
 
-    <?php   foreach($carrera as $id => $text):?>
+    <?php   foreach($grupo as $id => $text):?>
 
 <option value="<?php  echo $id; ?>">  <?php echo $text; ?></option>
 
