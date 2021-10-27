@@ -10,10 +10,10 @@ $listadoEstudiantes = $_SESSION['estudiantes'];
 
 if(!empty($listadoEstudiantes)){
 
-if(isset($_GET['$CarreraId'])){
+if(isset($_GET['$grupoId'])){
 
 
-  $listadoEstudiantes = searchProperty ($listadoEstudiantes,'carrera',$_GET['CarreraId']);   
+  $listadoEstudiantes = searchProperty ($listadoEstudiantes,'grupo',$_GET['grupoId']);   
 
 }
 }
@@ -132,7 +132,7 @@ if(!empty($listadoEstudiantes)){
                             </h5>
 
                             <p class="card-text">
-                                <?php echo $estudiante['apellido']; ?>
+                                <?php echo $estudiante['descripcion']; ?>
                             </p>
 
                             <h6 class="card-subtitle mb-2 text-muted">
@@ -140,7 +140,7 @@ if(!empty($listadoEstudiantes)){
                             </h6>
 
                             <h6 class="card-subtitle mb-2 text-muted">
-                                <?php echo  getCarreraName($estudiante['carrera']); ?>
+                                <?php echo  getGrupoName($estudiante['grupo']); ?>
                             </h6>
 
                             <a href="../assets/php/Estudiantes/edit.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Mas acerca de la asignacion</a>
