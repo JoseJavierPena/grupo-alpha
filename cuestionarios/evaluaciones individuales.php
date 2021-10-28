@@ -23,7 +23,7 @@ $resultado= mysqli_query($conexion,$insertar);
 
 if($resultado){
     echo "<script> alert('Se enviaron los datos');</script>";
-    header("location:../index.html");
+    header("location:enviar evaluaciones.html");
     }else{
         print("Errormessage: %s\n". mysqli_error($conexion));
     
