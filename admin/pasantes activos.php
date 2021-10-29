@@ -1,6 +1,4 @@
-<?php
-$conexion=mysqli_connect("localhost:3310","root","","pasantes alpha db");
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -116,7 +114,8 @@ $conexion=mysqli_connect("localhost:3310","root","","pasantes alpha db");
                         </thead>
                         <tbody>
                             <?php
-                            $sql="SELECT Id,Nombre,Apellido,Cedula,Universidad,Telefono,Direcion,Donde_Vives,Correo FROM formulario order by Id desc";
+                            $conexion=mysqli_connect("localhost:3310","root","","pasantes alpha db");
+                            $sql="SELECT Id,Nombre,Apellido,Cedula,Universidad,Telefono,Direccion,Donde_Vives,Correo FROM formulario";
                             $resultado= mysqli_query($conexion,$sql);
                             while($mostrar= mysqli_fetch_row($resultado)){
                                 ?>   
@@ -130,6 +129,8 @@ $conexion=mysqli_connect("localhost:3310","root","","pasantes alpha db");
                                     <td><?php echo $mostrar['6']?></td>
                                     <td><?php echo $mostrar['7']?></td>
                                     <td><?php echo $mostrar['8']?></td>
+                                    <td><a href="eliminar.php"button class="btn btn-danger"><i class="fas fa-trash"></i></a></button></td>
+                                    <td><a href="editar.php"button class="btn btn-edit"><i class="fas fa-edit"></i></a></button></td>
 
                                 </tr>
                                 <?php
