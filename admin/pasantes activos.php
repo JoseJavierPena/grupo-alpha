@@ -1,3 +1,6 @@
+<?php
+$conexion=mysqli_connect("localhost:3310","root","","pasantes alpha db");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -112,6 +115,28 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php
+                            $sql="SELECT Id,Nombre,Apellido,Cedula,Universidad,Telefono,Direcion,Donde_Vives,Correo FROM formulario order by Id desc";
+                            $resultado= mysqli_query($conexion,$sql);
+                            while($mostrar= mysqli_fetch_row($resultado)){
+                                ?>   
+                                <tr>
+                                    <td><?php echo $mostrar['0']?></td>
+                                    <td><?php echo $mostrar['1']?></td>
+                                    <td><?php echo $mostrar['2']?></td>
+                                    <td><?php echo $mostrar['3']?></td>
+                                    <td><?php echo $mostrar['4']?></td>
+                                    <td><?php echo $mostrar['5']?></td>
+                                    <td><?php echo $mostrar['6']?></td>
+                                    <td><?php echo $mostrar['7']?></td>
+                                    <td><?php echo $mostrar['8']?></td>
+
+                                </tr>
+                                <?php
+                            }
+                            ?>
+
+                            
                            
 
                         </tbody>
