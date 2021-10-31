@@ -15,17 +15,13 @@ $filas=mysqli_fetch_array($resultado);
 if($filas['id_cargo']==1){ //administrador
     header("location:../admin/pasantes activos.html");
 
-}else
-if($filas['id_cargo']==2){ //pasantes
+}else if($filas['id_cargo']==2){ //pasantes
 header("location:../pasantes/pasantes.html");
 }
 else{
-    ?>
-    <?php
-    include("");
-    ?>
-    <h1 class="bad" style="text-align: center;">ERROR EN LA AUTENTIFICACION</h1>
-    <?php
+
+     header("location:../logins/login.html");
+
 }
 mysqli_free_result($resultado); 
 mysqli_close($conexion);
