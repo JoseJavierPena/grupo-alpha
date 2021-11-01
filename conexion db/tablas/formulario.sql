@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3310
--- Tiempo de generación: 22-10-2021 a las 18:21:14
+-- Tiempo de generación: 02-11-2021 a las 00:42:45
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.3.9
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `formulario` (
-  `Id` int(11) NOT NULL,
+  `Id_formulario` int(11) NOT NULL,
   `Nombre` varchar(250) NOT NULL,
   `Apellido` varchar(250) NOT NULL,
   `Cedula` int(11) NOT NULL,
@@ -41,6 +41,13 @@ CREATE TABLE `formulario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Volcado de datos para la tabla `formulario`
+--
+
+INSERT INTO `formulario` (`Id_formulario`, `Nombre`, `Apellido`, `Cedula`, `Universidad`, `Telefono`, `Direccion`, `Donde_vives`, `Correo`) VALUES
+(17, 'ramona', 'santana', 123456, 'utesas', 4561238, 'aja', 'villa juana', 'hola@gmail.com');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -48,7 +55,7 @@ CREATE TABLE `formulario` (
 -- Indices de la tabla `formulario`
 --
 ALTER TABLE `formulario`
-  ADD PRIMARY KEY (`Id`);
+  ADD PRIMARY KEY (`Id_formulario`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -58,7 +65,7 @@ ALTER TABLE `formulario`
 -- AUTO_INCREMENT de la tabla `formulario`
 --
 ALTER TABLE `formulario`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_formulario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
