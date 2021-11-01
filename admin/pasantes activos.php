@@ -141,7 +141,7 @@
                                         correo=<?php  echo $mostrar['8']?>
                                     
                                     "button class="btn btn-edit"><i class="fas fa-edit"></i></a></button></td>
-                                    <td><a href="eliminar.php"button class="btn btn-danger"><i class="fas fa-trash"></i></a></button></td>
+                                    <td><a href="eliminar.php? id=<?php  echo $mostrar['0']?> "button class="btn btn-danger"><i class="fas fa-trash"></i></a></button></td>
                                     
 
                                 </tr>
