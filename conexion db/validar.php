@@ -23,5 +23,6 @@ else{
      header("location:../logins/login.html");
 
 }
+
 mysqli_free_result($resultado); 
 mysqli_close($conexion);
