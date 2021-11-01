@@ -108,8 +108,8 @@
                                 <th scope="col">Direccion</th>
                                 <th scope="col">Donde vives</th>
                                 <th scope="col">Correo</th>
-                                <th scope="col">Eliminar</th>
                                 <th scope="col">Actualizar</th>
+                                <th scope="col">Eliminar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -129,8 +129,20 @@
                                     <td><?php echo $mostrar['6']?></td>
                                     <td><?php echo $mostrar['7']?></td>
                                     <td><?php echo $mostrar['8']?></td>
+                                    <td><a href="editar.php?
+                                        id=<?php  echo $mostrar['0']?> &
+                                        nombre=<?php echo $mostrar['1']?> &
+                                        apellido=<?php  echo $mostrar['2']?> &
+                                        cedula=<?php echo $mostrar['3']?> &
+                                        universidad=<?php echo $mostrar['4']?> &
+                                        telefono=<?php  echo $mostrar['5']?> &
+                                        direccion=<?php echo $mostrar['6']?> &
+                                        donde_vives=<?php echo $mostrar['7']?> &
+                                        correo=<?php  echo $mostrar['8']?>
+                                    
+                                    "button class="btn btn-edit"><i class="fas fa-edit"></i></a></button></td>
                                     <td><a href="eliminar.php"button class="btn btn-danger"><i class="fas fa-trash"></i></a></button></td>
-                                    <td><a href="editar.php"button class="btn btn-edit"><i class="fas fa-edit"></i></a></button></td>
+                                    
 
                                 </tr>
                                 <?php

@@ -17,6 +17,18 @@
 </head>
 
 <body>
+    <?php
+    $id=$_GET['id'];
+    $nombre=$_GET['nombre'];
+    $apellido=$_GET['apellido'];
+    $cedula=$_GET['cedula'];
+    $universidad=$_GET['universidad'];
+    $telefono=$_GET['telefono'];
+    $direccion=$_GET['direccion'];
+    $donde_vives=$_GET['donde_vives'];
+    $correo=$_GET['correo'];
+    
+    ?>
 
     <div class="container">
         <main>
@@ -30,39 +42,45 @@
                 <div class="Formulario">
                     <h2 class="mb-3">Formulario</h2>
                     <p class="lead">Completar este formulario para tener mas informacion acerca de usted y poder contactarnos.</p>
-                    <form action="Formulario.php" method="post">
+                    <form action="update.php" method="post">
+
+                    <div class="Formulario">
+                            <label for="First_name" class="form-label">ID:</label>
+                            <input type="text" class="form-control" id="id" name="id" value="<?= $id?>" placeholder=""  required="">
+                            
+                        </div>
 
                         <div class="Formulario">
                             <label for="First_name" class="form-label">Nombre:</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" value="" required="">
+                            <input type="text" class="form-control" id="nombre" name="nombre" value="<?= $nombre?>" placeholder="" required="">
                             <div class="invalid-feedback">
                                 Ingrese el nombre.
                             </div>
                         </div>
                         <div class="Formulario">
                             <label for="Last_name" class="form-label">Apellido:</label>
-                            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="" value="" required="">
+                            <input type="text" class="form-control" id="apellido" name="apellido" value="<?= $apellido?>" placeholder=""  required="">
                             <div class="invalid-feedback">
                                 Ingrese el Apellido.
                             </div>
                         </div>
                         <div class="Formulario">
                             <label for="cedula" class="form-label">Cédula:</label>
-                            <input type="text" class="form-control" id="cedula" name="cedula" placeholder="" value="" required="">
+                            <input type="text" class="form-control" id="cedula"  name="cedula" value="<?= $cedula?>" placeholder=""  required="">
                             <div class="invalid-feedback">
                                 Ingrese la Cedula.
                             </div>
                         </div>
                         <div class="Formulario">
                             <label for="College" class="form-label">Universidad:</label>
-                            <input type="text" class="form-control" id="universidad" name="universidad" placeholder="" value="" required="">
+                            <input type="text" class="form-control" id="universidad" name="universidad" value="<?= $universidad?>" placeholder=""  required="">
                             <div class="invalid-feedback">
                                 Ingrese una Universidad.
                             </div>
                         </div>
                         <div class="Formulario">
                             <label for="Cellphone" class="form-label">Teléfono:</label>
-                            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="" value="" required="">
+                            <input type="text" class="form-control" id="telefono" name="telefono"  value="<?= $telefono?>" placeholder="" required="">
                             <div class="invalid-feedback">
                                 Ingrese un Telefono.
                             </div>
@@ -71,29 +89,33 @@
 
                         <div class="Formulario">
                             <label for="Adress" class="form-label">Direccion:</label>
-                            <input type="text" class="form-control" id="direccion" name="direccion" placeholder="" value="" required="">
+                            <input type="text" class="form-control" id="direccion" name="direccion"  value="<?= $direccion?>" placeholder="" required="">
                             <div class="invalid-feedback">
                                 Ingrese una Direccion.
                             </div>
                         </div>
                         <div class="Formulario">
                             <label for="Location" class="form-label">En que zona del pais reside:</label>
-                            <input type="text" class="form-control" id="donde_vives" name="donde_vives" placeholder="" value="" required="">
+                            <input type="text" class="form-control" id="donde_vives" name="donde_vives"  value="<?= $donde_vives?>" placeholder=""  required="">
                             <div class="invalid-feedback">
                                 Ingrese una Risidencia.
                             </div>
                         </div>
                         <div class="Formulario">
                             <label for="Imail" class="form-label">Correo:</label>
-                            <input type="text" class="form-control" id="correo" name="correo" placeholder="" value="" required="">
+                            <input type="text" class="form-control" id="correo" name="correo" value="<?= $correo?>" placeholder=""  required="">
                             <div class="invalid-feedback">
                                 Ingrese un correo.
                             </div>
 
                             <hr class="my-4">
 
-                            <button class="w-100 btn btn-primary btn-lg " type="submit ">Enviar y continuar</button>
+                            <button class="w-100 btn btn-primary btn-lg " type="submit">Actualizar</button>
+                            
 
+                        </div>
+                        <div class="Formulario">
+                        <a href="pasantes activos.php" button class="w-100 btn btn-primary btn-lg ">Cancelar</a></button>
                         </div>
                     </form>
                 </div>
