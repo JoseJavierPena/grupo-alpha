@@ -94,6 +94,12 @@
                             </a>
                         </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pasantes/pasantes.html">
+                                <span data-feather="layers"></span>Pasantes
+                            </a>
+                        </li>
+
                     </ul>
                 </div>
             </nav>

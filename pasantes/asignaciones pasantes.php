@@ -101,15 +101,7 @@ if(!empty($listadoEstudiantes)){
                     <h1 class="h2">Asignaciones pasantes</h1>
 
                 </div>
-                <div class="col-sm-6">
-                    <label for="First_name" class="form-label">Asignaciones:</label>
-                    <p>Aqui subira sus asignaciones:</p>
-                    <input type="file" class="form-control" id="Shipping" placeholder="" value="" required="">
-                    <input type="submit" class="form-control2" value="Subir Asignacion">
-                </div>
-
-
-
+      
                 <div class="row">
 
                     <?php if(empty($listadoEstudiantes)): ?>
@@ -143,7 +135,7 @@ if(!empty($listadoEstudiantes)){
                                 <?php echo  getGrupoName($estudiante['grupo']); ?>
                             </h6>
 
-                            <a href="../assets/php/Estudiantes/edit.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Mas acerca de la asignacion</a>
+                            <a href="../assets/php/Estudiantes/detalles.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Mas acerca de la asignacion</a>
 
                         </div>
                     </div>
