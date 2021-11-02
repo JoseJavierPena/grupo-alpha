@@ -1,5 +1,5 @@
 <?php
-$conexion=mysqli_connect("localhost:3310","root","","pasantes alpha db");
+$conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
 
 
 if(isset($_POST['insertar'])){

@@ -119,7 +119,7 @@
                         </thead>
                         <tbody>
                             <?php
-                            $conexion=mysqli_connect("localhost:3310","root","","pasantes alpha db");
+                            $conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
                             $sql="SELECT Id_formulario,Nombre,Apellido,Cedula,Universidad,Telefono,Direccion,Donde_Vives,Correo FROM formulario";
                             $resultado= mysqli_query($conexion,$sql);
                             while($mostrar= mysqli_fetch_row($resultado)){
