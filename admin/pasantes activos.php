@@ -41,13 +41,13 @@
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="Pasantes activos.html">
+                    <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="Pasantes activos.php">
                                 <span data-feather="home">Pasantes activos</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="informacion de evaluaciones pasantes.html">
+                            <a class="nav-link" href="informacion de evaluaciones pasantes.php">
                                 <span data-feather="file"></span>Informacion de evaluaciones pasantes
                             </a>
                         </li>
@@ -76,6 +76,11 @@
                             </a>
                         </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pasantes/pasantes.html">
+                                <span data-feather="layers"></span>Pasantes
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
@@ -114,8 +119,8 @@
                         </thead>
                         <tbody>
                             <?php
-                            $conexion=mysqli_connect("localhost:3310","root","","pasantes alpha db");
-                            $sql="SELECT Id,Nombre,Apellido,Cedula,Universidad,Telefono,Direccion,Donde_Vives,Correo FROM formulario";
+                            $conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
+                            $sql="SELECT Id_formulario,Nombre,Apellido,Cedula,Universidad,Telefono,Direccion,Donde_Vives,Correo FROM formulario";
                             $resultado= mysqli_query($conexion,$sql);
                             while($mostrar= mysqli_fetch_row($resultado)){
                                 ?>   
@@ -129,7 +134,7 @@
                                     <td><?php echo $mostrar['6']?></td>
                                     <td><?php echo $mostrar['7']?></td>
                                     <td><?php echo $mostrar['8']?></td>
-                                    <td><a href="editar.php?
+                                    <td><a href="../assets/php/editar/editar pasantes activos.php?
                                         id=<?php  echo $mostrar['0']?> &
                                         nombre=<?php echo $mostrar['1']?> &
                                         apellido=<?php  echo $mostrar['2']?> &
@@ -141,7 +146,7 @@
                                         correo=<?php  echo $mostrar['8']?>
                                     
                                     "button class="btn btn-edit"><i class="fas fa-edit"></i></a></button></td>
-                                    <td><a href="eliminar.php? id=<?php  echo $mostrar['0']?> "button class="btn btn-danger"><i class="fas fa-trash"></i></a></button></td>
+                                    <td><a href="../assets/php/borrar/eliminar pasantes activos.php? id=<?php  echo $mostrar['0']?> "button class="btn btn-danger"><i class="fas fa-trash"></i></a></button></td>
                                     
 
                                 </tr>
