@@ -19,7 +19,7 @@ $sql = "INSERT INTO  formulario values(id_formulario,'$nombre','$apellido','$ced
 
      echo "Datos guardados";
    
-header("location:evaluaciones.html");
+header("location:evaluaciones diseño.php");
 
 }
 else {
