@@ -8,13 +8,6 @@
     background: #1568e4;
 }
 
-body {
-    background-image: url(../img/background.jpg);
-    background-repeat: no-repeat;
-    background-position: fixed;
-    background-size: cover;
-}
-
 .individuales {
     text-align: center;
     position: center;
