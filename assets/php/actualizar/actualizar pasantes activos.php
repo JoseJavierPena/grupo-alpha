@@ -9,7 +9,7 @@ $direccion=$_POST['direccion'];
 $donde_vives=$_POST['donde_vives'];
 $correo=$_POST['correo'];
 //base de datos
-$conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
+$conexion=mysqli_connect("localhost:3310","root","","pasantes alpha db");
 //actualizacion del formulario
 $sql="UPDATE formulario SET nombre='$nombre', apellido='$apellido', cedula='$cedula', universidad='$universidad', telefono='$telefono', direccion='$direccion', donde_vives='$donde_vives', correo='$correo' WHERE id_formulario LIKE $id";
 $ejecutar = mysqli_query ($conexion,$sql) or die (mysqli_error($conexion));
