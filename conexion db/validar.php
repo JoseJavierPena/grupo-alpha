@@ -13,7 +13,7 @@ $resultado=mysqli_query($conexion,$consulta);
 $filas=mysqli_fetch_array($resultado);
 
 if($filas['id_cargo']==1){ //administrador
-    header("location:../admin/pasantes activos.html");
+    header("location:../admin/pasantes activos.php");
 
 }else if($filas['id_cargo']==2){ //pasantes
 header("location:../pasantes/pasantes.html");
