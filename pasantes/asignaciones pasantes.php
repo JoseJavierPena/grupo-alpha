@@ -135,7 +135,7 @@ if(!empty($listadoEstudiantes)){
                                 <?php echo  getGrupoName($estudiante['grupo']); ?>
                             </h6>
 
-                            <a href="../assets/php/Estudiantes/detalles.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Mas acerca de la asignacion</a>
+                            <a href="../assets/php/editar/detalles asignaciones pasantes.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Mas acerca de la asignacion</a>
 
                         </div>
                     </div>
