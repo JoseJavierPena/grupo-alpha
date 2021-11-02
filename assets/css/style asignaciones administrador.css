@@ -2,13 +2,6 @@
     background-color: rgb(77, 150, 235);
 }
 
-body {
-    background-image: url(../img/background.jpg);
-    background-repeat: no-repeat;
-    background-position: fixed;
-    background-size: cover;
-}
-
 .my-4 {
     background: #300999;
 }
