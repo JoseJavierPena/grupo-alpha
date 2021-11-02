@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,8 +9,8 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
     <link rel="stylesheet" type=" text/css" href="../assets/css/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" type=" text/css" href="../assets/css/style Infomacion de evaluacion pasantes.css" media="screen">
-    <title>Infomacion de evaluacion pasantes</title>
+    <link rel="stylesheet" type=" text/css" href="../assets/css/style pasantes activos.css" media="screen">
+    <title>Pasantes activos</title>
 
 
 
@@ -23,7 +24,7 @@
 <body>
 
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Pasantes ALPHA AIlogic.</a>
+        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Pasantes ALPHA AIlogic</a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -75,56 +76,82 @@
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="../pasantes/pasantes.html">
-                                <span data-feather="layers"></span>Pasantes
-                            </a>
-                        </li>
                     </ul>
                 </div>
 
             </nav>
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Infomacion de evaluacion pasantes</h1>
+                    <h1 class="h2">Registrar pasante</h1>
 
-
+                    <p>
+                        <a href="../cuestionarios/Formulario.html" class="btn btn-primary my-2">
+                            <font style="vertical-align: inherit;">
+                                <font style=" vertical-align: inherit;">Registrar</font>
+                            </font>
+                        </a>
+                    </p>
                 </div>
-                <h2>Toda la informacion de los pasantes que completaron las evaluaciones</h2>
-                <br>
+
+
+                <h2>Pasantes activos</h2>
                 <div class="table-responsive">
                     <table class="table table-striped table-sm">
                         <thead>
                             <tr>
-                                <th scope="col">Nombre</th>
+                                <th scope="col">ID</th>
+                                <th scope="col">NOMBRE</th>
                                 <th scope="col">Apellido</th>
+                                <th scope="col">Cedula</th>
+                                <th scope="col">Universidad</th>
+                                <th scope="col">Telefono</th>
+                                <th scope="col">Direccion</th>
+                                <th scope="col">Donde vives</th>
                                 <th scope="col">Correo</th>
-                                <th scope="col">Numero de telefono</th>
-                                <th scope="col">Dirrecion</th>
-                                <th scope="col">Curriculum</th>
-                                <th scope="col">Repositorio</th>
-                                <th scope="col">Linkendin</th>
-                                <th scope="col">Cartera</th>
-                                <th scope="col">Estado</th>
-                                <th scope="col">Eliminar</th>
                                 <th scope="col">Actualizar</th>
+                                <th scope="col">Eliminar</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>sandra area</td>
-                                <td>1</td>
-                                <td>erika</td>
-                                <td>erika</td>
-                                <td>activo</td>
-                                <td>sandra area</td>
-                                <td>1</td>
-                                <td>erika</td>
-                                <td>erika</td>
-                                <td>activo</td>
-                                <td><button class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
-                                <td><button class="btn btn-edit"><i class="fas fa-edit"></i></button></td>
-                            </tr>
+                            <?php
+                            $conexion=mysqli_connect("localhost:3310","root","","pasantes alpha db");
+                            $sql="SELECT Id,Nombre,Apellido,Cedula,Universidad,Telefono,Direccion,Donde_Vives,Correo FROM formulario";
+                            $resultado= mysqli_query($conexion,$sql);
+                            while($mostrar= mysqli_fetch_row($resultado)){
+                                ?>   
+                                <tr>
+                                    <td><?php echo $mostrar['0']?></td>
+                                    <td><?php echo $mostrar['1']?></td>
+                                    <td><?php echo $mostrar['2']?></td>
+                                    <td><?php echo $mostrar['3']?></td>
+                                    <td><?php echo $mostrar['4']?></td>
+                                    <td><?php echo $mostrar['5']?></td>
+                                    <td><?php echo $mostrar['6']?></td>
+                                    <td><?php echo $mostrar['7']?></td>
+                                    <td><?php echo $mostrar['8']?></td>
+                                    <td><a href="editar.php?
+                                        id=<?php  echo $mostrar['0']?> &
+                                        nombre=<?php echo $mostrar['1']?> &
+                                        apellido=<?php  echo $mostrar['2']?> &
+                                        cedula=<?php echo $mostrar['3']?> &
+                                        universidad=<?php echo $mostrar['4']?> &
+                                        telefono=<?php  echo $mostrar['5']?> &
+                                        direccion=<?php echo $mostrar['6']?> &
+                                        donde_vives=<?php echo $mostrar['7']?> &
+                                        correo=<?php  echo $mostrar['8']?>
+                                    
+                                    "button class="btn btn-edit"><i class="fas fa-edit"></i></a></button></td>
+                                    <td><a href="eliminar.php? id=<?php  echo $mostrar['0']?> "button class="btn btn-danger"><i class="fas fa-trash"></i></a></button></td>
+                                    
+
+                                </tr>
+                                <?php
+                            }
+                            ?>
+
+                            
+                           
+
                         </tbody>
                     </table>
                 </div>
