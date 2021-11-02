@@ -7,12 +7,12 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    <link rel="stylesheet" type=" text/css" href="../assets/css/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" type=" text/css" href="../assets/css/style Formulario.css" media="screen">
+    <link rel="stylesheet" type=" text/css" href="../../css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" type=" text/css" href="../../css/style Formulario.css" media="screen">
     <title>Formulario</title>
 
 
-    <link rel="icon" href="../assets/img/social-icon.ico">
+    <link rel="icon" href="../../img/social-icon.ico">
 
 </head>
 
@@ -33,7 +33,7 @@
     <div class="container">
         <main>
             <div class="py-5 text-center">
-                <img class="d-block mx-auto mb-4" src="../assets/img/horizontal/oscuro/medium.png" alt="" width="400" height="100">
+                <img class="d-block mx-auto mb-4" src="../../img/horizontal/oscuro/medium.png" alt="" width="400" height="100">
 
             </div>
 
@@ -42,7 +42,7 @@
                 <div class="Formulario">
                     <h2 class="mb-3">Formulario</h2>
                     <p class="lead">Completar este formulario para tener mas informacion acerca de usted y poder contactarnos.</p>
-                    <form action="update.php" method="post">
+                    <form action="../actualizar/actualizar pasantes activos.php" method="post">
 
                     <div class="Formulario">
                             <label for="First_name" class="form-label">ID:</label>
@@ -115,7 +115,7 @@
 
                         </div>
                         <div class="Formulario">
-                        <a href="pasantes activos.php" button class="w-100 btn btn-primary btn-lg ">Cancelar</a></button>
+                        <a href="../../../admin/pasantes activos.php" button class="w-100 btn btn-primary btn-lg ">Cancelar</a></button>
                         </div>
                     </form>
                 </div>
@@ -124,17 +124,7 @@
 
         <footer class="my-5 pt-5 text-muted text-center text-small">
             <p class="mb-1">© 2021 Pasantes ALPHA AIlogic</p>
-            <ul class="list-inline">
-                <li class="list-inline-item">
-                    <a href="#"></a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="#"></a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="#"></a>
-                </li>
-            </ul>
+           
         </footer>
     </div>
 
