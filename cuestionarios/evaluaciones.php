@@ -1,12 +1,12 @@
 <?php
 
 
-$conexion=mysqli_connect("localhost:3310","root","","pasantes alpha db");
+$conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
     
     $repositorio= $_POST["repositorio"];
     $linkedin= $_POST["linkedin"];
     $portafolio= $_POST["portafolio"];
-
+    $Id_formulario= $_POST["Id_formulario"];
   if($_FILES["curriculum"]){
 
     $nombre_base = basename($_FILES["curriculum"]["name"]);
@@ -18,6 +18,7 @@ $conexion=mysqli_connect("localhost:3310","root","","pasantes alpha db");
 $insertar = "INSERT INTO evaluaciones (repositorio,linkedin,portafolio,curriculum) VALUES ('$repositorio','$linkedin','$portafolio','$ruta')";
 
 $resultado=mysqli_query($conexion, $insertar);
+echo $insertar;
 
 if($resultado){
 echo "<script> alert('Se enviaron los datos');</script>";
