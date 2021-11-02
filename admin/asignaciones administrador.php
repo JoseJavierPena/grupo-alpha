@@ -60,12 +60,12 @@
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="Pasantes activos.html">
+                            <a class="nav-link active" aria-current="page" href="Pasantes activos.php">
                                 <span data-feather="home">Pasantes activos</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="informacion de evaluaciones pasantes.html">
+                            <a class="nav-link" href="informacion de evaluaciones pasantes.php">
                                 <span data-feather="file"></span>Informacion de evaluaciones pasantes
                             </a>
                         </li>
@@ -121,7 +121,7 @@
 
               
                         <p>
-                            <a href="../assets/php/Estudiantes/add.php" class="btn btn-primary my-2">
+                            <a href="../assets/php/insertar/add.php" class="btn btn-primary my-2">
                                 <font style="vertical-align: inherit;">
                                     <font style="vertical-align: inherit;">Crear asignacion </font>
                                 </font>
@@ -167,9 +167,9 @@
                                         <?php echo  getGrupoName($estudiante['grupo']); ?>
                                     </h6>
 
-                                    <a href="../assets/php/Estudiantes/edit.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Editar</a>
+                                    <a href="../assets/php/editar/editar asignaciones administrador.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Editar</a>
 
-                                    <a href="../assets/php/Estudiantes/borrar.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Borrar</a>
+                                    <a href="../assets/php/borrar/eliminar asignaciones administrador.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Borrar</a>
 
                                 </div>
                             </div>

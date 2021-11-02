@@ -1,10 +1,10 @@
 <?php
-$conexion=mysqli_connect("localhost:3310","root","","pasantes alpha db");
+$conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
     
     $repositorio= $_POST["repositorio"];
     $linkedin= $_POST["linkedin"];
     $portafolio= $_POST["portafolio"];
-
+$Id_formulario=$_GET["Id_formulario"];
   if($_FILES["curriculum"]){
 
     $nombre_base = basename($_FILES["curriculum"]["name"]);
@@ -13,7 +13,7 @@ $conexion=mysqli_connect("localhost:3310","root","","pasantes alpha db");
     $subirarchivo = ($_FILES["curriculum"]["tmp_name"]. $ruta);
 
     if($subirarchivo){
-$insertar = "INSERT INTO evaluaciones (repositorio,linkedin,portafolio,curriculum,Id_formulario) VALUES ('$repositorio','$linkedin','$portafolio','$ruta')";
+$insertar = "INSERT INTO evaluaciones (repositorio,linkedin,portafolio,curriculum,Id_formulario) VALUES ('$repositorio','$linkedin','$portafolio','$ruta','$Id_formulario')";
 
 $resultado=mysqli_query($conexion, $insertar);
 
