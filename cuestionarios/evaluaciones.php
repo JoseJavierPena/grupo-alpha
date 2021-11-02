@@ -15,7 +15,7 @@ $conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
     $subirarchivo = ($_FILES["curriculum"]["tmp_name"]. $ruta);
 
     if($subirarchivo){
-$insertar = "INSERT INTO evaluaciones (repositorio,linkedin,portafolio,curriculum,Id_formulario) VALUES ('$repositorio','$linkedin','$portafolio','$ruta','$Id_formulario')";
+$insertar = "INSERT INTO evaluaciones (repositorio,linkedin,portafolio,curriculum) VALUES ('$repositorio','$linkedin','$portafolio','$ruta')";
 
 $resultado=mysqli_query($conexion, $insertar);
 echo $insertar;

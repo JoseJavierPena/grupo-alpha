@@ -13,10 +13,3 @@
 .btn {
     background: #48ABC5;
 }
-
-body {
-    background-image: url(../img/background.jpg);
-    background-repeat: no-repeat;
-    background-position: fixed;
-    background-size: cover;
-}
