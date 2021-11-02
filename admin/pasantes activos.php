@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +10,7 @@
     <meta name="generator" content="Hugo 0.88.1">
     <link rel="stylesheet" type=" text/css" href="../assets/css/bootstrap.min.css" media="screen">
     <link rel="stylesheet" type=" text/css" href="../assets/css/style pasantes activos.css" media="screen">
-    <title>Administrador</title>
+    <title>Pasantes activos</title>
 
 
 
@@ -98,43 +99,58 @@
                     <table class="table table-striped table-sm">
                         <thead>
                             <tr>
-                                <th scope="col">Nombre/Correo</th>
                                 <th scope="col">ID</th>
-                                <th scope="col">Creado por</th>
-                                <th scope="col">Modificado por</th>
-                                <th scope="col">Estado</th>
-                                <th scope="col">Eliminar</th>
+                                <th scope="col">NOMBRE</th>
+                                <th scope="col">Apellido</th>
+                                <th scope="col">Cedula</th>
+                                <th scope="col">Universidad</th>
+                                <th scope="col">Telefono</th>
+                                <th scope="col">Direccion</th>
+                                <th scope="col">Donde vives</th>
+                                <th scope="col">Correo</th>
                                 <th scope="col">Actualizar</th>
+                                <th scope="col">Eliminar</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>sandra area</td>
-                                <td>1</td>
-                                <td>erika</td>
-                                <td>erika</td>
-                                <td>activo</td>
-                                <td><button class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
-                                <td><button class="btn btn-edit"><i class="fas fa-edit"></i></button></td>
-                            </tr>
-                            <tr>
-                                <td>rosmery bloom</td>
-                                <td>2</td>
-                                <td>beau</td>
-                                <td>beau</td>
-                                <td>activo</td>
-                                <td><button class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
-                                <td><button class="btn btn-edit"><i class="fas fa-edit"></i></button></td>
-                            </tr>
-                            <tr>
-                                <td>ashylin batista</td>
-                                <td>3</td>
-                                <td>linda</td>
-                                <td>linda</td>
-                                <td>activo</td>
-                                <td><button class="btn btn-danger"><i class="fas fa-trash"></i></button></td>
-                                <td><button class="btn btn-edit"><i class="fas fa-edit"></i></button></td>
-                            </tr>
+                            <?php
+                            $conexion=mysqli_connect("localhost:3310","root","","pasantes alpha db");
+                            $sql="SELECT Id,Nombre,Apellido,Cedula,Universidad,Telefono,Direccion,Donde_Vives,Correo FROM formulario";
+                            $resultado= mysqli_query($conexion,$sql);
+                            while($mostrar= mysqli_fetch_row($resultado)){
+                                ?>   
+                                <tr>
+                                    <td><?php echo $mostrar['0']?></td>
+                                    <td><?php echo $mostrar['1']?></td>
+                                    <td><?php echo $mostrar['2']?></td>
+                                    <td><?php echo $mostrar['3']?></td>
+                                    <td><?php echo $mostrar['4']?></td>
+                                    <td><?php echo $mostrar['5']?></td>
+                                    <td><?php echo $mostrar['6']?></td>
+                                    <td><?php echo $mostrar['7']?></td>
+                                    <td><?php echo $mostrar['8']?></td>
+                                    <td><a href="editar.php?
+                                        id=<?php  echo $mostrar['0']?> &
+                                        nombre=<?php echo $mostrar['1']?> &
+                                        apellido=<?php  echo $mostrar['2']?> &
+                                        cedula=<?php echo $mostrar['3']?> &
+                                        universidad=<?php echo $mostrar['4']?> &
+                                        telefono=<?php  echo $mostrar['5']?> &
+                                        direccion=<?php echo $mostrar['6']?> &
+                                        donde_vives=<?php echo $mostrar['7']?> &
+                                        correo=<?php  echo $mostrar['8']?>
+                                    
+                                    "button class="btn btn-edit"><i class="fas fa-edit"></i></a></button></td>
+                                    <td><a href="eliminar.php? id=<?php  echo $mostrar['0']?> "button class="btn btn-danger"><i class="fas fa-trash"></i></a></button></td>
+                                    
+
+                                </tr>
+                                <?php
+                            }
+                            ?>
+
+                            
+                           
 
                         </tbody>
                     </table>
