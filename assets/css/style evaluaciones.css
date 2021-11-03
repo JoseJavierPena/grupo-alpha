@@ -1,0 +1,15 @@
+.evaluaciones {
+    margin: auto;
+    width: 60%;
+    border: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.my-4 {
+    background: #1568e4;
+}
+
+.btn {
+    background: #48ABC5;
+}
