@@ -37,6 +37,20 @@ include ("../conexion db/db.php")
                     <hr class="my-4">
                     <form method="POST" action="evaluaciones.php" enctype="multipart/form-data">
 
+                    <div class="evaluaciones">
+                                <label for="Id_formulario" class="form-label">Cual pasante es usted?: </label>
+                                <select name="Id_formulario" required>
+                                    <?php 
+
+                                    $sql="select * from formulario";
+                                    $bautor=$conexion->query($sql);
+                                    while($mostrar=$bautor->fetch_array()){
+                                  echo   "<option value='".$mostrar['Id_formulario']."'> ".$mostrar['1']." ".$mostrar['2']."</option>";
+                                    }
+                                    ?>
+                               
+                            </select>
+                            </div>
 
                         <div class="evaluaciones">
                             <label for="repositorio" class="form-label">Repositorio: </label>
@@ -60,20 +74,7 @@ include ("../conexion db/db.php")
                                 Un archivo .pdf es requerido.
                             </div>
 
-                            <div class="evaluaciones">
-                                <label for="Id_formulario" class="form-label">Cual pasante es usted?: </label>
-                                <select name="Id_formulario" required>
-                                    <?php 
-
-                                    $sql="select * from formulario";
-                                    $bautor=$conexion->query($sql);
-                                    while($mostrar=$bautor->fetch_array()){
-                                  echo   "<option value='".$mostrar['Id_formulario']."'> ".$mostrar['1']."".$mostrar['2']."</option>";
-                                    }
-                                    ?>
-                               
-                            </select>
-                            </div>
+                           
                             <hr class="my-4">
 
 
