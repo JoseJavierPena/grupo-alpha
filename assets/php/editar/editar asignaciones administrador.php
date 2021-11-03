@@ -145,7 +145,7 @@ else{
   </div> 
   <div class="card-body">
 
-  <form action="edit.php?id=<?php echo $element['id']?>" method="POST">
+  <form action="editar asignaciones administrador.php?id=<?php echo $element['id']?>" method="POST">
   <div class="form-group">
     <label for="nombre">Titulo de la asignacion:</label>
     <input type="text" value="<?php echo $element['nombre']?>"  class="form-control" id="nombre" name="nombre">

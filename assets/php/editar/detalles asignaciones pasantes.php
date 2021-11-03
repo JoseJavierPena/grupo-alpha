@@ -31,7 +31,7 @@ if(isset($_GET['id'])){
 
     $_SESSION['estudiantes']=$estudiantes; 
 
- header("Location:../../../admin/asignaciones administrador.php");
+ header("Location:../../../pasantes/asignaciones pasantes.php");
  exit();
 
 }
@@ -41,7 +41,7 @@ if(isset($_GET['id'])){
 }
 
 else{
-  header("Location:../../../admin/asignaciones administrador.php");
+  header("Location:../../../pasantes/asignaciones pasantes.php");
  exit();
 
 }
@@ -129,7 +129,7 @@ else{
   </div> 
   <div class="card-body">
 
-  <form action="edit.php?id=<?php echo $element['id']?>" method="POST">
+  <form action="detalles asignaciones pasantes.php?id=<?php echo $element['id']?>" method="POST">
   <div class="form-group">
     <label for="nombre">Titulo de la asignacion:</label>
     <input type="text" value="<?php echo $element['nombre']?>"  class="form-control" id="nombre" name="nombre" readonly="readonly">
