@@ -1,1 +1,0 @@
-# Proyecto Pasantes grupo-alpha
