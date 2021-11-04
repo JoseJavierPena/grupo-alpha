@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8111
--- Tiempo de generación: 27-10-2021 a las 22:20:05
--- Versión del servidor: 10.4.6-MariaDB
--- Versión de PHP: 7.3.9
+-- Tiempo de generación: 03-11-2021 a las 20:55:02
+-- Versión del servidor: 10.4.13-MariaDB
+-- Versión de PHP: 7.4.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -35,26 +34,19 @@ CREATE TABLE `individuales` (
   `conocimientosjavascript` int(11) NOT NULL,
   `conocimientosphp` int(11) NOT NULL,
   `conocmientossqlmysql` int(11) NOT NULL,
-  `otroslenguajes` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `otroslenguajes` int(11) NOT NULL,
+  `Id_formulario` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `individuales`
 --
 
-INSERT INTO `individuales` (`Id`, `conociminetoshtml`, `conociminetoscss`, `conocimientosjavascript`, `conocimientosphp`, `conocmientossqlmysql`, `otroslenguajes`) VALUES
-(1, 0, 0, 0, 0, 0, 0),
-(2, 0, 0, 0, 0, 0, 0),
-(3, 0, 0, 0, 0, 0, 0),
-(4, 0, 0, 0, 0, 0, 0),
-(5, 0, 0, 0, 0, 0, 0),
-(6, 0, 0, 0, 0, 0, 0),
-(7, 0, 0, 0, 0, 0, 0),
-(8, 0, 0, 0, 0, 0, 0),
-(9, 0, 0, 0, 0, 0, 0),
-(10, 0, 0, 0, 0, 0, 0),
-(11, 0, 0, 0, 0, 0, 0),
-(12, 0, 0, 0, 0, 0, 0);
+INSERT INTO `individuales` (`Id`, `conociminetoshtml`, `conociminetoscss`, `conocimientosjavascript`, `conocimientosphp`, `conocmientossqlmysql`, `otroslenguajes`, `Id_formulario`) VALUES
+(1, 2, 4, 5, 5, 3, 8, 31),
+(2, 2, 4, 5, 5, 3, 8, 27),
+(3, 2, 4, 5, 5, 3, 8, 27),
+(5, 4, 7, 4, 6, 10, 10, 32);
 
 --
 -- Índices para tablas volcadas
@@ -64,7 +56,8 @@ INSERT INTO `individuales` (`Id`, `conociminetoshtml`, `conociminetoscss`, `cono
 -- Indices de la tabla `individuales`
 --
 ALTER TABLE `individuales`
-  ADD PRIMARY KEY (`Id`);
+  ADD PRIMARY KEY (`Id`),
+  ADD KEY `Id_formulario` (`Id_formulario`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -74,7 +67,17 @@ ALTER TABLE `individuales`
 -- AUTO_INCREMENT de la tabla `individuales`
 --
 ALTER TABLE `individuales`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `individuales`
+--
+ALTER TABLE `individuales`
+  ADD CONSTRAINT `individuales_ibfk_1` FOREIGN KEY (`Id_formulario`) REFERENCES `formulario` (`Id_formulario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -22,7 +22,7 @@ echo $insertar;
 
 if($resultado){
 echo "<script> alert('Se enviaron los datos');</script>";
-header("location:evaluaciones individuales.html");
+header("location:evaluaciones individuales diseño.php");
 }else{
     print("Errormessage: %s\n". mysqli_error($conexion));
 
