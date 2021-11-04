@@ -71,7 +71,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="seguimiento de recursos.html">
+                            <a class="nav-link" href="seguimiento de recursos.php">
                                 <span data-feather="bar-chart-2"></span> Seguimiento de recurso
                             </a>
                         </li>

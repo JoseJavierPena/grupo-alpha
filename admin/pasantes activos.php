@@ -1,7 +1,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,17 +11,10 @@
     <link rel="stylesheet" type=" text/css" href="../assets/css/style pasantes activos.css" media="screen">
     <title>Pasantes activos</title>
 
-
-
     <link rel="icon" href="../assets/img/social-icon.ico">
     <script src="https://kit.fontawesome.com/0f48d8c00d.js"></script>
-
-
-
 </head>
-
 <body>
-
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Pasantes ALPHA AIlogic</a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,7 +45,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="seguimiento de recursos.html">
+                            <a class="nav-link" href="seguimiento de recursos.php">
                                 <span data-feather="bar-chart-2"></span> Seguimiento de recurso
                             </a>
                         </li>
@@ -97,8 +89,6 @@
                         </a>
                     </p>
                 </div>
-
-
                 <h2>Pasantes activos</h2>
                 <div class="table-responsive">
                     <table class="table table-striped table-sm">
@@ -147,25 +137,15 @@
                                     
                                     "button class="btn btn-edit"><i class="fas fa-edit"></i></a></button></td>
                                     <td><a href="../assets/php/borrar/eliminar pasantes activos.php? id=<?php  echo $mostrar['0']?> "button class="btn btn-danger"><i class="fas fa-trash"></i></a></button></td>
-                                    
-
                                 </tr>
                                 <?php
                             }
                             ?>
-
-                            
-                           
-
                         </tbody>
                     </table>
                 </div>
-
             </main>
-
-
         </div>
     </div>
 </body>
-
 </html>
