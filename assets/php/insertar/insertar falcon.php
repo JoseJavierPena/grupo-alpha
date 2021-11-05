@@ -86,6 +86,7 @@
                             </a>
                         </li>
 
+
                     </ul>
                 </div>
             </nav>
@@ -101,29 +102,29 @@
 
 <div class="card">
   <div class="card-header bg-info text-light" >
- <a href="../informacion y creacion/detalles grupo administracion beta.php" class="btn btn-warning"> Volver Atras</a> Miembro
+ <a href="../informacion y creacion/detalles grupo administracion falcon.php" class="btn btn-warning"> Volver Atras</a> Miembro
   </div> 
 
 
   <div class="card-body">
-  <form method="POST" action="beta insertar.php">
+  <form method="POST" action=" falcon insertar.php">
 
 
-  <div class="grupo beta">
-                            <label for="grupo beta" class="form-label">Nombre:</label>
+  <div class="grupo">
+                            <label for="grupo" class="form-label">Nombre:</label>
                             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" value="" required="">
                             <div class="invalid-feedback">
                                 Ingrese el nombre.
                             </div>
                         </div>
-                        <div class="grupo beta">
+                        <div class="grupo">
                             <label for="Last_name" class="form-label">Apellido:</label>
                             <input type="text" class="form-control" id="apellido" name="apellido" placeholder="" value="" required="">
                             <div class="invalid-feedback">
                                 Ingrese el Apellido.
                             </div>
                         </div>
-                        <div class="grupo beta">
+                        <div class="grupo">
                             <label for="Imail" class="form-label">Correo:</label>
                             <input type="imail" class="form-control" id="correo" name="correo" placeholder="" value="" required="">
                             <div class="invalid-feedback">

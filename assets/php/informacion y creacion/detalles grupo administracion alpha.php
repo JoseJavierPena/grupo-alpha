@@ -9,7 +9,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
     <link rel="stylesheet" type=" text/css" href="../../css/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" type=" text/css" href="../../css/style pasantes activos.css" media="screen">
+    <link rel="stylesheet" type=" text/css" href="../../css/style grupos administrador.css" media="screen">
     <title>Grupo ALPHA</title>
 
 
@@ -79,6 +79,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="../../../pasantes/pasantes.html">
                                 <span data-feather="layers"></span>Pasantes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../admin/chat admin.html">
+                                <span data-feather="layers"></span>Chat
                             </a>
                         </li>
                     </ul>

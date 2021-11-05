@@ -9,8 +9,8 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
     <link rel="stylesheet" type=" text/css" href="../../css/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" type=" text/css" href="../../css/style grupos administrador.css" media="screen">
-    <title>Grupo DELTA</title>
+    <link rel="stylesheet" type=" text/css" href="../../css/style pasantes activos.css" media="screen">
+    <title>Grupo FALCON</title>
 
 
 
@@ -42,48 +42,21 @@
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                     <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../../../admin/Pasantes activos.php">
-                                <span data-feather="home">Pasantes activos</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/informacion de evaluaciones pasantes.php">
-                                <span data-feather="file"></span>Informacion de evaluaciones pasantes
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/seguimiento de recursos.html">
-                                <span data-feather="bar-chart-2"></span> Seguimiento de recurso
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/recursos.html">
-                                <span data-feather="layers"></span>Recursos
-                            </a>
-                        </li>
-
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/asignaciones administrador.php">
-                                <span data-feather="layers"></span>Asignaciones
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/grupos administrador.html">
-                                <span data-feather="layers"></span>Grupos
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
                             <a class="nav-link" href="../../../pasantes/pasantes.html">
-                                <span data-feather="layers"></span>Pasantes
+                                <span data-feather=" layers "></span>Pasantes
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/chat admin.html">
-                                <span data-feather="layers"></span>Chat
+
+
+                        <li class="nav-item ">
+                            <a class="nav-link " href="../../../pasantes/asignaciones pasantes.php ">
+                                <span data-feather="layers "></span>Asignaciones
+                            </a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link " href="../../../pasantes/grupos pasantes.html ">
+                                <span data-feather="layers "></span>Grupos
                             </a>
                         </li>
                     </ul>
@@ -92,15 +65,9 @@
             </nav>
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Grupo DELTA</h1>
+                    <h1 class="h2">Grupo FALCON</h1>
 
-                    <p>
-                        <a href="../insertar/insertar delta.php" class="btn btn-primary my-2">
-                            <font style="vertical-align: inherit;">
-                                <font style=" vertical-align: inherit;">Registrar</font>
-                            </font>
-                        </a>
-                    </p>
+                   
                 </div>
 
 
@@ -113,14 +80,13 @@
                                 <th scope="col">NOMBRE</th>
                                 <th scope="col">Apellido</th> 
                                 <th scope="col">Correo</th>
-                               
-                                <th scope="col">Eliminar</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
                             <?php
                             $conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
-                            $sql="SELECT id,nombre,apellido,correo FROM grupod";
+                            $sql="SELECT id,nombre,apellido,correo FROM grupof";
                             $resultado= mysqli_query($conexion,$sql);
                             while($mostrar= mysqli_fetch_row($resultado)){
                                 ?>   
@@ -131,7 +97,8 @@
                                     <td><?php echo $mostrar['3']?></td>
                                    
                                     
-                                    <td><a href="../borrar/eliminar elecon.php? id=<?php  echo $mostrar['0']?> "button class="btn btn-danger"><i class="fas fa-trash"></i></a></button></td>
+                                    
+                                   
 
                                 </tr>
                                 <?php

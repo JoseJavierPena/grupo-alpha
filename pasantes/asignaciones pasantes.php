@@ -73,12 +73,11 @@ if(!empty($listadoEstudiantes)){
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
 
-                        <li class="nav-item">
+                    <li class="nav-item">
                             <a class="nav-link" href="pasantes.html">
                                 <span data-feather="layers"></span>Pasantes
                             </a>
                         </li>
-
 
                         <li class="nav-item">
                             <a class="nav-link" href="asignaciones pasantes.php">
@@ -89,6 +88,11 @@ if(!empty($listadoEstudiantes)){
                         <li class="nav-item">
                             <a class="nav-link" href="grupos pasantes.html">
                                 <span data-feather="layers"></span>Grupos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="chat pasantes.html">
+                                <span data-feather="layers"></span>chat
                             </a>
                         </li>
                     </ul>
