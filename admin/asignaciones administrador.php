@@ -26,19 +26,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
     <link rel="stylesheet" type=" text/css" href="../assets/css/bootstrap.min.css" media="screen">
     <link rel="stylesheet" type=" text/css" href="../assets/css/style asignaciones administrador.css" media="screen">
     <title>Asignaciones</title>
 
-
     <link rel="icon" href="../assets/img/social-icon.ico">
 
-
-
 </head>
-
 <body>
 
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -49,7 +44,7 @@
 
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="../logins/login.html">Cerrar sesion</a>
+                <a class="nav-link px-3" href="../logins/login.html">Cerrar sesión</a>
             </div>
         </div>
     </header>
@@ -66,13 +61,13 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="informacion de evaluaciones pasantes.php">
-                                <span data-feather="file"></span>Informacion de evaluaciones pasantes
+                                <span data-feather="file"></span>Información de evaluaciones pasantes
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="seguimiento de recursos.php">
-                                <span data-feather="bar-chart-2"></span> Seguimiento de recurso
+                                <span data-feather="bar-chart-2"></span> Seguimiento de recursos
                             </a>
                         </li>
                         <li class="nav-item">
@@ -114,45 +109,22 @@
                     <h1 class="h2">Asignaciones</h1>
 
                 </div>
-           
-
-
-
-        
-
       
-
-            <main role="main">
-
-              
+            <main role="main">              
                         <p>
                             <a href="../assets/php/insertar/add.php" class="btn btn-primary my-2">
                                 <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Crear asignacion </font>
+                                    <font style="vertical-align: inherit;">Crear asignación </font>
                                 </font>
                             </a>
-
                         </p>
                         <hr class="my-4">
-
-
-
-
 
                         <div class="row">
 
                             <?php if(empty($listadoEstudiantes)): ?>
-
-
                             <?php  else:?>
-
-
-
-
                             <?php   foreach($listadoEstudiantes as $estudiante):  ?>
-
-
-
 
                             <div class="card">
                                 <div class="card-body">
@@ -175,30 +147,16 @@
                                     <a href="../assets/php/editar/editar asignaciones administrador.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Editar</a>
 
                                     <a href="../assets/php/borrar/eliminar asignaciones administrador.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Borrar</a>
-
                                 </div>
                             </div>
-
-
                             <?php endforeach; ?>
-
-
-
                             <?php   endif;?>
-
-
                         </div>
                     </div>
                 </div>
         </div>
-
         </main>
-
-  
-
     </div>
     </div>
-
 </body>
-
 </html>

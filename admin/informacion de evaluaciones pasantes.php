@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,17 +8,12 @@
     <meta name="generator" content="Hugo 0.88.1">
     <link rel="stylesheet" type=" text/css" href="../assets/css/bootstrap.min.css" media="screen">
     <link rel="stylesheet" type=" text/css" href="../assets/css/style Infomacion de evaluacion pasantes.css" media="screen">
-    <title>Infomacion de evaluacion pasantes</title>
-
-
+    <title>Infomación de evaluación pasantes</title>
 
     <link rel="icon" href="../assets/img/social-icon.ico">
     <script src="https://kit.fontawesome.com/0f48d8c00d.js"></script>
 
-
-
 </head>
-
 <body>
 
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -30,7 +24,7 @@
 
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="../logins/login.html">Cerrar sesion</a>
+                <a class="nav-link px-3" href="../logins/login.html">Cerrar sesión</a>
             </div>
         </div>
     </header>
@@ -47,13 +41,13 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="informacion de evaluaciones pasantes.php">
-                                <span data-feather="file"></span>Informacion de evaluaciones pasantes
+                                <span data-feather="file"></span>Información de evaluaciones pasantes
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="seguimiento de recursos.html">
-                                <span data-feather="bar-chart-2"></span> Seguimiento de recurso
+                            <a class="nav-link" href="seguimiento de recursos.php">
+                                <span data-feather="bar-chart-2"></span> Seguimiento de recursos
                             </a>
                         </li>
                         <li class="nav-item">
@@ -88,15 +82,13 @@
 
                     </ul>
                 </div>
-
             </nav>
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Infomacion de evaluacion pasantes</h1>
-
+                    <h1 class="h2">Infomación de evaluación pasantes</h1>
 
                 </div>
-                <h2>Toda la informacion de los pasantes que completaron las evaluaciones</h2>
+                <h2>Toda la información de los pasantes que completaron las evaluaciones</h2>
                 <br>
                 <div class="table-responsive">
                     <table class="table table-striped table-sm">
@@ -108,12 +100,7 @@
                                 <th scope="col">Linkedin</th>
                                 <th scope="col">Portafolio</th>
                                 <th scope="col">Curriculum</th>
-                                <th scope="col">ID Pasantes</th>
-                                
-                                
-
-                                
-                                
+                                <th scope="col">ID Pasantes</th>                                                                                                                                
                                 
                             </tr>
                         </thead>
@@ -131,33 +118,17 @@
                                         <td><?php echo $mostrar['2']?></td>
                                         <td><?php echo $mostrar['3']?></td>
                                         <td><?php echo $mostrar['4']?></td>
-                                        <td><?php echo $mostrar['5']?></td>
-
-                                       
-                                       
-                                        
-                                        
-                                        
-                                       
+                                        <td><?php echo $mostrar['5']?></td>   
                                  </tr>
                                  <?php
-                                 }
-                               
-                                 
-                                ?>
-                                  
-                               
-                               
+                                 }                                                             
+                                ?>                                                                                                
                             </tr>
                         </tbody>
                     </table>
                 </div>
-
             </main>
-
-
         </div>
     </div>
 </body>
-
 </html>
