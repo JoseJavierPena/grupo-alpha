@@ -99,6 +99,11 @@
                                 <span data-feather="layers"></span>Pasantes
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="chat admin.html">
+                                <span data-feather="layers"></span>Chat
+                            </a>
+                        </li>
 
                     </ul>
                 </div>
