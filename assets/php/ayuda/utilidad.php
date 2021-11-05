@@ -2,7 +2,7 @@
 $estatus =[1=>"Seleccione",2=>"Sin hacer",3=>"Haciendo",4=>"Hecho"];
 
 $grupo =[1=>"Seleccione",2=>"Grupo ALPHA",3=>"Grupo BETA",4=>"Grupo CENTRAL",5=>"Grupo DELTA",
-6=>"Grupo FALCON"];
+6=>"Grupo ELECON"];
 
 
 
