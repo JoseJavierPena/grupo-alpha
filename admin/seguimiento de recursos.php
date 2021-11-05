@@ -39,13 +39,13 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="informacion de evaluaciones pasantes.php">
-                                <span data-feather="file"></span>Informacion de evaluaciones pasantes
+                                <span data-feather="file"></span>Información de evaluaciones pasantes
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="seguimiento de recursos.php">
-                                <span data-feather="bar-chart-2"></span> Seguimiento de recurso
+                                <span data-feather="bar-chart-2"></span> Seguimiento de recursos
                             </a>
                         </li>
                         <li class="nav-item">
@@ -97,8 +97,8 @@
                             $conexion = mysqli_connect("localhost:8111","root","","pasantes alpha db");
                             $sqlFormulario = "SELECT Nombre, Apellido FROM formulario";
                             $sqlEvaluaciones = "SELECT repositorio, linkedin, portafolio, curriculum FROM evaluaciones";
-                            $resultado= mysqli_query($conexion, $sqlEvaluaciones);
-                            while($mostrar= mysqli_fetch_row($resultado)){
+                            $resultado = mysqli_query($conexion, $sqlEvaluaciones);
+                            while($mostrar = mysqli_fetch_row($resultado)){
                                 ?>   
                                 <tr>
                                     <td><?php echo $mostrar['0']?></td>

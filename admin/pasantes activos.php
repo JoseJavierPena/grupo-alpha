@@ -23,7 +23,7 @@
 
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="../logins/login.html">Cerrar sesion</a>
+                <a class="nav-link px-3" href="../logins/login.html">Cerrar sesión</a>
             </div>
         </div>
     </header>
@@ -40,13 +40,13 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="informacion de evaluaciones pasantes.php">
-                                <span data-feather="file"></span>Informacion de evaluaciones pasantes
+                                <span data-feather="file"></span>Información de evaluaciones pasantes
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="seguimiento de recursos.php">
-                                <span data-feather="bar-chart-2"></span> Seguimiento de recurso
+                                <span data-feather="bar-chart-2"></span> Seguimiento de recursos
                             </a>
                         </li>
                         <li class="nav-item">
@@ -97,11 +97,11 @@
                                 <th scope="col">ID</th>
                                 <th scope="col">NOMBRE</th>
                                 <th scope="col">Apellido</th>
-                                <th scope="col">Cedula</th>
+                                <th scope="col">Cédula</th>
                                 <th scope="col">Universidad</th>
-                                <th scope="col">Telefono</th>
-                                <th scope="col">Direccion</th>
-                                <th scope="col">Donde vives</th>
+                                <th scope="col">Teléfono</th>
+                                <th scope="col">Dirección</th>
+                                <th scope="col">Dónde vives</th>
                                 <th scope="col">Correo</th>
                                 <th scope="col">Actualizar</th>
                                 <th scope="col">Eliminar</th>
