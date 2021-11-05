@@ -32,10 +32,7 @@ if(!empty($listadoEstudiantes)){
 ?>
 
 <!DOCTYPE html>
-
 <html lang="en">
-
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,12 +43,8 @@ if(!empty($listadoEstudiantes)){
     <link rel="stylesheet" type=" text/css" href="../assets/css/style asignaciones pasantes.css" media="screen">
     <title>Asignaciones pasantes </title>
 
-
     <link rel="icon" href="../assets/img/social-icon.ico">
-
-
 </head>
-
 <body>
 
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -62,7 +55,7 @@ if(!empty($listadoEstudiantes)){
 
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="../logins/login.html">Cerrar sesion</a>
+                <a class="nav-link px-3" href="../logins/login.html">Cerrar sesión</a>
             </div>
         </div>
     </header>
@@ -97,29 +90,18 @@ if(!empty($listadoEstudiantes)){
                         </li>
                     </ul>
                 </div>
-
             </nav>
-
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Asignaciones pasantes</h1>
-
                 </div>
-      
                 <div class="row">
 
                     <?php if(empty($listadoEstudiantes)): ?>
 
-
                     <?php  else:?>
 
-
-
-
                     <?php   foreach($listadoEstudiantes as $estudiante):  ?>
-
-
-
 
                     <div class="card">
                         <div class="card-body">
@@ -144,18 +126,11 @@ if(!empty($listadoEstudiantes)){
                         </div>
                     </div>
 
-
                     <?php endforeach; ?>
 
-
-
                     <?php   endif;?>
-
             </main>
             </div>
         </div>
-
-
 </body>
-
 </html>

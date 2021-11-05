@@ -27,10 +27,4 @@ else {
     echo  "Hay un error";
 }
 
-
- 
-  
-  
- 
-
 ?>
