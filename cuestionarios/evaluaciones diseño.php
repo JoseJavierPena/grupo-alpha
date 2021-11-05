@@ -4,7 +4,6 @@ include ("../conexion db/db.php")
 ?>
     <!DOCTYPE html>
     <html lang="en">
-
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,19 +25,16 @@ include ("../conexion db/db.php")
                     <img class="d-block mx-auto mb-4" src="../assets/img/horizontal/oscuro/medium.png" alt="" width="400" height="100">
                     <h2>Evaluaciones</h2>
 
-                    <p class="lead">Aqui nos suministrara su currulum y repositorios para ver su rendimiento en programacion. base de datos y analisis de sistema. </p>
+                    <p class="lead">Aquí nos suministrará su curriculum y repositorios para ver su rendimiento en programación, base de datos y análisis de sistema. </p>
                 </div>
 
                 <div class="evaluaciones">
-                    <h4 class="evaluaciones">Evaluacion</h4>
-
-
-
+                    <h4 class="evaluaciones">Evaluación</h4>
                     <hr class="my-4">
                     <form method="POST" action="evaluaciones.php" enctype="multipart/form-data">
 
                     <div class="evaluaciones">
-                                <label for="Id_formulario" class="form-label">Cual pasante es usted?: </label>
+                                <label for="Id_formulario" class="form-label">¿Cuál pasante es usted?: </label>
                                 <select name="Id_formulario" required>
                                     <?php 
 
@@ -72,29 +68,20 @@ include ("../conexion db/db.php")
                             <input type="file" class="form-cv" name="curriculum" required>
                             <div class="invalid-feedback">
                                 Un archivo .pdf es requerido.
-                            </div>
-
-                           
+                            </div>                        
                             <hr class="my-4">
-
-
                             <button class=" btn btn-primary btn-lg" type="submit">Enviar y continuar</button>
 
                         </div>
                     </form>
                 </div>
-
             </main>
-
             <footer class="my-5 pt-5 text-muted text-center text-small">
                 <p class="mb-1">© 2021 Pasantes ALPHA AIlogic</p>
                 <ul class="list-inline">
-
                 </ul>
             </footer>
         </div>
     </body>
-
     </html>
-
     </html>

@@ -88,7 +88,7 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['esta
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/seguimiento de recursos.html">
+                            <a class="nav-link" href="../../../admin/seguimiento de recursos.php">
                                 <span data-feather="bar-chart-2"></span> Seguimiento de recurso
                             </a>
                         </li>
