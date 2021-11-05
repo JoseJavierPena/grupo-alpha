@@ -102,21 +102,14 @@
                     <table class="table table-striped table-sm">
                         <thead>
                             <tr>
-                            <th scope="col">ID_Formulario</th>
-                                <th scope="col">NOMBRE</th>
-                                <th scope="col">Apellido</th>
-                                <th scope="col">Cedula</th>
-                                <th scope="col">Universidad</th>
-                                <th scope="col">Telefono</th>
-                                <th scope="col">Direccion</th>
-                                <th scope="col">Donde vives</th>
-                                <th scope="col">Correo</th>
-                                <th scope="col">ID_Evaluaciones</th>
+                            
+                                <th scope="col">ID</th>
                                 <th scope="col">Repositorio</th>
                                 <th scope="col">Linkedin</th>
                                 <th scope="col">Portafolio</th>
                                 <th scope="col">Curriculum</th>
-                                <th scope="col">ID_Formulario</th>
+                                <th scope="col">ID Pasantes</th>
+                                
                                 
 
                                 
@@ -128,7 +121,7 @@
                             <tr>
                                 <?php
                                  $conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
-                                 $sql="SELECT *, COUNT(curriculum) FROM formulario,evaluaciones GROUP BY 1 HAVING COUNT(curriculum) > 1 ";
+                                 $sql="SELECT Id,repositorio,linkedIn,portafolio,curriculum,Id_formulario  FROM evaluaciones ";
                                  $resultado= mysqli_query($conexion,$sql);
                                  while($mostrar= mysqli_fetch_row($resultado)){
                                     ?>   
@@ -139,15 +132,9 @@
                                         <td><?php echo $mostrar['3']?></td>
                                         <td><?php echo $mostrar['4']?></td>
                                         <td><?php echo $mostrar['5']?></td>
-                                        <td><?php echo $mostrar['6']?></td>
-                                        <td><?php echo $mostrar['7']?></td>
-                                        <td><?php echo $mostrar['8']?></td>
-                                        <td><?php echo $mostrar['9']?></td>
-                                        <td><?php echo $mostrar['10']?></td>
-                                        <td><?php echo $mostrar['11']?></td>
-                                        <td><?php echo $mostrar['12']?></td>
-                                        <td><?php echo $mostrar['13']?></td>
-                                        <td><?php echo $mostrar['14']?></td>
+
+                                       
+                                       
                                         
                                         
                                         

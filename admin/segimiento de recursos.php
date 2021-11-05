@@ -1,24 +1,3 @@
-
-
-
-    <?php 
-           
-            include '../assets/php/ayuda/utilidad.php';
-            
-            session_start();
-
-            $_SESSION['estudiantes'] = isset($_SESSION['estudiantes'])? $_SESSION['estudiantes']: array();
-            
-            $listadoEstudiantes = $_SESSION['estudiantes'];
-            
-           
-    
-            
-            ?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,9 +8,8 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
     <link rel="stylesheet" type=" text/css" href="../assets/css/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" type=" text/css" href="../assets/css/style asignaciones administrador.css" media="screen">
-    <title>Asignaciones</title>
-
+    <link rel="stylesheet" type=" text/css" href="../assets/css/style seguimiento de recursos.css" media="screen">
+    <title>Seguimiento de recursos</title>
 
     <link rel="icon" href="../assets/img/social-icon.ico">
 
@@ -93,110 +71,82 @@
                                 <span data-feather="layers"></span>Grupos
                             </a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="../pasantes/pasantes.html">
                                 <span data-feather="layers"></span>Pasantes
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="chat admin.html">
-                                <span data-feather="layers"></span>Chat
-                            </a>
-                        </li>
-
                     </ul>
                 </div>
             </nav>
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Asignaciones</h1>
+                    <h1 class="h2">Seguimiento de recursos</h1>
 
                 </div>
-           
+
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Conocimientos de HTML</th>
+                                <th scope="col">Conocimientos de CSS</th>
+                                <th scope="col">Conocimientos de JAVASCRIPT</th>
+                                <th scope="col">Conocimientos de PHP</th>
+                                <th scope="col">Conocimientos de SQL y MYSQL</th>
+                                <th scope="col">Conocimientos de C#. C++. Python y c</th>
+                                <th scope="col">ID Del Pasante</th>
+                                
 
 
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                                <?php
+                                 $conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
+                                 $sql="SELECT Id,conociminetoshtml,conociminetoscss,conocimientosjavascript,conocimientosphp,conocmientossqlmysql,otroslenguajes,Id_formulario FROM individuales";
+                                 $resultado= mysqli_query($conexion,$sql);
+                                 while($mostrar= mysqli_fetch_row($resultado)){
+                                    ?>   
+                                    <tr>
+                                        <td><?php echo $mostrar['0']?></td>
+                                        <td><?php echo $mostrar['1']?></td>
+                                        <td><?php echo $mostrar['2']?></td>
+                                        <td><?php echo $mostrar['3']?></td>
+                                        <td><?php echo $mostrar['4']?></td>
+                                        <td><?php echo $mostrar['5']?></td>
+                                        <td><?php echo $mostrar['6']?></td>
+                                        <td><?php echo $mostrar['7']?></td>
+                                        
+                                        
+                                       
+                                        
+                                        
+                                        
+                                       
+                                 </tr>
+                                 <?php
+                                 }
+                               
+                                 
+                                ?>
+                                  
+                               
+                               
+                            </tr>
+                               
+                           
+                            
 
-        
-
-      
-
-            <main role="main">
-
-              
-                        <p>
-                            <a href="../assets/php/insertar/add.php" class="btn btn-primary my-2">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Crear asignacion </font>
-                                </font>
-                            </a>
-
-                        </p>
-                        <hr class="my-4">
-
-
-
-
-
-                        <div class="row">
-
-                            <?php if(empty($listadoEstudiantes)): ?>
-
-
-                            <?php  else:?>
-
-
-
-
-                            <?php   foreach($listadoEstudiantes as $estudiante):  ?>
-
-
-
-
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">
-                                        <?php echo $estudiante['nombre'];?>
-                                    </h5>
-
-                                    <p class="card-text">
-                                        <?php echo $estudiante['descripcion']; ?>
-                                    </p>
-
-                                    <h6 class="card-subtitle mb-2 text-muted">
-                                        <?php echo getEstatusName($estudiante['estatus']); ?>
-                                    </h6>
-
-                                    <h6 class="card-subtitle mb-2 text-muted">
-                                        <?php echo  getGrupoName($estudiante['grupo']); ?>
-                                    </h6>
-
-                                    <a href="../assets/php/editar/editar asignaciones administrador.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Editar</a>
-
-                                    <a href="../assets/php/borrar/eliminar asignaciones administrador.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Borrar</a>
-
-                                </div>
-                            </div>
-
-
-                            <?php endforeach; ?>
-
-
-
-                            <?php   endif;?>
-
-
-                        </div>
-                    </div>
+                        </tbody>
+                    </table>
                 </div>
+            </main>
+
         </div>
-
-        </main>
-
-  
-
-    </div>
     </div>
 
 </body>

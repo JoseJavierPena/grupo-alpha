@@ -140,6 +140,8 @@
                                     <td><?php echo $mostrar['6']?></td>
                                     <td><?php echo $mostrar['7']?></td>
                                     <td><?php echo $mostrar['8']?></td>
+                                    
+                                   
                                     <td><a href="../assets/php/editar/editar pasantes activos.php?
                                         id=<?php  echo $mostrar['0']?> &
                                         nombre=<?php echo $mostrar['1']?> &
@@ -149,7 +151,8 @@
                                         telefono=<?php  echo $mostrar['5']?> &
                                         direccion=<?php echo $mostrar['6']?> &
                                         donde_vives=<?php echo $mostrar['7']?> &
-                                        correo=<?php  echo $mostrar['8']?>
+                                        correo=<?php  echo $mostrar['8']?> &
+                                        
                                     
                                     "button class="btn btn-edit"><i class="fas fa-edit"></i></a></button></td>
                                     <td><a href="../assets/php/borrar/eliminar pasantes activos.php? id=<?php  echo $mostrar['0']?> "button class="btn btn-danger"><i class="fas fa-trash"></i></a></button></td>
