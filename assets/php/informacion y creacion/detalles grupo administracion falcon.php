@@ -1,26 +1,28 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
+<<<<<<< HEAD:assets/php/informacion y creacion/detalles grupo administracion falcon.php
     <link rel="stylesheet" type=" text/css" href="../../css/bootstrap.min.css" media="screen">
     <link rel="stylesheet" type=" text/css" href="../../css/style grupos administrador.css" media="screen">
-    <title>Grupo DELTA</title>
+    <title>Grupo FALCON</title>
 
 
+=======
+    <link rel="stylesheet" type=" text/css" href="../assets/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" type=" text/css" href="../assets/css/style Infomacion de evaluacion pasantes.css" media="screen">
+    <title>Infomación de evaluación pasantes</title>
+>>>>>>> ed1858ac5ace2259592ef15942109e4e4dde52d8:admin/informacion de evaluaciones pasantes.html
 
     <link rel="icon" href="../../img/social-icon.ico">
     <script src="https://kit.fontawesome.com/0f48d8c00d.js"></script>
 
-
-
 </head>
-
 <body>
 
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -31,7 +33,11 @@
 
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
+<<<<<<< HEAD:assets/php/informacion y creacion/detalles grupo administracion falcon.php
                 <a class="nav-link px-3" href="../../../logins/login.html">Cerrar sesion</a>
+=======
+                <a class="nav-link px-3" href="../logins/login.html">Cerrar sesión</a>
+>>>>>>> ed1858ac5ace2259592ef15942109e4e4dde52d8:admin/informacion de evaluaciones pasantes.html
             </div>
         </div>
     </header>
@@ -47,14 +53,24 @@
                             </a>
                         </li>
                         <li class="nav-item">
+<<<<<<< HEAD:assets/php/informacion y creacion/detalles grupo administracion falcon.php
                             <a class="nav-link" href="../../../admin/informacion de evaluaciones pasantes.php">
                                 <span data-feather="file"></span>Informacion de evaluaciones pasantes
+=======
+                            <a class="nav-link" href="informacion de evaluaciones pasantes.php">
+                                <span data-feather="file"></span>Información de evaluaciones pasantes
+>>>>>>> ed1858ac5ace2259592ef15942109e4e4dde52d8:admin/informacion de evaluaciones pasantes.html
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/seguimiento de recursos.php">
+<<<<<<< HEAD:assets/php/informacion y creacion/detalles grupo administracion falcon.php
+                            <a class="nav-link" href="../../../admin/seguimiento de recursos.html">
                                 <span data-feather="bar-chart-2"></span> Seguimiento de recurso
+=======
+                            <a class="nav-link" href="seguimiento de recursos.php">
+                                <span data-feather="bar-chart-2"></span> Seguimiento de recursos
+>>>>>>> ed1858ac5ace2259592ef15942109e4e4dde52d8:admin/informacion de evaluaciones pasantes.html
                             </a>
                         </li>
                         <li class="nav-item">
@@ -92,10 +108,11 @@
             </nav>
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Grupo DELTA</h1>
+<<<<<<< HEAD:assets/php/informacion y creacion/detalles grupo administracion falcon.php
+                    <h1 class="h2">Grupo FALCON</h1>
 
                     <p>
-                        <a href="../insertar/insertar delta.php" class="btn btn-primary my-2">
+                        <a href="../insertar/insertar falcon.php" class="btn btn-primary my-2">
                             <font style="vertical-align: inherit;">
                                 <font style=" vertical-align: inherit;">Registrar</font>
                             </font>
@@ -105,6 +122,14 @@
 
 
                 <h2>Miembros</h2>
+=======
+                    <h1 class="h2">Infomación de evaluación pasantes</h1>
+
+
+                </div>
+                <h2>Toda la información de los pasantes que completaron las evaluaciones</h2>
+                <br>
+>>>>>>> ed1858ac5ace2259592ef15942109e4e4dde52d8:admin/informacion de evaluaciones pasantes.html
                 <div class="table-responsive">
                     <table class="table table-striped table-sm">
                         <thead>
@@ -113,25 +138,37 @@
                                 <th scope="col">NOMBRE</th>
                                 <th scope="col">Apellido</th> 
                                 <th scope="col">Correo</th>
+<<<<<<< HEAD:assets/php/informacion y creacion/detalles grupo administracion falcon.php
                                
+=======
+                                <th scope="col">Número de teléfono</th>
+                                <th scope="col">Direción</th>
+                                <th scope="col">Curriculum</th>
+                                <th scope="col">Repositorio</th>
+                                <th scope="col">Linkendin</th>
+                                <th scope="col">Cartera</th>
+                                <th scope="col">Estado</th>
+>>>>>>> ed1858ac5ace2259592ef15942109e4e4dde52d8:admin/informacion de evaluaciones pasantes.html
                                 <th scope="col">Eliminar</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
                             $conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
-                            $sql="SELECT id,nombre,apellido,correo FROM grupod";
+                            $sql="SELECT id,nombre,apellido,correo FROM grupof";
                             $resultado= mysqli_query($conexion,$sql);
-                            while($mostrar= mysqli_fetch_row($resultado)){
+                            while($mostra= mysqli_fetch_row($resultado)){
                                 ?>   
                                 <tr>
-                                    <td><?php echo $mostrar['0']?></td>
-                                    <td><?php echo $mostrar['1']?></td>
-                                    <td><?php echo $mostrar['2']?></td>
-                                    <td><?php echo $mostrar['3']?></td>
+                                    <td><?php echo $mostra['0']?></td>
+                                    <td><?php echo $mostra['1']?></td>
+                                    <td><?php echo $mostra['2']?></td>
+                                    <td><?php echo $mostra['3']?></td>
                                    
                                     
-                                    <td><a href="../borrar/eliminar elecon.php? id=<?php  echo $mostrar['0']?> "button class="btn btn-danger"><i class="fas fa-trash"></i></a></button></td>
+                                    
+                                
+                                    <td><a href="../borrar/eliminar falcon.php? id=<?php  echo $mostra['0']?> "button class="btn btn-danger"><i class="fas fa-trash"></i></a></button></td>
 
                                 </tr>
                                 <?php
@@ -144,10 +181,12 @@
                         </tbody>
                     </table>
                 </div>
-
             </main>
-
-
         </div>
     </div>
+<<<<<<< HEAD:assets/php/informacion y creacion/detalles grupo administracion falcon.php
 </body>
+=======
+</body>
+</html>
+>>>>>>> ed1858ac5ace2259592ef15942109e4e4dde52d8:admin/informacion de evaluaciones pasantes.html

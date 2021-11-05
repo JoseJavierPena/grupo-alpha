@@ -74,7 +74,17 @@
                                 <span data-feather="layers"></span>Grupos
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../pasantes/pasantes.html">
+                                <span data-feather="layers"></span>Pasantes
+                            </a>
+                        </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../admin/chat admin.html">
+                                <span data-feather="layers"></span>Chat
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
