@@ -76,6 +76,11 @@
                                 <span data-feather="layers"></span>Pasantes
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="chat admin">
+                                <span data-feather="layers"></span>chat
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
