@@ -3,10 +3,11 @@
     width: 60%;
     border: 5px;
     padding: 10px;
-    text-align: center; 
+    text-align: center;
 }
 
-.main, .about {
+.main,
+.about {
     line-height: 2em;
     margin-top: 50px;
 }
@@ -29,7 +30,7 @@
     border-bottom-color: rgb(124, 124, 124);
 }
 
-.nav-masthead .nav-link + .nav-link {
+.nav-masthead .nav-link+.nav-link {
     margin-left: 1rem;
 }
 
@@ -41,12 +42,13 @@
 .btn {
     display: flexbox;
     background: #48ABC5;
-    border-radius: 6px;   
+    border-radius: 6px;
 }
 
 .btn-secondary,
 .btn-secondary:hover,
 .btn-secondary:focus {
-  color: #000000;
-  text-shadow: none; /* Prevent inheritance from `body` */
+    color: #000000;
+    text-shadow: none;
+    /* Prevent inheritance from `body` */
 }
