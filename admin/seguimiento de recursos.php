@@ -77,7 +77,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="chat admin">
+                            <a class="nav-link" href="chat admin.php">
                                 <span data-feather="layers"></span>chat
                             </a>
                         </li>

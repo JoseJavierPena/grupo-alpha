@@ -84,7 +84,7 @@ if(!empty($listadoEstudiantes)){
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="chat pasantes.html">
+                            <a class="nav-link" href="chat pasantes.php">
                                 <span data-feather="layers"></span>chat
                             </a>
                         </li>

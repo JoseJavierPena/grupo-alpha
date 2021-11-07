@@ -95,9 +95,9 @@
                     <h1 class="h2">Grupo ALPHA</h1>
 
                     <p>
-                        <a href="../insertar/insertar alpha.php" class="btn btn-primary my-2">
+                        <a href="../insertar/insertar alpha.php" class="btn btn-primary">
                             <font style="vertical-align: inherit;">
-                                <font style=" vertical-align: inherit;">Registrar</font>
+                                <font style=" vertical-align: inherit;" >Registrar</font>
                             </font>
                         </a>
                     </p>
