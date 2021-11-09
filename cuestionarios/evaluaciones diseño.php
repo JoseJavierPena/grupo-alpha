@@ -34,6 +34,7 @@ include ("../conexion db/db.php")
                     <form method="POST" action="evaluaciones.php" enctype="multipart/form-data">
 
                     <div class="evaluaciones">
+
                                 <label for="Id_formulario" class="form-label">¿Cuál pasante es usted?: </label>
                                 <select name="Id_formulario" required>
                                     <?php 
