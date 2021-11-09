@@ -9,22 +9,38 @@
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" crossorigin="anonymous">
 
     <link rel="icon" href="../assets/img/social-icon.ico">
+
+    <link rel="stylesheet" href="../assets/css/style_login.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-    <form action="../conexion db/validar.php" class="caja_login" method="POST">
-        <main>
-            <img class="d-block mx-auto mb-4" src="../assets/img/horizontal/oscuro/medium.png" alt="" width="400" height="100">
-            <h1>Inicio de sesión</h1>
-            <label for="nombre" class="sr-only">Nombre de usuario</label>
-            <input type="text" id="nombre" class="form-control" placeholder="Correo electronico" name="nombre" required autofocus>
-            <label for="contraseña" class="sr-only">Contraseña</label>
-            <input type="password" id="contraseña" class="form-control" placeholder="Contraseña" name="contraseña" required>
-            <div class="checkbox mb-3">
-            </div>
-            <button type="submit" style="color: rgb(36, 34, 34);">Entrar</button>
-        </main>
-        <script src="../assets/js/login.js"></script>
-        <a href="../index.html " style="color: rgb(36, 34, 34); "> Volver a página principal</a>
-    </form>
+
+    <div class="wrapper fadeInDown"  action="../conexion db/validar.php" method="POST">
+        <div id="formContent">
+          <!-- Tabs Titles -->
+      
+          <!-- Icon -->
+          <div class="fadeIn first py-5">
+            <img src="../assets/img/small.png" id="icon" alt="User Icon" />
+          </div>
+      
+          <!-- Login Form -->
+          <form>
+            <input type="text" id="nombre" class="fadeIn second" name="nombre" placeholder="Usuario" required autofocus>
+            <input type="password" id="contraseña" class="fadeIn third" name="contraseña" placeholder="Contraseña" required>
+            <input type="submit" class="fadeIn fourth" value="Iniciar">
+          </form>
+      
+          <!-- Remind Passowrd -->
+          <div id="formFooter">
+            <a href="../index.html "> Volver a página principal</a>
+        </div>
+
+        <script src="../assets/js/login.js"></script>   
+        </div>
+     </div>
+     
 </body>
 </html>
