@@ -26,5 +26,13 @@ else {
    
     echo  "Hay un error";
 }
+ if($conexion->query($sql)=== TRUE){
+     $last_id = $conexion->insert_id;
+     echo "este es el ultimo id que se inserto". $last_id;
+
+     
+ }else{
+     echo "error". $sql . "<br>" . $conexion->error;
+ }
 
 ?>
