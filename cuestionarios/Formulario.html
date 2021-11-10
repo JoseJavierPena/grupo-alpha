@@ -7,91 +7,105 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
     <link rel="stylesheet" type=" text/css" href="../assets/css/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" type=" text/css" href="../assets/css/style Formulario.css" media="screen">
     <title>Formulario</title>
 
     <link rel="icon" href="../assets/img/social-icon.ico">
 </head>
 <body>
 
+
     <div class="container">
-        <main>
-            <div class="py-5 text-center">
-                <img class="d-block mx-auto mb-4" src="../assets/img/horizontal/oscuro/medium.png" alt="" width="400" height="100">
+
+   <div class="row mx-0 mx-md-5 mb-5 ">
+
+    <form class="border mt-5  p-5 rounded  shadow col-12" action="Formulario.php" method="post">
+
+        
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="../assets/img/horizontal/oscuro/small.png" alt="">
+        </div>
+
+        
+        <h2 class="mb-3 ">Formulario</h2>
+        <p class="text-justify">Completar este formulario para tener mas información acerca de usted y poder contactarnos.</p>
+
+        <div class="Form my-4">
+            <label for="First_name" class="form-label"><b>Nombre:</b></label>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" value="" required="">
+            <div class="invalid-feedback">
+                Ingrese el nombre.
             </div>
+        </div>
 
-            <div class="row g-5">
-                <div class="Formulario">
-                    <h2 class="mb-3">Formulario</h2>
-                    <p class="lead">Completar este formulario para tener mas información acerca de usted y poder contactarnos.</p>
-                    <form action="Formulario.php" method="post">
-
-                        <div class="Formulario">
-                            <label for="First_name" class="form-label">Nombre:</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" value="" required="">
-                            <div class="invalid-feedback">
-                                Ingrese el nombre.
-                            </div>
-                        </div>
-                        <div class="Formulario">
-                            <label for="Last_name" class="form-label">Apellido:</label>
-                            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="" value="" required="">
-                            <div class="invalid-feedback">
-                                Ingrese el Apellido.
-                            </div>
-                        </div>
-                        <div class="Formulario">
-                            <label for="cedula" class="form-label">Cédula:</label>
-                            <input type="text" class="form-control" id="cedula" name="cedula" placeholder="" value="" required="">
-                            <div class="invalid-feedback">
-                                Ingrese la Cédula.
-                            </div>
-                        </div>
-                        <div class="Formulario">
-                            <label for="College" class="form-label">Universidad:</label>
-                            <input type="text" class="form-control" id="universidad" name="universidad" placeholder="" value="" required="">
-                            <div class="invalid-feedback">
-                                Ingrese una Universidad.
-                            </div>
-                        </div>
-                        <div class="Formulario">
-                            <label for="Cellphone" class="form-label">Teléfono:</label>
-                            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="" value="" required="">
-                            <div class="invalid-feedback">
-                                Ingrese un Teléfono.
-                            </div>
-                        </div>
-
-                        <div class="Formulario">
-                            <label for="Adress" class="form-label">Dirección:</label>
-                            <input type="text" class="form-control" id="direccion" name="direccion" placeholder="" value="" required="">
-                            <div class="invalid-feedback">
-                                Ingrese una Dirección.
-                            </div>
-                        </div>
-                        <div class="Formulario">
-                            <label for="Location" class="form-label">¿En qué zona del país reside?</label>
-                            <input type="text" class="form-control" id="donde_vives" name="donde_vives" placeholder="" value="" required="">
-                            <div class="invalid-feedback">
-                                Ingrese una Residencia.
-                            </div>
-                        </div>
-                        <div class="Formulario">
-                            <label for="Imail" class="form-label">Correo:</label>
-                            <input type="text" class="form-control" id="correo" name="correo" placeholder="" value="" required="">
-                            <div class="invalid-feedback">
-                                Ingrese un correo.
-                            </div>
-                            <hr class="my-4">
-                            <button class="w-100 btn btn-primary btn-lg " type="submit ">Enviar y continuar</button>
-                        </div>
-                    </form>
-                </div>
+        <div class="Form  my-4">
+            <label for="Last_name" class="form-label"><b>Apellido:</b></label>
+            <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" value="" required="">
+            <div class="invalid-feedback">
+                Ingrese el Apellido.
             </div>
-        </main>
-        <footer class="my-5 pt-5 text-muted text-center text-small">
-            <p class="mb-1">© 2021 Pasantes ALPHA AIlogic</p>
-        </footer>
-    </div>
+        </div>
+
+        <div class="Form  my-4">
+            <label for="cedula" class="form-label"><b>Cédula:</b></label>
+            <input type="text" class="form-control" id="cedula" name="cedula" placeholder="Cedula" value="" required="">
+            <div class="invalid-feedback">
+                Ingrese la Cédula.
+            </div>
+        </div>
+
+        <div class="Form  my-4">
+            <label for="College" class="form-label"><b>Universidad:</b></label>
+            <input type="text" class="form-control" id="universidad" name="universidad" placeholder="Universidad" value="" required="">
+            <div class="invalid-feedback">
+                Ingrese una Universidad.
+            </div>
+        </div>
+
+        <div class="Form  my-4">
+            <label for="Cellphone" class="form-label"><b>Teléfono:</b></label>
+            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="809-000-000" value="" required="">
+            <div class="invalid-feedback">
+                Ingrese un Teléfono.
+            </div>
+        </div>
+
+        <div class="Form  my-4">
+            <label for="Adress" class="form-label"><b>Dirección:</b></label>
+            <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Dirección" value="" required="">
+            <div class="invalid-feedback">
+                Ingrese una Dirección.
+            </div>
+        </div>
+        <div class="Form   my-4">
+            <label for="Location" class="form-label"><b>¿En qué zona del país reside?</b></label>
+            <input type="text" class="form-control" id="donde_vives" name="donde_vives" placeholder="R.D santo domingo" value="" required="">
+            <div class="invalid-feedback">
+                Ingrese una Residencia.
+            </div>
+        </div>
+
+        <div class="Form">
+            <label for="Imail" class="form-label"><b>Correo:</b></label>
+            <input type="email" class="form-control" id="correo" name="correo" placeholder="Email@gmail.com" value="" required="">
+            <div class="invalid-feedback">
+                Ingrese un correo.
+        </div>
+
+
+          <hr class="my-4">
+
+        <button type="submit" class="btn w-100 p-2 text-white" style="background-color: #39ace7 ;"><h5>Enviar y continuar</h5></button>
+    </form>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1 text-center">© 2021 Pasantes ALPHA AIlogic</p>
+    </footer>
+
+
+   </div>
+        
+
+
+
 </body>
 </html>
