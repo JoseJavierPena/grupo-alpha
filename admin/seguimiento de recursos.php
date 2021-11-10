@@ -81,6 +81,11 @@
                                 <span data-feather="layers"></span>chat
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="enviar correo.html">
+                                <span data-feather="layers"></span>Enviar correo
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>

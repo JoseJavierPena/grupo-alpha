@@ -26,7 +26,10 @@ $mail->Body = $Body;
 $mail->addAddress($imail);
 
 if($mail->Send()){
-    echo "correo enviado";
+    echo'<script type="text/javascript">
+    alert("Mensaje enviado");
+    window.location.href="../../enviar correo.html"
+    </script>';
 }else{
     echo "error";
 
