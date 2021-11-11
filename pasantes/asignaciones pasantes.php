@@ -137,6 +137,10 @@ if (!empty($listadoEstudiantes)) {
                                     <?php echo  getGrupoName($estudiante['grupo']); ?>
                                 </h6>
 
+                                <p class="card-text">
+                                    <?php echo $estudiante['asignacion']; ?>
+                                </p>
+
                                 <a href="../assets/php/editar/detalles asignaciones pasantes.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Más acerca de la asignacion</a>
                             </div>
                         </div>

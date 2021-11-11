@@ -206,7 +206,7 @@ if (isset($_GET['id'])) {
 
                                     <div class="col-sm-6">
                                         <label for="First_name" class="form-label"> Subir asignación aquí:</label>
-                                        <input type="file" class="form-control" id="asignacion" name="asignacion" placeholder="" value="" required="">
+                                        <input type="url" class="form-control" id="asignacion" name="asignacion" placeholder="" value="" required="">
                                     </div>
                                     <br>
                                     <button type="submit" class=" btn btn-success">Guardar</button>
