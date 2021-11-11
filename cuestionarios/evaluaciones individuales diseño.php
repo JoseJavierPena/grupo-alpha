@@ -1,9 +1,12 @@
 <?php
 
-include ("../conexion db/db.php")
+include("../conexion db/db.php")
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,15 +21,13 @@ include ("../conexion db/db.php")
 </head>
 
 <body>
-
     <div class="container">
         <main class="container1.0  border mt-5  p-5 rounded  shadow col-12 mb-5">
 
             <div class="py-5 text-center">
-              <img class="d-block mx-auto mb-4" src="../assets/img/horizontal/oscuro/small.png" alt="">
+                <img class="d-block mx-auto mb-4" src="../assets/img/horizontal/oscuro/small.png" alt="">
             </div>
 
-        
             <div class="text-justify py-3">
                 <h2>Evaluaciones individuales</h2>
                 <p class="lead">En esta evaluación veremos sus conocimientos del 1 al 10 en lenguajes de programación y base de datos, en donde 1 es mediocre y 10 excelente. </p>
@@ -36,24 +37,21 @@ include ("../conexion db/db.php")
 
                 <h4 class="mb-3">Evaluación</h4>
                 <hr class="my-4 ">
-
                 <form action="evaluaciones individuales.php" name="insertar" method="post">
-
                     <div class="individuales mx-5">
-                      <h3>¿Cuál pasante es usted?</h3> 
+                        <h3>¿Cuál pasante es usted?</h3>
                         <select name="Id_formulario" required class="form-control ">
-                            <?php 
+                            <?php
 
-                            $sql="select * from formulario";
-                            $bautor=$conexion->query($sql);
-                            while($mostrar=$bautor->fetch_array()){
-                          echo   "<option value='".$mostrar['Id_formulario']."'> ".$mostrar['1']." ".$mostrar['2']."</option>";
+                            $sql = "select * from formulario";
+                            $bautor = $conexion->query($sql);
+                            while ($mostrar = $bautor->fetch_array()) {
+                                echo   "<option value='" . $mostrar['Id_formulario'] . "'> " . $mostrar['1'] . " " . $mostrar['2'] . "</option>";
                             }
                             ?>
-                       
-                    </select>
+                        </select>
                     </div>
-                    
+
                     <hr class="my-4 ">
                     <h3>1. Conocimientos en HTML</h3>
                     <div class="individiduales mx-5  mb-5">
@@ -95,16 +93,11 @@ include ("../conexion db/db.php")
                     <button class=" btn btn-lg w-100  text-white" type="submit">Enviar y continuar</button>
                 </form>
             </div>
-
             <footer class="my-5 pt-5 text-muted text-center text-small ">
-            <p class="mb-1 ">© 2021 Pasantes ALPHA AIlogic</p>
-        </footer>
-
+                <p class="mb-1 ">© 2021 Pasantes ALPHA AIlogic</p>
+            </footer>
         </main>
-     
     </div>
-
-
-
 </body>
+
 </html>
