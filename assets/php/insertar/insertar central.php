@@ -40,20 +40,20 @@
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../../../admin/Pasantes activos.html">
+                    <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../../../admin/Pasantes activos.php">
                                 <span data-feather="home">Pasantes activos</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/informacion de evaluaciones pasantes.html">
-                                <span data-feather="file"></span>Informacion de evaluaciones pasantes
+                            <a class="nav-link" href="../../../admin/informacion de evaluaciones pasantes.php">
+                                <span data-feather="file"></span>Información de evaluaciones pasantes
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="../../../admin/seguimiento de recursos.php">
-                                <span data-feather="bar-chart-2"></span> Seguimiento de recurso
+                                <span data-feather="bar-chart-2"></span> Seguimiento de recursos
                             </a>
                         </li>
                         <li class="nav-item">
@@ -74,15 +74,20 @@
                                 <span data-feather="layers"></span>Grupos
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="../../../pasantes/pasantes.html">
                                 <span data-feather="layers"></span>Pasantes
                             </a>
                         </li>
-
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/chat admin.html">
+                            <a class="nav-link" href="../../../admin/chat admin.php">
                                 <span data-feather="layers"></span>Chat
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../admin/enviar correo.html">
+                                <span data-feather="layers"></span>Enviar correo
                             </a>
                         </li>
 

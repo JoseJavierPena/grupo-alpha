@@ -1,35 +1,52 @@
 <?php 
 
-include '../ayuda/utilidad.php';
+include '../ayuda/utilidad recurso.php';
+
+
 
 session_start();
 
-if(isset($_GET['id'])) {
-    $estudianteid = $_GET['id'];
+if(isset($_GET['id'])){
 
-    $_SESSION['estudiantes'] = isset($_SESSION['estudiantes'])? $_SESSION['estudiantes']: array();
+  $estudianteid = $_GET['id'];
 
-    $estudiantes = $_SESSION['estudiantes'];
+  $_SESSION['pasantes'] = isset($_SESSION['pasantes'])? $_SESSION['pasantes']: array();
 
-    $element = searchProperty($estudiantes, 'id', $estudianteid)[0];
-    $elementIndex = getIndexElement($estudiantes, 'id', $estudianteid);
+  $pasantes =  $_SESSION['pasantes'];
 
-    if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['estatus']) && isset($_POST['grupo'])) {
-        $newEstudiante = [ 'id' => $estudianteid, 'nombre' => $_POST['nombre'], 'descripcion' => $_POST['descripcion'], 'estatus' => $_POST['estatus'], 'grupo' => $_POST['grupo'] ];
+  $element = searchProperty($pasantes,'id',$estudianteid)[0];
+  $elementIndex = getIndexElement($pasantes,'id',$estudianteid);
 
-        $_SESSION['estudiantes'] = $estudiantes;
 
-        header("Location:../../../../../admin/recursos.php");
-        exit();
-    }
+
+
+  if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['recurso']) && isset($_POST['grupo'])){
+
+
+  $newEstudiante = [ 'id'=>$estudianteid , 'nombre'=> $_POST['nombre'],
+    'descripcion'=>$_POST['descripcion'],'recurso'=>$_POST['recurso'], 'grupo'=>$_POST['grupo']  ];
+
+    $pasantes[$elementIndex] = $newEstudiante;
+
+
+    $_SESSION['pasantes']=$pasantes; 
+
+ header("Location:../../../admin/recursos.php");
+ exit();
+
 }
-// else {
-//     header("Location:../../editar recursos.php");
-//     exit();
-// }
+
+
+  
+}
+
+else{
+  header("Location:../../../admin/recursos.php");
+ exit();
+
+}
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,8 +79,8 @@ if(isset($_GET['id'])) {
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../../../admin/pasantes activos.php">
+                    <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../../../admin/Pasantes activos.php">
                                 <span data-feather="home">Pasantes activos</span>
                             </a>
                         </li>
@@ -84,6 +101,7 @@ if(isset($_GET['id'])) {
                             </a>
                         </li>
 
+
                         <li class="nav-item">
                             <a class="nav-link" href="../../../admin/asignaciones administrador.php">
                                 <span data-feather="layers"></span>Asignaciones
@@ -95,17 +113,25 @@ if(isset($_GET['id'])) {
                                 <span data-feather="layers"></span>Grupos
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="../../../pasantes/pasantes.html">
                                 <span data-feather="layers"></span>Pasantes
                             </a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="../../../admin/chat admin.php">
                                 <span data-feather="layers"></span>Chat
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../admin/enviar correo.html">
+                                <span data-feather="layers"></span>Enviar correo
+                            </a>
+                        </li>
+
+
+                      
                     </ul>
                 </div>
             </nav>
@@ -129,11 +155,11 @@ if(isset($_GET['id'])) {
                             <form action="editar recursos.php?id=<?php echo $element['id']?> " method="POST">                                
                                     <div class="form-group">
                                         <label for="nombre">Título del recurso:</label>
-                                        <input type="text" class="form-control" id="nombre" name="nombre">
+                                        <input type="text"value="<?php echo $element['nombre']?>" class="form-control" id="nombre" name="nombre">
                                     </div>
                                     <div class="form-group">
                                         <label for="descripcion">Descripción del recurso:</label>
-                                        <input type="text" class="form-control" id="descripcion" name="descripcion">
+                                        <input type="text" value="<?php echo $element['descripcion']?>" class="form-control" id="descripcion" name="descripcion">
                                     </div>
 
                                     <div class="form-group">
@@ -148,11 +174,9 @@ if(isset($_GET['id'])) {
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="First_name" class="form-label">Subir recurso:</label>
-                                        <input type="file" name="recurso" id="recurso" 
-                                        placeholder=""
-                                        value="" required="">
-                                    </div>                            
+                                        <label for="recurso" class="form-label">Enlace del recurso:</label>
+                                        <input type="url" value="<?php echo $element['recurso']?>" name="recurso" id="recurso" >
+                                    </div>                             
 
                                     <button type="submit" class="btn btn-success">Guardar</button>                                
                             </form>

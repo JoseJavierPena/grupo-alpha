@@ -1,27 +1,28 @@
 <?php 
 
-include '../ayuda/utilidad.php';
+include '../ayuda/utilidad recurso.php';
 
 session_start();
 
-if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['estatus']) && isset($_POST['grupo'])) {
-    $_SESSION['estudiantes'] = isset($_SESSION['estudiantes'])? $_SESSION['estudiantes']: array();
+if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['recurso']) && isset($_POST['grupo'])) {
+    $_SESSION['pasantes'] = isset($_SESSION['pasantes'])? $_SESSION['pasantes']: array();
 
-    $estudiantes = $_SESSION['estudiantes'];
+    $pasantes = $_SESSION['pasantes'];
 
     $estudianteid = 1;
 
-    if(!empty($estudiantes)) {
-        $lastElement = getLastElement($estudiantes);
+    if(!empty($pasantes)) {
+        $lastElement = getLastElement($pasantes);
 
         $estudianteid = $lastElement['id'] + 1;
     }
 
-    array_push($estudiantes, [ 'id'=>$estudianteid, 'nombre'=> $_POST['nombre'], 'descripcion' => $_POST['descripcion'], 'estatus' => $_POST['estatus'], 'grupo' => $_POST['grupo']]);
+    array_push($pasantes, [ 'id'=>$estudianteid, 'nombre'=> $_POST['nombre'], 'descripcion' => $_POST['descripcion'], 'recurso' => $_POST['recurso'], 'grupo' => $_POST['grupo']]);
 
-    $_SESSION['estudiantes'] = $estudiantes;
+    $_SESSION['pasantes'] = $pasantes;
 
-    header("Location: ../../../../../admin/recursos.php");
+    header("Location:../../../admin/recursos.php");
+    exit();
 }
 
 ?>
@@ -60,8 +61,8 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['esta
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../../../admin/pasantes activos.php">
+                    <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../../../admin/Pasantes activos.php">
                                 <span data-feather="home">Pasantes activos</span>
                             </a>
                         </li>
@@ -82,6 +83,7 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['esta
                             </a>
                         </li>
 
+
                         <li class="nav-item">
                             <a class="nav-link" href="../../../admin/asignaciones administrador.php">
                                 <span data-feather="layers"></span>Asignaciones
@@ -93,15 +95,20 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['esta
                                 <span data-feather="layers"></span>Grupos
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="../../../pasantes/pasantes.html">
                                 <span data-feather="layers"></span>Pasantes
                             </a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="../../../admin/chat admin.php">
                                 <span data-feather="layers"></span>Chat
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../admin/enviar correo.html">
+                                <span data-feather="layers"></span>Enviar correo
                             </a>
                         </li>
                     </ul>
@@ -147,8 +154,8 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['esta
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="First_name" class="form-label">Subir recurso:</label>
-                                        <input type="file" name="recurso" id="recurso" 
+                                        <label for="recurso" class="form-label">Enlace del recurso:</label>
+                                        <input type="url" name="recurso" id="recurso" 
                                         placeholder=""
                                         value="" required="">
                                     </div>                            
