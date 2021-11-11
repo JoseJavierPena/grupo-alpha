@@ -93,7 +93,7 @@
                     <h1 class="h2">Registrar pasante</h1>
 
                     <p>
-                        <a href="../cuestionarios/Formulario.html" class="btn btn-primary my-2">
+                        <a href="registrar pasante.html" class="btn btn-primary my-2">
                             <font style="vertical-align: inherit;">
                                 <font style=" vertical-align: inherit;">Registrar</font>
                             </font>
