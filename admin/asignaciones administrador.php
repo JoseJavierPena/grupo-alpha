@@ -4,7 +4,7 @@
     <?php 
            
             include '../assets/php/ayuda/utilidad.php';
-            
+          
             session_start();
 
             $_SESSION['estudiantes'] = isset($_SESSION['estudiantes'])? $_SESSION['estudiantes']: array();
@@ -86,7 +86,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="recursos.html">
+                            <a class="nav-link" href="recursos.php">
                                 <span data-feather="layers"></span>Recursos
                             </a>
                         </li>
@@ -171,6 +171,10 @@
                                     <h6 class="card-subtitle mb-2 text-muted">
                                         <?php echo  getGrupoName($estudiante['grupo']); ?>
                                     </h6>
+                                    <p class="card-text">
+                                <?php echo $estudiante['asignacion']; ?>
+                            </p>
+                                   
 
                                     <a href="../assets/php/editar/editar asignaciones administrador.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Editar</a>
 

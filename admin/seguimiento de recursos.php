@@ -19,15 +19,15 @@
 
 <body>
 
- 
-<nav class="navbar navbar-dark bg-dark  fixed-top ">
+
+    <nav class="navbar navbar-dark bg-dark  fixed-top ">
         <div class="container">
             <a href="#" class="navbar-brand">
                 <strong>AILogic</strong>
             </a>
 
             <button type="button" class="navbar-toggler d-md-none" data-toggle="collapse" data-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Desplegar menú de navegación">
-               <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
@@ -44,10 +44,10 @@
                     <li class="nav-item"> <a class="nav-link " href="../logins/login.html"> Cerrar sesión </a> </li>
                 </ul>
             </div>
-        </div> 
+        </div>
     </nav>
 
- 
+
 
     <div class="container-fluid mt-5">
         <div class="row">
@@ -61,17 +61,17 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="informacion de evaluaciones pasantes.php">
-                                <span data-feather="file"></span>Informacion de evaluaciones pasantes
+                                <span data-feather="file"></span>Información de evaluaciones pasantes
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="seguimiento de recursos.php">
-                                <span data-feather="bar-chart-2"></span> Seguimiento de recurso
+                                <span data-feather="bar-chart-2"></span> Seguimiento de recursos
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="recursos.html">
+                            <a class="nav-link" href="recursos.php">
                                 <span data-feather="layers"></span>Recursos
                             </a>
                         </li>
@@ -107,7 +107,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="../logins/login.html">
                                 <span data-feather="layers"></span>Cerrar sesión
-                             </a>
+                            </a>
                         </li>
 
                     </ul>
@@ -132,48 +132,48 @@
                                 <th scope="col">Conocimientos de SQL y MYSQL</th>
                                 <th scope="col">Conocimientos de C#. C++. Python y c</th>
                                 <th scope="col">ID Del Pasante</th>
-                                
+
 
 
                             </tr>
                         </thead>
                         <tbody>
-                        <tr>
+                            <tr>
                                 <?php
-                                 $conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
-                                 $sql="SELECT Id,conociminetoshtml,conociminetoscss,conocimientosjavascript,conocimientosphp,conocmientossqlmysql,otroslenguajes,Id_formulario FROM individuales";
-                                 $resultado= mysqli_query($conexion,$sql);
-                                 while($mostrar= mysqli_fetch_row($resultado)){
-                                    ?>   
-                                    <tr>
-                                        <td><?php echo $mostrar['0']?></td>
-                                        <td><?php echo $mostrar['1']?></td>
-                                        <td><?php echo $mostrar['2']?></td>
-                                        <td><?php echo $mostrar['3']?></td>
-                                        <td><?php echo $mostrar['4']?></td>
-                                        <td><?php echo $mostrar['5']?></td>
-                                        <td><?php echo $mostrar['6']?></td>
-                                        <td><?php echo $mostrar['7']?></td>
-                                        
-                                        
-                                       
-                                        
-                                        
-                                        
-                                       
-                                 </tr>
-                                 <?php
-                                 }
-                               
-                                 
+                                $conexion = mysqli_connect("localhost:8111", "root", "", "pasantes alpha db");
+                                $sql = "SELECT Id,conociminetoshtml,conociminetoscss,conocimientosjavascript,conocimientosphp,conocmientossqlmysql,otroslenguajes,Id_formulario FROM individuales";
+                                $resultado = mysqli_query($conexion, $sql);
+                                while ($mostrar = mysqli_fetch_row($resultado)) {
                                 ?>
-                                  
-                               
-                               
+                            <tr>
+                                <td><?php echo $mostrar['0'] ?></td>
+                                <td><?php echo $mostrar['1'] ?></td>
+                                <td><?php echo $mostrar['2'] ?></td>
+                                <td><?php echo $mostrar['3'] ?></td>
+                                <td><?php echo $mostrar['4'] ?></td>
+                                <td><?php echo $mostrar['5'] ?></td>
+                                <td><?php echo $mostrar['6'] ?></td>
+                                <td><?php echo $mostrar['7'] ?></td>
+
+
+
+
+
+
+
                             </tr>
-                               
-                           
-                            
+                        <?php
+                                }
+
+
+                        ?>
+
+
+
+                        </tr>
+
+
+
 
                         </tbody>
                     </table>
@@ -183,8 +183,8 @@
         </div>
     </div>
 
-        <!-- ARCHIVOS BOOTSTRAP JAVASCRIPT -->
-        <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <!-- ARCHIVOS BOOTSTRAP JAVASCRIPT -->
+    <script src="../assets/js/jquery-3.3.1.min.js"></script>
     <script src="../assets/js/popper.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
 

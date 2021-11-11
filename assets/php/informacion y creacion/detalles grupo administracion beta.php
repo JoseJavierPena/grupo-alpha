@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +29,7 @@
             </a>
 
             <button type="button" class="navbar-toggler d-md-none" data-toggle="collapse" data-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Desplegar menú de navegación">
-               <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
@@ -47,7 +46,7 @@
                     <li class="nav-item"> <a class="nav-link " href="../../../logins/login.html"> Cerrar sesión </a> </li>
                 </ul>
             </div>
-        </div> 
+        </div>
     </nav>
 
     <div class="container-fluid mt-5">
@@ -55,24 +54,24 @@
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
-                    <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="../../../admin/Pasantes activos.php">
                                 <span data-feather="home">Pasantes activos</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../../../admin/informacion de evaluaciones pasantes.php">
-                                <span data-feather="file"></span>Informacion de evaluaciones pasantes
+                                <span data-feather="file"></span>Información de evaluaciones pasantes
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="../../../admin/seguimiento de recursos.php">
-                                <span data-feather="bar-chart-2"></span> Seguimiento de recurso
+                                <span data-feather="bar-chart-2"></span> Seguimiento de recursos
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/recursos.html">
+                            <a class="nav-link" href="../../../admin/recursos.php">
                                 <span data-feather="layers"></span>Recursos
                             </a>
                         </li>
@@ -95,18 +94,22 @@
                                 <span data-feather="layers"></span>Pasantes
                             </a>
                         </li>
-                        
+
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/chat admin.html">
+                            <a class="nav-link" href="../../../admin/chat admin.php">
                                 <span data-feather="layers"></span>Chat
                             </a>
                         </li>
 
-                        
+
                         <li class="nav-item">
                             <a class="nav-link" href="../../../logins/login.html">
                                 <span data-feather="layers"></span>Cerrar sesión
-                             </a>
+                            </a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../admin/enviar correo.html">
+                                <span data-feather="layers"></span>Enviar correo
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -133,37 +136,37 @@
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">NOMBRE</th>
-                                <th scope="col">Apellido</th> 
+                                <th scope="col">Apellido</th>
                                 <th scope="col">Correo</th>
-                               
+
                                 <th scope="col">Eliminar</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                            $conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
-                            $sql="SELECT id,nombre,apellido,correo FROM grupob";
-                            $resultado= mysqli_query($conexion,$sql);
-                            while($mostra= mysqli_fetch_row($resultado)){
-                                ?>   
+                            $conexion = mysqli_connect("localhost:8111", "root", "", "pasantes alpha db");
+                            $sql = "SELECT id,nombre,apellido,correo FROM grupob";
+                            $resultado = mysqli_query($conexion, $sql);
+                            while ($mostra = mysqli_fetch_row($resultado)) {
+                            ?>
                                 <tr>
-                                    <td><?php echo $mostra['0']?></td>
-                                    <td><?php echo $mostra['1']?></td>
-                                    <td><?php echo $mostra['2']?></td>
-                                    <td><?php echo $mostra['3']?></td>
-                                   
-                                    
-                                    
-                                
-                                    <td><a href="../borrar/eliminar beta.php? id=<?php  echo $mostra['0']?> "button class="btn btn-danger"><i class="fas fa-trash"></i></a></button></td>
+                                    <td><?php echo $mostra['0'] ?></td>
+                                    <td><?php echo $mostra['1'] ?></td>
+                                    <td><?php echo $mostra['2'] ?></td>
+                                    <td><?php echo $mostra['3'] ?></td>
+
+
+
+
+                                    <td><a href="../borrar/eliminar beta.php? id=<?php echo $mostra['0'] ?> " button class="btn btn-danger"><i class="fas fa-trash"></i></a></button></td>
 
                                 </tr>
-                                <?php
+                            <?php
                             }
                             ?>
 
-                            
-                           
+
+
 
                         </tbody>
                     </table>
@@ -171,10 +174,10 @@
 
             </main>
 
-               <!-- ARCHIVOS BOOTSTRAP JAVASCRIPT -->
-              <script src="../../../assets/js/jquery-3.3.1.min.js"></script>
-              <script src="../../../assets/js/popper.min.js"></script>
-              <script src="../../../assets/js/bootstrap.min.js"></script>
+            <!-- ARCHIVOS BOOTSTRAP JAVASCRIPT -->
+            <script src="../../../assets/js/jquery-3.3.1.min.js"></script>
+            <script src="../../../assets/js/popper.min.js"></script>
+            <script src="../../../assets/js/bootstrap.min.js"></script>
 
 
 

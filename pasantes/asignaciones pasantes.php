@@ -93,6 +93,13 @@ if(!empty($listadoEstudiantes)){
                                 <span data-feather="layers"></span>Grupos
                             </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="recursos pasantes.php">
+                                <span data-feather="layers"></span>Recursos
+                            </a>
+                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="chat pasantes.php">
                                 <span data-feather="layers"></span>Chat
@@ -138,6 +145,11 @@ if(!empty($listadoEstudiantes)){
                             <h6 class="card-subtitle mb-2 text-muted">
                                 <?php echo  getGrupoName($estudiante['grupo']); ?>
                             </h6>
+
+                            <p class="card-text">
+                                <?php echo $estudiante['asignacion']; ?>
+                            </p>
+
 
                             <a href="../assets/php/editar/detalles asignaciones pasantes.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Mas acerca de la asignacion</a>
 

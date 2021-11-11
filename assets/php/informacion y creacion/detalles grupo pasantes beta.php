@@ -52,20 +52,31 @@
                     <ul class="nav flex-column">
                     <li class="nav-item">
                             <a class="nav-link" href="../../../pasantes/pasantes.html">
-                                <span data-feather=" layers "></span>Pasantes
+                                <span data-feather="layers"></span>Pasantes
                             </a>
                         </li>
 
-
-                        <li class="nav-item ">
-                            <a class="nav-link " href="../../../pasantes/asignaciones pasantes.php ">
-                                <span data-feather="layers "></span>Asignaciones
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../pasantes/asignaciones pasantes.php">
+                                <span data-feather="layers"></span>Asignaciones
                             </a>
                         </li>
 
-                        <li class="nav-item ">
-                            <a class="nav-link " href="../../../pasantes/grupos pasantes.html ">
-                                <span data-feather="layers "></span>Grupos
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../pasantes/grupos pasantes.html">
+                                <span data-feather="layers"></span>Grupos
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../pasantes/recursos pasantes.php">
+                                <span data-feather="layers"></span>Recursos
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../pasantes/chat pasantes.php">
+                                <span data-feather="layers"></span>Chat
                             </a>
                         </li>
 

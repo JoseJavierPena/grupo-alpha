@@ -29,7 +29,7 @@
             </a>
 
             <button type="button" class="navbar-toggler d-md-none" data-toggle="collapse" data-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Desplegar menú de navegación">
-               <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
@@ -46,7 +46,7 @@
                     <li class="nav-item"> <a class="nav-link " href="../logins/login.html"> Cerrar sesión </a> </li>
                 </ul>
             </div>
-        </div> 
+        </div>
     </nav>
 
 
@@ -63,17 +63,17 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="informacion de evaluaciones pasantes.php">
-                                <span data-feather="file"></span>Informacion de evaluaciones pasantes
+                                <span data-feather="file"></span>Información de evaluaciones pasantes
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="seguimiento de recursos.php">
-                                <span data-feather="bar-chart-2"></span> Seguimiento de recurso
+                                <span data-feather="bar-chart-2"></span> Seguimiento de recursos
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="recursos.html">
+                            <a class="nav-link" href="recursos.php">
                                 <span data-feather="layers"></span>Recursos
                             </a>
                         </li>
@@ -110,7 +110,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="../logins/login.html">
                                 <span data-feather="layers"></span>Cerrar sesión
-                             </a>
+                            </a>
                         </li>
 
                     </ul>
@@ -132,7 +132,7 @@
 
 
 
-                        <h2>Registrese o Inicie seccion si ya esta registrado</h2>
+                        <h2>Registrese o Inicie sesión si ya esta registrado</h2>
                     </center>
                     </br>
                     <form class="form-horizontal" method="post" action="chat/add_user.php">
@@ -177,7 +177,7 @@
                                 </div>
                     </form>
 
-                    <a type="submit" class="btn btn-primary" href="chat/login.php">Iniciar seccion</a>
+                    <a type="submit" class="btn btn-primary" href="chat/login.php">Iniciar sesión</a>
                 </div>
 
             </main>
@@ -186,7 +186,7 @@
         </div>
     </div>
 
-       
+
     <!-- ARCHIVOS BOOTSTRAP JAVASCRIPT -->
     <script src="../assets/js/jquery-3.3.1.min.js"></script>
     <script src="../assets/js/popper.min.js"></script>

@@ -29,7 +29,7 @@
             </a>
 
             <button type="button" class="navbar-toggler d-md-none" data-toggle="collapse" data-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Desplegar menú de navegación">
-               <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
@@ -41,7 +41,7 @@
                     <li class="nav-item"> <a class="nav-link " href="../logins/login.html">Cerrar sesión</a> </li>
                 </ul>
             </div>
-        </div> 
+        </div>
     </nav>
 
 
@@ -69,6 +69,12 @@
                         </li>
 
                         <li class="nav-item">
+                            <a class="nav-link" href="recursos pasantes.php">
+                                <span data-feather="layers"></span>Recursos
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
                             <a class="nav-link" href="chat pasantes.php">
                                 <span data-feather="layers"></span>Chat
                             </a>
@@ -77,7 +83,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="../logins/login.html">
                                 <span data-feather="layers"></span>Cerrar sesión
-                            </a>                           
+                            </a>
                         </li>
 
                     </ul>
@@ -150,10 +156,10 @@
         </div>
     </div>
 
-            <!-- ARCHIVOS BOOTSTRAP JAVASCRIPT -->
-            <script src="../assets/js/jquery-3.3.1.min.js"></script>
-        <script src="../assets/js/popper.min.js"></script>
-        <script src="../assets/js/bootstrap.min.js"></script>
+    <!-- ARCHIVOS BOOTSTRAP JAVASCRIPT -->
+    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
 
 </body>
 
