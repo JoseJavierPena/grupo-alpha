@@ -49,12 +49,12 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/seguimiento de recursos.html">
+                            <a class="nav-link" href="../../../admin/seguimiento de recursos.php">
                                 <span data-feather="bar-chart-2"></span> Seguimiento de recurso
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/recursos.html">
+                            <a class="nav-link" href="../../../admin/recursos.php">
                                 <span data-feather="layers"></span>Recursos
                             </a>
                         </li>

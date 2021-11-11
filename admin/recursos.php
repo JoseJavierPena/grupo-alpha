@@ -1,3 +1,16 @@
+<?php
+
+include '../assets/php/ayuda/utilidad.php';
+
+session_start();
+
+$_SESSION['estudiantes'] = isset($_SESSION['estudiantes'])
+? $_SESSION['estudiantes']: array();
+
+$listadoEstudiantes = $_SESSION['estudiantes'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +68,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="recursos.html">
+                            <a class="nav-link" href="recursos.php">
                                 <span data-feather="layers"></span>Recursos
                             </a>
                         </li>
@@ -91,6 +104,45 @@
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Recursos</h1>
                 </div>
+
+                <main role="main">
+                <p>
+                    <a href="../assets/php/insertar/add.php" class="btn btn-primary my-2">
+                        <font style="vertical-align:  inherit;">
+                            <font style="vertical-align: inherit;">
+                                Crear recurso                   
+                            </font>
+                        </font>
+                    </a>
+                </p>
+                <hr class="my-4">
+                <div class="row">
+                    <?php if(empty($listadoEstudiantes)):?>
+                    <?php else:?>
+                    <?php foreach($listadoEstudiantes as $estudiante): ?>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <?php echo $estudiante['nombre']; ?>
+                            </h5>
+
+                            <p class="card-text">
+                               <?php echo $estudiante['descripcion'] ?> 
+                            </p>
+                            
+                            <h6 class="card-subtitle mb-2 text-muted">
+                                <?php echo getGrupoName($estudiante['grupo']); ?>
+                            </h6>
+
+                            <a href="../assets/php/editar/editar asignaciones administrador.php?id=<?php echo $estudiante['id']; ?> " class="card-link">Editar</a>                        
+
+                            <a href="../assets/php/borrar/eliminar asignaciones administrador.php?id=<?php echo $estudiante['id']; ?> " class="card-link">Borrar</a>
+                        </div>
+                    </div>
+                    <?php endforeach;?>
+                    <?php endif;?>
+                </div>
+            </main>
             </main>
         </div>
     </div>
