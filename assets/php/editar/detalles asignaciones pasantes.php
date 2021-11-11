@@ -15,14 +15,27 @@ if (isset($_GET['id'])) {
     $element = searchProperty($estudiantes, 'id', $estudianteid)[0];
     $elementIndex = getIndexElement($estudiantes, 'id', $estudianteid);
 
-    if (isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['estatus']) && isset($_POST['grupo'])) {
+    $_SESSION['estudiantes'] = isset($_SESSION['estudiantes']) ? $_SESSION['estudiantes'] : array();
+
+    $estudiantes =  $_SESSION['estudiantes'];
+
+    $element = searchProperty($estudiantes, 'id', $estudianteid)[0];
+    $elementIndex = getIndexElement($estudiantes, 'id', $estudianteid);
+
+    if (isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['estatus']) && isset($_POST['asignacion']) && isset($_POST['grupo'])) {
 
         $newEstudiante = [
             'id' => $estudianteid, 'nombre' => $_POST['nombre'],
             'descripcion' => $_POST['descripcion'], 'estatus' => $_POST['estatus'], 'grupo' => $_POST['grupo']
         ];
 
+        $newEstudiante = [
+            'id' => $estudianteid, 'nombre' => $_POST['nombre'],
+            'descripcion' => $_POST['descripcion'], 'estatus' => $_POST['estatus'], 'grupo' => $_POST['grupo'], 'asignacion' => $_POST['asignacion']
+        ];
+
         $estudiantes[$elementIndex] = $newEstudiante;
+
 
         $_SESSION['estudiantes'] = $estudiantes;
 
@@ -54,20 +67,30 @@ if (isset($_GET['id'])) {
 </head>
 
 <body>
-    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Pasantes ALPHA AIlogic</a>
-        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="navbar-nav">
-            <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="../../../logins/login.html">Cerrar sesión</a>
+    <nav class="navbar navbar-dark bg-dark  fixed-top ">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <strong>AILogic</strong>
+            </a>
+
+            <button type="button" class="navbar-toggler d-md-none" data-toggle="collapse" data-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Desplegar menú de navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/pasantes.html"> Pasantes </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/asignaciones pasantes.php">Asignaciones</a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/grupos pasantes.html"> Grupo </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/chat pasantes.php"> Chat </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../logins/login.html">Cerrar sesión</a> </li>
+                </ul>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <div class="container-fluid">
+    <div class="container-fluid mt-5">
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3">
@@ -96,6 +119,18 @@ if (isset($_GET['id'])) {
                             </a>
                         </li>
 
+                        <li class="nav-item ">
+                            <a class="nav-link " href="../../../pasantes/chat pasantes.php">
+                                <span data-feather="layers "></span>Chat
+                            </a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link " href="../../../logins/login.html">
+                                <span data-feather="layers "></span>Cerrar sesión
+                            </a>
+                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="../../../pasantes/chat pasantes.php">
                                 <span data-feather="layers"></span>Chat
@@ -107,7 +142,7 @@ if (isset($_GET['id'])) {
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Detalle y entrega de la asignaciones</h1>
+                    <h1 class="h2">Detalle y entrega de la asignación</h1>
                 </div>
 
                 <main role="main">

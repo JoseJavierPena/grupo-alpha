@@ -63,15 +63,7 @@ include("../conexion db/db.php")
                 <div class="invalid-feedback">
                     Un archivo .pdf es requerido.
                 </div>
-                <hr class="my-4">
-                <button class=" btn btn-lg w-100 text-white" type="submit" style="background:#39ace7;">Enviar y continuar</button>
             </div>
-
-            <footer class="my-5 pt-5 text-muted text-center text-small">
-                <p class="mb-1">© 2021 Pasantes ALPHA AIlogic</p>
-                <ul class="list-inline">
-                </ul>
-            </footer>
         </form>
     </div>
 </body>

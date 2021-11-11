@@ -1,22 +1,24 @@
 <?php
 
-include '../ayuda/utilidad.php';
+include '../ayuda/utilidad recurso.php';
 
 session_start();
 
-$estudiantes = $_SESSION['estudiantes'];
+$pasantes = $_SESSION['pasantes'];
 
-if(isset($_GET['id'])) {
+if(isset($_GET['id'])){
+
     $estudianteId = $_GET['id'];
 
-    $elementIndex = getIndexElement($estudiantes, 'id', $estudianteId);
+    $elementIndex = getIndexElement($pasantes,'id',$estudianteId);
 
-    unset($estudiantes[$estudianteId]);
+    unset($pasantes[$elementIndex]);
 
-    $_SESSION['estudiantes'] = $estudiantes;
+    $_SESSION['pasantes'] = $pasantes;
+    
 }
 
-header("Location:../../../../../admin/recursos.php");
+header("Location:../../../admin/recursos.php");
 exit();
 
 ?>

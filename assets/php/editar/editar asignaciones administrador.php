@@ -15,13 +15,12 @@ if (isset($_GET['id'])) {
     $element = searchProperty($estudiantes, 'id', $estudianteid)[0];
     $elementIndex = getIndexElement($estudiantes, 'id', $estudianteid);
 
-
-    if (isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['estatus']) && isset($_POST['grupo'])) {
+    if (isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['estatus'])  && isset($_POST['asignacion']) && isset($_POST['grupo'])) {
 
 
         $newEstudiante = [
             'id' => $estudianteid, 'nombre' => $_POST['nombre'],
-            'descripcion' => $_POST['descripcion'], 'estatus' => $_POST['estatus'], 'grupo' => $_POST['grupo']
+            'descripcion' => $_POST['descripcion'], 'estatus' => $_POST['estatus'], 'asignacion' => $_POST['asignacion'], 'grupo' => $_POST['grupo']
         ];
 
         $estudiantes[$elementIndex] = $newEstudiante;
@@ -57,38 +56,51 @@ if (isset($_GET['id'])) {
 </head>
 
 <body>
+    <nav class="navbar navbar-dark bg-dark  fixed-top ">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <strong>AILogic</strong>
+            </a>
 
-    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Pasantes ALPHA AIlogic</a>
-        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button type="button" class="navbar-toggler d-md-none" data-toggle="collapse" data-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Desplegar menú de navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="navbar-nav">
-            <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="../../../logins/login.html">Cerrar sesión</a>
+            <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"> <a class="nav-link " href="../../../admin/Pasantes activos.php"> Pasantes activos </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../admin/informacion de evaluaciones pasantes.php"> Información de evaluaciones pasantes </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../admin/seguimiento de recursos.php"> Seguimiento de recursos </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../admin/recursos.html"> Recursos </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../admin/asignaciones administrador.php"> Asignaciones</a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../admin/grupos administrador.html"> Grupos </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/pasantes.html"> Pasantes </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../admin/admin.php">Chat</a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../admin/enviar correo.html"> Enviar correo </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../logins/login.html"> Cerrar sesión </a> </li>
+                </ul>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <div class="container-fluid">
+    <div class="container-fluid mt-5">
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="Pasantes activos.php">
+                            <a class="nav-link active" aria-current="page" href="../../../admin/Pasantes activos.php">
                                 <span data-feather="home">Pasantes activos</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="informacion de evaluaciones pasantes.php">
+                            <a class="nav-link" href="../../../admin/informacion de evaluaciones pasantes.php">
                                 <span data-feather="file"></span>Información de evaluaciones pasantes
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="seguimiento de recursos.php">
+                            <a class="nav-link" href="../../../admin/seguimiento de recursos.php">
                                 <span data-feather="bar-chart-2"></span> Seguimiento de recursos
                             </a>
                         </li>
@@ -111,21 +123,23 @@ if (isset($_GET['id'])) {
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="../pasantes/pasantes.html">
-                                <span data-feather="layers"></span>Pasantes
-                            </a>
+                        <a class="nav-link" href="../../../pasantes/pasantes.html">
+                            <span data-feather="layers"></span>Pasantes
+                        </a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link" href="chat admin.php">
+                            <a class="nav-link" href="../../../admin/chat admin.html">
                                 <span data-feather="layers"></span>Chat
                             </a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link" href="enviar correo.html">
-                                <span data-feather="layers"></span>Enviar correo
+                            <a class="nav-link" href="../../../logins/login.html">
+                                <span data-feather="layers"></span>Cerrar sesión
                             </a>
                         </li>
+
                     </ul>
                 </div>
             </nav>
@@ -137,7 +151,6 @@ if (isset($_GET['id'])) {
 
                 <main role="main">
                     <div style="margin-top: 2%;">
-
                         <div class="card">
                             <div class="card-header bg-info  text-light">
                                 <a href="../../../admin/asignaciones administrador.php" class="btn btn-warning"> Volver Atrás</a> Editando asignación
@@ -150,12 +163,12 @@ if (isset($_GET['id'])) {
                                         <input type="text" value="<?php echo $element['nombre'] ?>" class="form-control" id="nombre" name="nombre">
                                     </div>
                                     <div class="form-group">
-                                        <label for="descripcion">Descripción de la asignación:</label>
+                                        <label for="descripcion">Descripcion de la asignacion:</label>
                                         <input type="text" value="<?php echo $element['descripcion'] ?>" class="form-control" id="descripcion" name="descripcion">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="estatus">Estatus de la asignación:</label>
+                                        <label for="estatus">Estatus de la asignacion:</label>
                                         <select class="form-control" id="estatus" name="estatus">
 
                                             <?php foreach ($estatus as $id => $text) : ?>
@@ -175,7 +188,7 @@ if (isset($_GET['id'])) {
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="grupo">Grupo encargado de la asignación:</label>
+                                        <label for="grupo">Grupo encargado de la asignacion:</label>
                                         <select class="form-control" id="grupo" name="grupo">
 
                                             <?php foreach ($grupo as $id => $text) : ?>
@@ -190,15 +203,27 @@ if (isset($_GET['id'])) {
 
                                                 <?php endif; ?>
 
+
                                             <?php endforeach; ?>
 
                                         </select>
                                     </div>
+                                    <div class="col-sm-6">
+                                        <label for="asignacion" class="form-label"> Subir enlace de la asignación aquí:</label>
+                                        <input type="url" value="<?php echo $element['asignacion'] ?>" class="form-control" id="asignacion" name="asignacion">
+
+                                    </div>
                                     <button type="submit" class=" btn btn-success">Guardar</button>
+
                                 </form>
                             </div>
                         </div>
-                    </div>
+
+                        <!-- ARCHIVOS BOOTSTRAP JAVASCRIPT -->
+                        <script src="../../../assets/js/jquery-3.3.1.min.js"></script>
+                        <script src="../../../assets/js/popper.min.js"></script>
+                        <script src="../../../assets/js/bootstrap.min.js"></script>
+
                 </main>
             </main>
         </div>

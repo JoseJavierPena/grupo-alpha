@@ -40,95 +40,116 @@ if (!empty($listadoEstudiantes)) {
     <link rel="icon" href="../assets/img/social-icon.ico">
 </head>
 
-<body>
-    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Pasantes ALPHA AIlogic</a>
-        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-dark bg-dark  fixed-top ">
+    <div class="container">
+        <a href="#" class="navbar-brand">
+            <strong>AILogic</strong>
+        </a>
+
+        <button type="button" class="navbar-toggler d-md-none" data-toggle="collapse" data-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Desplegar menú de navegación">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="navbar-nav">
-            <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="../logins/login.html">Cerrar sesión</a>
-            </div>
-        </div>
-    </header>
-
-    <div class="asignaciones">
-        <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-                <div class="position-sticky pt-3">
-                    <ul class="nav flex-column">
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="pasantes.html">
-                                <span data-feather="layers"></span>Pasantes
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="asignaciones pasantes.php">
-                                <span data-feather="layers"></span>Asignaciones
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="grupos pasantes.html">
-                                <span data-feather="layers"></span>Grupos
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="recursos pasantes.php">
-                                <span data-feather="layers"></span>Recursos
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="chat pasantes.php">
-                                <span data-feather="layers"></span>Chat
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Asignaciones pasantes</h1>
-                </div>
-
-                <div class="row">
-                    <?php if (empty($listadoEstudiantes)) : ?>
-                    <?php else : ?>
-                        <?php foreach ($listadoEstudiantes as $estudiante) :  ?>
-
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">
-                                        <?php echo $estudiante['nombre']; ?>
-                                    </h5>
-
-                                    <p class="card-text">
-                                        <?php echo $estudiante['descripcion']; ?>
-                                    </p>
-
-                                    <h6 class="card-subtitle mb-2 text-muted">
-                                        <?php echo getEstatusName($estudiante['estatus']); ?>
-                                    </h6>
-
-                                    <h6 class="card-subtitle mb-2 text-muted">
-                                        <?php echo  getGrupoName($estudiante['grupo']); ?>
-                                    </h6>
-
-                                    <a href="../assets/php/editar/detalles asignaciones pasantes.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Más acerca de la asignacion</a>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-            </main>
+        <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"> <a class="nav-link " href="pasantes.html"> Pasantes </a> </li>
+                <li class="nav-item"> <a class="nav-link " href="asignaciones pasantes.php">Asignaciones</a> </li>
+                <li class="nav-item"> <a class="nav-link " href="grupos pasantes.html"> Grupo </a> </li>
+                <li class="nav-item"> <a class="nav-link " href="chat pasantes.php"> Chat </a> </li>
+                <li class="nav-item"> <a class="nav-link " href="../logins/login.html">Cerrar sesión</a> </li>
+            </ul>
         </div>
     </div>
-</body>
+</nav>
+
+<div class="asignaciones mt-5 px-3">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="position-sticky pt-3">
+                <ul class="nav flex-column">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="pasantes.html">
+                            <span data-feather="layers"></span>Pasantes
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="asignaciones pasantes.php">
+                            <span data-feather="layers"></span>Asignaciones
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="grupos pasantes.html">
+                            <span data-feather="layers"></span>Grupos
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="recursos pasantes.php">
+                            <span data-feather="layers"></span>Recursos
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="chat pasantes.php">
+                            <span data-feather="layers"></span>Chat
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../logins/login.html">
+                            <span data-feather="layers"></span>Cerrar sesión
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Asignaciones pasantes</h1>
+            </div>
+
+            <div class="row">
+                <?php if (empty($listadoEstudiantes)) : ?>
+                <?php else : ?>
+                    <?php foreach ($listadoEstudiantes as $estudiante) :  ?>
+
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <?php echo $estudiante['nombre']; ?>
+                                </h5>
+
+                                <p class="card-text">
+                                    <?php echo $estudiante['descripcion']; ?>
+                                </p>
+
+                                <h6 class="card-subtitle mb-2 text-muted">
+                                    <?php echo getEstatusName($estudiante['estatus']); ?>
+                                </h6>
+
+                                <h6 class="card-subtitle mb-2 text-muted">
+                                    <?php echo  getGrupoName($estudiante['grupo']); ?>
+                                </h6>
+
+                                <a href="../assets/php/editar/detalles asignaciones pasantes.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Más acerca de la asignacion</a>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+        </main>
+    </div>
+
+    <!-- ARCHIVOS BOOTSTRAP JAVASCRIPT -->
+    <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
+
+    </body>
 
 </html>
