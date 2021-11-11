@@ -85,7 +85,7 @@ if(!empty($listadoEstudiantes)){
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="recursos pasantes.html">
+                            <a class="nav-link" href="recursos pasantes.php">
                                 <span data-feather="layers"></span>Recursos
                             </a>
                         </li>
