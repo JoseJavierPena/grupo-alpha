@@ -1,20 +1,15 @@
-<?php 
-$id=$_GET['id']; 
- 
+<?php
+$id = $_GET['id'];
+
 //base de datos 
-$conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db"); 
+$conexion = mysqli_connect("localhost:8111", "root", "", "pasantes alpha db");
 //eliminar datos del formulario 
-$sql="DELETE FROM grupo WHERE id LIKE $id"; 
-$ejecutar = mysqli_query ($conexion,$sql) or die (mysqli_error($conexion)); 
-if ($ejecutar){ 
- 
-   
-header("location:../informacion y creacion/detalles grupo administracion alpha.php"); 
- 
-} 
-else { 
-   
-   echo  "Hay un error"; 
-} 
- 
-?>
+$sql = "DELETE FROM grupo WHERE id LIKE $id";
+$ejecutar = mysqli_query($conexion, $sql) or die(mysqli_error($conexion));
+if ($ejecutar) {
+
+   header("location:../informacion y creacion/detalles grupo administracion alpha.php");
+} else {
+
+   echo  "Hay un error";
+}

@@ -11,12 +11,8 @@
     <link rel="stylesheet" type=" text/css" href="../assets/css/style chat admin.css" media="screen">
     <title>Chat</title>
 
-
-
     <link rel="icon" href="../assets/img/social-icon.ico">
     <script src="https://kit.fontawesome.com/0f48d8c00d.js"></script>
-
-
 
 </head>
 
@@ -35,21 +31,19 @@
             <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"> <a class="nav-link " href="Pasantes activos.php"> Pasantes activos </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="informacion de evaluaciones pasantes.php"> Informacion de evaluaciones pasantes </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="informacion de evaluaciones pasantes.php"> Información de evaluaciones pasantes </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="seguimiento de recursos.php"> Seguimiento de recursos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="recursos.html"> Recursos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="asignaciones administrador.php"> Asignaciones</a> </li>
                     <li class="nav-item"> <a class="nav-link " href="grupos administrador.html"> Grupos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../pasantes/pasantes.html"> Pasantes </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="chat admin.php">Chat</a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="enviar correo.html"> enviar correo </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="enviar correo.html"> Enviar correo </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../logins/login.html"> Cerrar sesión </a> </li>
                 </ul>
             </div>
         </div>
     </nav>
-
-
 
     <div class="container-fluid mt-5">
         <div class="row">
@@ -77,7 +71,6 @@
                                 <span data-feather="layers"></span>Recursos
                             </a>
                         </li>
-
 
                         <li class="nav-item">
                             <a class="nav-link" href="asignaciones administrador.php">
@@ -120,23 +113,15 @@
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Chat pasante ALPHA</h1>
-
-
                 </div>
 
-
-
                 <div class="container">
-
                     <center>
-
-
-
-                        <h2>Registrese o Inicie sesión si ya esta registrado</h2>
+                        <h2>Regístrese o Inicie sesión si ya está registrado</h2>
                     </center>
                     </br>
                     <form class="form-horizontal" method="post" action="chat/add_user.php">
-                        <for <div class="form-group">
+                        <div class="form-group">
                             <label class="control-label col-sm-2 col-sm-offset-2" for="name">Nombre:</label>
 
                             <div class="col-sm-5">
@@ -156,7 +141,7 @@
                                     <input type="password" class="form-control" id="pwd" placeholder="Ingresa una clave" name="password" required>
                                 </div>
                             </div>
-                            <d iv class="form-group">
+                            <div class="form-group">
                                 <label class="control-label col-sm-2 col-sm-offset-2" for="number">Teléfono:</label>
                                 <div class="col-sm-5">
                                     <input type="text" class="form-control" id="number" placeholder="ingresa un número" name="number" required>
@@ -176,13 +161,9 @@
                                     </div>
                                 </div>
                     </form>
-
                     <a type="submit" class="btn btn-primary" href="chat/login.php">Iniciar sesión</a>
                 </div>
-
             </main>
-
-
         </div>
     </div>
 

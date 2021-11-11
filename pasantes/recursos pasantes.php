@@ -1,21 +1,20 @@
-<?php 
+<?php
 
 include '../assets/php/ayuda/utilidad recurso.php';
 
 session_start();
 
-$_SESSION['pasantes'] = isset($_SESSION['pasantes'])? $_SESSION['pasantes']: array();
+$_SESSION['pasantes'] = isset($_SESSION['pasantes']) ? $_SESSION['pasantes'] : array();
 
 $listadoEstudiantes = $_SESSION['pasantes'];
 
-if(!empty($listadoEstudiantes)){
+if (!empty($listadoEstudiantes)) {
 
-if(isset($_GET['$grupoId'])){
+    if (isset($_GET['$grupoId'])) {
 
 
-  $listadoEstudiantes = searchProperty ($listadoEstudiantes,'grupo',$_GET['grupoId']);   
-
-}
+        $listadoEstudiantes = searchProperty($listadoEstudiantes, 'grupo', $_GET['grupoId']);
+    }
 }
 
 ?>
@@ -23,6 +22,7 @@ if(isset($_GET['$grupoId'])){
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,13 +36,14 @@ if(isset($_GET['$grupoId'])){
     <link rel="icon" href="../assets/img/social-icon.ico">
 
 </head>
+
 <body>
 
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Pasantes ALPHA AIlogic</a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
@@ -93,38 +94,38 @@ if(isset($_GET['$grupoId'])){
                     <h1 class="h2 ">Recursos</h1>
                 </div>
                 <div class="row">
-                    <?php if(empty($listadoEstudiantes)): ?>
-                    <?php else: ?>
-                    <?php foreach($listadoEstudiantes as $estudiante): ?>
+                    <?php if (empty($listadoEstudiantes)) : ?>
+                    <?php else : ?>
+                        <?php foreach ($listadoEstudiantes as $estudiante) : ?>
 
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <?php echo $estudiante['nombre']; ?>
-                            </h5>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <?php echo $estudiante['nombre']; ?>
+                                    </h5>
 
-                            <p class="card-text">
-                                <?php echo $estudiante['descripcion']; ?>
-                            </p>
+                                    <p class="card-text">
+                                        <?php echo $estudiante['descripcion']; ?>
+                                    </p>
 
 
-                            <h6 class="card-subtitle mb-2 text-muted">
-                                <?php echo getGrupoName($estudiante['grupo']); ?>
-                            </h6>
+                                    <h6 class="card-subtitle mb-2 text-muted">
+                                        <?php echo getGrupoName($estudiante['grupo']); ?>
+                                    </h6>
 
-                            <p class="card-text">
-                                <?php echo $estudiante['recurso']; ?>
-                            </p>
+                                    <p class="card-text">
+                                        <?php echo $estudiante['recurso']; ?>
+                                    </p>
 
-                            <a href="../assets/php/editar/detalles recurso pasante.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Más acerca del recurso</a>
-                        </div>
-                    </div>
-                    <?php endforeach; ?>
+                                    <a href="../assets/php/editar/detalles recurso pasante.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Más acerca del recurso</a>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
                     <?php endif; ?>
                 </div>
             </main>
-        
         </div>
     </div>
 </body>
+
 </html>

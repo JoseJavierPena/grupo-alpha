@@ -2,8 +2,6 @@
 
 include '../ayuda/utilidad.php';
 
-
-
 session_start();
 
 if (isset($_GET['id'])) {
@@ -16,9 +14,6 @@ if (isset($_GET['id'])) {
 
     $element = searchProperty($estudiantes, 'id', $estudianteid)[0];
     $elementIndex = getIndexElement($estudiantes, 'id', $estudianteid);
-
-
-
 
     if (isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['estatus'])  && isset($_POST['asignacion']) && isset($_POST['grupo'])) {
 
@@ -41,8 +36,6 @@ if (isset($_GET['id'])) {
     exit();
 }
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -58,10 +51,7 @@ if (isset($_GET['id'])) {
     <link rel="stylesheet" type=" text/css" href="../../css/style asignaciones administrador.css" media="screen">
     <title>Editar asignaciones</title>
 
-
     <link rel="icon" href="../../img/social-icon.ico">
-
-
 
 </head>
 
@@ -79,14 +69,14 @@ if (isset($_GET['id'])) {
             <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"> <a class="nav-link " href="../../../admin/Pasantes activos.php"> Pasantes activos </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../../../admin/informacion de evaluaciones pasantes.php"> Informacion de evaluaciones pasantes </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../admin/informacion de evaluaciones pasantes.php"> Información de evaluaciones pasantes </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../admin/seguimiento de recursos.php"> Seguimiento de recursos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../admin/recursos.html"> Recursos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../admin/asignaciones administrador.php"> Asignaciones</a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../admin/grupos administrador.html"> Grupos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../pasantes/pasantes.html"> Pasantes </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../admin/admin.php">Chat</a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../../../admin/enviar correo.html"> enviar correo </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../admin/enviar correo.html"> Enviar correo </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../logins/login.html"> Cerrar sesión </a> </li>
                 </ul>
             </div>
@@ -105,10 +95,7 @@ if (isset($_GET['id'])) {
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../../../admin/informacion de evaluaciones pasantes.php">
-                                <<<<<<< HEAD <span data-feather="file"></span>Informacion de evaluaciones pasantes
-                                    =======
-                                    <span data-feather="file"></span>Información de evaluaciones pasantes
-                                    >>>>>>> origin/develop
+                                <span data-feather="file"></span>Información de evaluaciones pasantes
                             </a>
                         </li>
 
@@ -118,20 +105,20 @@ if (isset($_GET['id'])) {
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/recursos.php">
+                            <a class="nav-link" href="recursos.php">
                                 <span data-feather="layers"></span>Recursos
                             </a>
                         </li>
 
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/asignaciones administrador.php">
+                            <a class="nav-link" href="asignaciones administrador.php">
                                 <span data-feather="layers"></span>Asignaciones
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/grupos administrador.html">
+                            <a class="nav-link" href="grupos administrador.html">
                                 <span data-feather="layers"></span>Grupos
                             </a>
                         </li>
@@ -160,22 +147,19 @@ if (isset($_GET['id'])) {
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Editar asignaciones</h1>
-
                 </div>
-
 
                 <main role="main">
                     <div style="margin-top: 2%;">
-
                         <div class="card">
                             <div class="card-header bg-info  text-light">
-                                <a href="../../../admin/asignaciones administrador.php" class="btn btn-warning"> Volver Atras</a> Editando asignacion
+                                <a href="../../../admin/asignaciones administrador.php" class="btn btn-warning"> Volver Atrás</a> Editando asignación
                             </div>
                             <div class="card-body">
 
                                 <form action="editar asignaciones administrador.php?id=<?php echo $element['id'] ?>" method="POST">
                                     <div class="form-group">
-                                        <label for="nombre">Titulo de la asignacion:</label>
+                                        <label for="nombre">Título de la asignación:</label>
                                         <input type="text" value="<?php echo $element['nombre'] ?>" class="form-control" id="nombre" name="nombre">
                                     </div>
                                     <div class="form-group">
@@ -198,8 +182,6 @@ if (isset($_GET['id'])) {
                                                     <option value="<?php echo $id; ?>"> <?php echo $text; ?></option>
 
                                                 <?php endif; ?>
-
-
 
                                             <?php endforeach; ?>
                                         </select>
@@ -227,7 +209,7 @@ if (isset($_GET['id'])) {
                                         </select>
                                     </div>
                                     <div class="col-sm-6">
-                                        <label for="asignacion" class="form-label"> Subir enlace de la asignacion aqui:</label>
+                                        <label for="asignacion" class="form-label"> Subir enlace de la asignación aquí:</label>
                                         <input type="url" value="<?php echo $element['asignacion'] ?>" class="form-control" id="asignacion" name="asignacion">
 
                                     </div>
@@ -242,6 +224,10 @@ if (isset($_GET['id'])) {
                         <script src="../../../assets/js/popper.min.js"></script>
                         <script src="../../../assets/js/bootstrap.min.js"></script>
 
-
-
                 </main>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

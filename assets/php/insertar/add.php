@@ -4,8 +4,7 @@ include '../ayuda/utilidad.php';
 
 session_start();
 
-if (isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['estatus']) && isset($_POST['grupo'])) {
-
+if (isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['estatus']) && isset($_POST['grupo']) && isset($_POST['asignacion'])) {
 
     $_SESSION['estudiantes'] = isset($_SESSION['estudiantes']) ? $_SESSION['estudiantes'] : array();
 
@@ -20,9 +19,6 @@ if (isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['est
 
         $estudianteid = $lastElement['id'] + 1;
     }
-
-
-
 
     array_push($estudiantes, [
         'id' => $estudianteid, 'nombre' => $_POST['nombre'],
@@ -51,10 +47,7 @@ if (isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['est
     <link rel="stylesheet" type=" text/css" href="../../css/style asignaciones administrador.css" media="screen">
     <title>Agregar asignaciones</title>
 
-
     <link rel="icon" href="../../img/social-icon.ico">
-
-
 
 </head>
 
@@ -110,20 +103,19 @@ if (isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['est
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/recursos.php">
+                            <a class="nav-link" href="recursos.php">
                                 <span data-feather="layers"></span>Recursos
                             </a>
                         </li>
 
-
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/asignaciones administrador.php">
+                            <a class="nav-link" href="asignaciones administrador.php">
                                 <span data-feather="layers"></span>Asignaciones
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/grupos administrador.html">
+                            <a class="nav-link" href="grupos administrador.html">
                                 <span data-feather="layers"></span>Grupos
                             </a>
                         </li>
@@ -154,7 +146,6 @@ if (isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['est
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Agregar asignaciones</h1>
-
                 </div>
 
                 <main role="main">
@@ -169,16 +160,16 @@ if (isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['est
                             <div class="card-body">
                                 <form action="add.php" method="POST">
                                     <div class="form-group">
-                                        <label for="nombre">Titulo de la asignacion:</label>
+                                        <label for="nombre">Título de la asignación:</label>
                                         <input type="text" class="form-control" id="nombre" name="nombre">
                                     </div>
                                     <div class="form-group">
-                                        <label for="descripcion">Descripcion de la asignacion:</label>
+                                        <label for="descripcion">Descripción de la asignación:</label>
                                         <input type="text" class="form-control" id="descripcion" name="descripcion">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="estatus">Estatus de la asignacion:</label>
+                                        <label for="estatus">Estatus de la asignación:</label>
                                         <select class="form-control" id="estatus" name="estatus">
 
                                             <?php foreach ($estatus as $id => $text) : ?>
@@ -190,7 +181,7 @@ if (isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['est
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="grupo">Grupo encargado de la asignacion:</label>
+                                        <label for="grupo">Grupo encargado de la asignación:</label>
                                         <select class="form-control" id="grupo" name="grupo">
 
                                             <?php foreach ($grupo as $id => $text) : ?>
@@ -201,15 +192,13 @@ if (isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['est
 
                                         </select>
                                     </div>
-                                    <<<<<<< HEAD <button type="submit" class=" btn btn-success mt-3">Guardar</button>
-                                        =======
-                                        <div class="col-sm-6">
-                                            <label for="asignacion" class="form-label"> Subir enlace de la asignacion aqui:</label>
-                                            <input type="url" class="form-control" id="asignacion" name="asignacion">
 
-                                        </div>
-                                        <button type="submit" class=" btn btn-success">Guardar</button>
-                                        >>>>>>> origin/develop
+                                    <div class="col-sm-6">
+                                        <label for="asignacion" class="form-label"> Subir enlace de la asignación aquí:</label>
+                                        <input type="url" class="form-control" id="asignacion" name="asignacion">
+
+                                    </div>
+                                    <button type="submit" class=" btn btn-success">Guardar</button>
 
                                 </form>
                             </div>
@@ -219,7 +208,10 @@ if (isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['est
                         <script src="../../../assets/js/jquery-3.3.1.min.js"></script>
                         <script src="../../../assets/js/popper.min.js"></script>
                         <script src="../../../assets/js/bootstrap.min.js"></script>
-
-
-
                 </main>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

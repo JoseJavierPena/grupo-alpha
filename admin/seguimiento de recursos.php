@@ -13,12 +13,9 @@
 
     <link rel="icon" href="../assets/img/social-icon.ico">
 
-
-
 </head>
 
 <body>
-
 
     <nav class="navbar navbar-dark bg-dark  fixed-top ">
         <div class="container">
@@ -33,21 +30,19 @@
             <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"> <a class="nav-link " href="Pasantes activos.php"> Pasantes activos </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="informacion de evaluaciones pasantes.php"> Informacion de evaluaciones pasantes </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="informacion de evaluaciones pasantes.php"> Información de evaluaciones pasantes </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="seguimiento de recursos.php"> Seguimiento de recursos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="recursos.html"> Recursos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="asignaciones administrador.php"> Asignaciones</a> </li>
                     <li class="nav-item"> <a class="nav-link " href="grupos administrador.html"> Grupos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../pasantes/pasantes.html"> Pasantes </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="chat admin.php">Chat</a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="enviar correo.html"> enviar correo </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="enviar correo.html"> Enviar correo </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../logins/login.html"> Cerrar sesión </a> </li>
                 </ul>
             </div>
         </div>
     </nav>
-
-
 
     <div class="container-fluid mt-5">
         <div class="row">
@@ -117,7 +112,6 @@
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Seguimiento de recursos</h1>
-
                 </div>
 
                 <div class="table-responsive">
@@ -132,9 +126,6 @@
                                 <th scope="col">Conocimientos de SQL y MYSQL</th>
                                 <th scope="col">Conocimientos de C#. C++. Python y c</th>
                                 <th scope="col">ID Del Pasante</th>
-
-
-
                             </tr>
                         </thead>
                         <tbody>
@@ -154,32 +145,15 @@
                                 <td><?php echo $mostrar['5'] ?></td>
                                 <td><?php echo $mostrar['6'] ?></td>
                                 <td><?php echo $mostrar['7'] ?></td>
-
-
-
-
-
-
-
                             </tr>
                         <?php
                                 }
-
-
                         ?>
-
-
-
                         </tr>
-
-
-
-
                         </tbody>
                     </table>
                 </div>
             </main>
-
         </div>
     </div>
 

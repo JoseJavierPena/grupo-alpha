@@ -11,12 +11,8 @@
     <link rel="stylesheet" type=" text/css" href="../assets/css/style chat pasante.css" media="screen">
     <title>Chat</title>
 
-
-
     <link rel="icon" href="../assets/img/social-icon.ico">
     <script src="https://kit.fontawesome.com/0f48d8c00d.js"></script>
-
-
 
 </head>
 
@@ -93,17 +89,11 @@
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Chat pasantes ALPHA</h1>
-
-
                 </div>
 
                 <div class="container">
-
                     <center>
-
-
-
-                        <h2>Registrese o Inicie seccion si ya esta registrado</h2>
+                        <h2>Regístrese o Inicie sesión si ya está registrado</h2>
                     </center>
                     </br>
                     <form class="form-horizontal" method="post" action="chat/add_user.php">
@@ -147,12 +137,9 @@
                                     </div>
                                 </div>
                     </form>
-
-                    <a type="submit" class="btn btn-primary" href="chat/login.php">Iniciar seccion</a>
+                    <a type="submit" class="btn btn-primary" href="chat/login.php">Iniciar sesión</a>
                 </div>
             </main>
-
-
         </div>
     </div>
 

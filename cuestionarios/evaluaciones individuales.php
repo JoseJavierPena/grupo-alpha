@@ -1,4 +1,5 @@
 <?php
+
 $conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
 
 $question1 = $_POST['question1'];
@@ -19,5 +20,3 @@ if($resultado){
         print("Errormessage: %s\n". mysqli_error($conexion));
     
     }
-
-?>
