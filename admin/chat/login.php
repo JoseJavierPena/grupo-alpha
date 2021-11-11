@@ -77,7 +77,7 @@ if ($_POST) {
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../recursos.html">
+                            <a class="nav-link" href="../recursos.php">
                                 <span data-feather="layers"></span>Recursos
                             </a>
                         </li>
