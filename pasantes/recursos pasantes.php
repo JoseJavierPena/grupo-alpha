@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include '../assets/php/ayuda/utilidad.php';
 
@@ -8,26 +8,18 @@ $_SESSION['estudiantes'] = isset($_SESSION['estudiantes'])? $_SESSION['estudiant
 
 $listadoEstudiantes = $_SESSION['estudiantes'];
 
-if(!empty($listadoEstudiantes)){
+if(!empty($listadoEstudiantes)) {
+    if(isset($_GET['$grupoId'])) {
+        $listadoEstudiantes = searchProperty($listadoEstudiantes, 'grupo', $_GET['grupoId']);
 
-if(isset($_GET['$grupoId'])){
-
-
-  $listadoEstudiantes = searchProperty ($listadoEstudiantes,'grupo',$_GET['grupoId']);   
-
-}
+    }
 }
 
-if(!empty($listadoEstudiantes)){
-
-  if(isset($_GET['$EstatusId'])){
-  
-  
-    $listadoEstudiantes = searchProperty ($listadoEstudiantes,'estatus',$_GET['EstatusId']);   
-  
-  }
-  }
-
+if(!empty($listadoEstudiantes)) {
+    if(isset($_GET['EstatusId'])) {
+        $listadoEstudiantes = searchProperty($listadoEstudiantes, 'estatus', $_GET['EstatusId']);
+    }
+}
 
 ?>
 
@@ -40,10 +32,11 @@ if(!empty($listadoEstudiantes)){
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
     <link rel="stylesheet" type=" text/css" href="../assets/css/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" type=" text/css" href="../assets/css/style asignaciones pasantes.css" media="screen">
-    <title>Asignaciones pasantes </title>
+    <link rel="stylesheet" type=" text/css" href="../assets/css/style pasantes.css" media="screen">
+    <title>Pasantes</title>
 
     <link rel="icon" href="../assets/img/social-icon.ico">
+
 </head>
 <body>
 
@@ -60,13 +53,13 @@ if(!empty($listadoEstudiantes)){
         </div>
     </header>
 
-    <div class="asignaciones">
+    <div class="container-fluid">
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
 
-                    <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link" href="pasantes.html">
                                 <span data-feather="layers"></span>Pasantes
                             </a>
@@ -83,13 +76,11 @@ if(!empty($listadoEstudiantes)){
                                 <span data-feather="layers"></span>Grupos
                             </a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="recursos pasantes.php">
                                 <span data-feather="layers"></span>Recursos
                             </a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" href="chat pasantes.php">
                                 <span data-feather="layers"></span>Chat
@@ -98,22 +89,20 @@ if(!empty($listadoEstudiantes)){
                     </ul>
                 </div>
             </nav>
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Asignaciones pasantes</h1>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 ">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom ">
+                    <h1 class="h2 ">Recursos</h1>
                 </div>
                 <div class="row">
-
                     <?php if(empty($listadoEstudiantes)): ?>
-
-                    <?php  else:?>
-
-                    <?php   foreach($listadoEstudiantes as $estudiante):  ?>
+                    <?php else: ?>
+                    <?php foreach($listadoEstudiantes as $estudiante): ?>
 
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">
-                                <?php echo $estudiante['nombre'];?>
+                                <?php echo $estudiante['nombre']; ?>
                             </h5>
 
                             <p class="card-text">
@@ -125,19 +114,18 @@ if(!empty($listadoEstudiantes)){
                             </h6>
 
                             <h6 class="card-subtitle mb-2 text-muted">
-                                <?php echo  getGrupoName($estudiante['grupo']); ?>
+                                <?php echo getGrupoName($estudiante['grupo']); ?>
                             </h6>
 
-                            <a href="../assets/php/editar/detalles asignaciones pasantes.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Mas acerca de la asignacion</a>
-
+                            <a href="../assets/php/editar/detalles asignaciones pasantes.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Más acerca del recurso</a>
                         </div>
                     </div>
-
                     <?php endforeach; ?>
-
-                    <?php   endif;?>
+                    <?php endif; ?>
+                </div>
             </main>
-            </div>
+        
         </div>
+    </div>
 </body>
 </html>

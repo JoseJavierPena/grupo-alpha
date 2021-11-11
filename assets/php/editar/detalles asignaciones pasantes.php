@@ -188,7 +188,7 @@ else{
     <div class="col-sm-6">
                     <label for="First_name" class="form-label"> Subir asignacion aqui:</label>
                     <input type="file" class="form-control" id="asignacion" name="asignacion" placeholder="" value="" required="">
-                    <input type="submit" class="form-control2" value="Subir Asignacion">
+                   
                 </div>
 
                 <br>
