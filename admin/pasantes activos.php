@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,12 +14,13 @@
     <link rel="icon" href="../assets/img/social-icon.ico">
     <script src="https://kit.fontawesome.com/0f48d8c00d.js"></script>
 </head>
+
 <body>
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Pasantes ALPHA AIlogic</a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
@@ -33,7 +34,7 @@
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
-                    <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="Pasantes activos.php">
                                 <span data-feather="home">Pasantes activos</span>
                             </a>
@@ -106,7 +107,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">NOMBRE</th>
+                                <th scope="col">Nombre</th>
                                 <th scope="col">Apellido</th>
                                 <th scope="col">Cédula</th>
                                 <th scope="col">Universidad</th>
@@ -120,39 +121,37 @@
                         </thead>
                         <tbody>
                             <?php
-                            $conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
-                            $sql="SELECT Id_formulario,Nombre,Apellido,Cedula,Universidad,Telefono,Direccion,Donde_Vives,Correo FROM formulario";
-                            $resultado= mysqli_query($conexion,$sql);
-                            while($mostrar= mysqli_fetch_row($resultado)){
-                                ?>   
+                            $conexion = mysqli_connect("localhost:8111", "root", "", "pasantes alpha db");
+                            $sql = "SELECT Id_formulario,Nombre,Apellido,Cedula,Universidad,Telefono,Direccion,Donde_Vives,Correo FROM formulario";
+                            $resultado = mysqli_query($conexion, $sql);
+                            while ($mostrar = mysqli_fetch_row($resultado)) {
+                            ?>
                                 <tr>
-                                    <td><?php echo $mostrar['0']?></td>
-                                    <td><?php echo $mostrar['1']?></td>
-                                    <td><?php echo $mostrar['2']?></td>
-                                    <td><?php echo $mostrar['3']?></td>
-                                    <td><?php echo $mostrar['4']?></td>
-                                    <td><?php echo $mostrar['5']?></td>
-                                    <td><?php echo $mostrar['6']?></td>
-                                    <td><?php echo $mostrar['7']?></td>
-                                    <td><?php echo $mostrar['8']?></td>
-                                    
-                                   
+                                    <td><?php echo $mostrar['0'] ?></td>
+                                    <td><?php echo $mostrar['1'] ?></td>
+                                    <td><?php echo $mostrar['2'] ?></td>
+                                    <td><?php echo $mostrar['3'] ?></td>
+                                    <td><?php echo $mostrar['4'] ?></td>
+                                    <td><?php echo $mostrar['5'] ?></td>
+                                    <td><?php echo $mostrar['6'] ?></td>
+                                    <td><?php echo $mostrar['7'] ?></td>
+                                    <td><?php echo $mostrar['8'] ?></td>
+
                                     <td><a href="../assets/php/editar/editar pasantes activos.php?
-                                        id=<?php  echo $mostrar['0']?> &
-                                        nombre=<?php echo $mostrar['1']?> &
-                                        apellido=<?php  echo $mostrar['2']?> &
-                                        cedula=<?php echo $mostrar['3']?> &
-                                        universidad=<?php echo $mostrar['4']?> &
-                                        telefono=<?php  echo $mostrar['5']?> &
-                                        direccion=<?php echo $mostrar['6']?> &
-                                        donde_vives=<?php echo $mostrar['7']?> &
-                                        correo=<?php  echo $mostrar['8']?> &
-                                        
-                                    
-                                    "button class="btn btn-edit"><i class="fas fa-edit"></i></a></button></td>
-                                    <td><a href="../assets/php/borrar/eliminar pasantes activos.php? id=<?php  echo $mostrar['0']?> "button class="btn btn-danger"><i class="fas fa-trash"></i></a></button></td>
+                                        id=<?php echo $mostrar['0'] ?> &
+                                        nombre=<?php echo $mostrar['1'] ?> &
+                                        apellido=<?php echo $mostrar['2'] ?> &
+                                        cedula=<?php echo $mostrar['3'] ?> &
+                                        universidad=<?php echo $mostrar['4'] ?> &
+                                        telefono=<?php echo $mostrar['5'] ?> &
+                                        direccion=<?php echo $mostrar['6'] ?> &
+                                        donde_vives=<?php echo $mostrar['7'] ?> &
+                                        correo=<?php echo $mostrar['8'] ?> &
+                                                                    
+                                    " button class="btn btn-edit"><i class="fas fa-edit"></i></a></button></td>
+                                    <td><a href="../assets/php/borrar/eliminar pasantes activos.php? id=<?php echo $mostrar['0'] ?> " button class="btn btn-danger"><i class="fas fa-trash"></i></a></button></td>
                                 </tr>
-                                <?php
+                            <?php
                             }
                             ?>
                         </tbody>
@@ -162,4 +161,5 @@
         </div>
     </div>
 </body>
+
 </html>

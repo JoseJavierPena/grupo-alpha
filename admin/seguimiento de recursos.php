@@ -13,8 +13,6 @@
 
     <link rel="icon" href="../assets/img/social-icon.ico">
 
-
-
 </head>
 
 <body>
@@ -22,8 +20,8 @@
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Pasantes ALPHA AIlogic</a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
@@ -93,7 +91,6 @@
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Seguimiento de recursos</h1>
-
                 </div>
 
                 <div class="table-responsive">
@@ -108,57 +105,36 @@
                                 <th scope="col">Conocimientos de SQL y MYSQL</th>
                                 <th scope="col">Conocimientos de C#. C++. Python y c</th>
                                 <th scope="col">ID Del Pasante</th>
-                                
-
-
                             </tr>
                         </thead>
                         <tbody>
-                        <tr>
+                            <tr>
                                 <?php
-                                 $conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
-                                 $sql="SELECT Id,conociminetoshtml,conociminetoscss,conocimientosjavascript,conocimientosphp,conocmientossqlmysql,otroslenguajes,Id_formulario FROM individuales";
-                                 $resultado= mysqli_query($conexion,$sql);
-                                 while($mostrar= mysqli_fetch_row($resultado)){
-                                    ?>   
-                                    <tr>
-                                        <td><?php echo $mostrar['0']?></td>
-                                        <td><?php echo $mostrar['1']?></td>
-                                        <td><?php echo $mostrar['2']?></td>
-                                        <td><?php echo $mostrar['3']?></td>
-                                        <td><?php echo $mostrar['4']?></td>
-                                        <td><?php echo $mostrar['5']?></td>
-                                        <td><?php echo $mostrar['6']?></td>
-                                        <td><?php echo $mostrar['7']?></td>
-                                        
-                                        
-                                       
-                                        
-                                        
-                                        
-                                       
-                                 </tr>
-                                 <?php
-                                 }
-                               
-                                 
+                                $conexion = mysqli_connect("localhost:8111", "root", "", "pasantes alpha db");
+                                $sql = "SELECT Id,conociminetoshtml,conociminetoscss,conocimientosjavascript,conocimientosphp,conocmientossqlmysql,otroslenguajes,Id_formulario FROM individuales";
+                                $resultado = mysqli_query($conexion, $sql);
+                                while ($mostrar = mysqli_fetch_row($resultado)) {
                                 ?>
-                                  
-                               
-                               
+                            <tr>
+                                <td><?php echo $mostrar['0'] ?></td>
+                                <td><?php echo $mostrar['1'] ?></td>
+                                <td><?php echo $mostrar['2'] ?></td>
+                                <td><?php echo $mostrar['3'] ?></td>
+                                <td><?php echo $mostrar['4'] ?></td>
+                                <td><?php echo $mostrar['5'] ?></td>
+                                <td><?php echo $mostrar['6'] ?></td>
+                                <td><?php echo $mostrar['7'] ?></td>
                             </tr>
-                               
-                           
-                            
-
+                        <?php
+                                }
+                        ?>
+                        </tr>
                         </tbody>
                     </table>
                 </div>
             </main>
-
         </div>
     </div>
-
 </body>
 
 </html>

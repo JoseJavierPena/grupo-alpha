@@ -21,12 +21,8 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['esta
         $estudianteid = $lastElement['id'] + 1 ;
     }
 
-
-
-
     array_push($estudiantes,[ 'id'=>$estudianteid , 'nombre'=> $_POST['nombre'],
     'descripcion'=>$_POST['descripcion'],'estatus'=>$_POST['estatus'], 'grupo'=>$_POST['grupo']]);
-
 
     $_SESSION['estudiantes']=$estudiantes; 
 
@@ -38,7 +34,6 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['esta
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,13 +44,9 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['esta
     <link rel="stylesheet" type=" text/css" href="../../css/style asignaciones administrador.css" media="screen">
     <title>Agregar asignaciones</title>
 
-
     <link rel="icon" href="../../img/social-icon.ico">
 
-
-
 </head>
-
 <body>
 
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
@@ -66,7 +57,7 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['esta
 
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="../../../logins/login.html">Cerrar sesion</a>
+                <a class="nav-link px-3" href="../../../logins/login.html">Cerrar sesión</a>
             </div>
         </div>
     </header>
@@ -75,42 +66,56 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['esta
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3">
-                    <ul class="nav flex-column">
+                <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../../../admin/Pasantes activos.html">
+                            <a class="nav-link active" aria-current="page" href="Pasantes activos.php">
                                 <span data-feather="home">Pasantes activos</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/informacion de evaluaciones pasantes.html">
-                                <span data-feather="file"></span>Informacion de evaluaciones pasantes
+                            <a class="nav-link" href="informacion de evaluaciones pasantes.php">
+                                <span data-feather="file"></span>Información de evaluaciones pasantes
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/seguimiento de recursos.php">
-                                <span data-feather="bar-chart-2"></span> Seguimiento de recurso
+                            <a class="nav-link" href="seguimiento de recursos.php">
+                                <span data-feather="bar-chart-2"></span> Seguimiento de recursos
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/recursos.php">
+                            <a class="nav-link" href="recursos.php">
                                 <span data-feather="layers"></span>Recursos
                             </a>
                         </li>
 
-
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/asignaciones administrador.php">
+                            <a class="nav-link" href="asignaciones administrador.php">
                                 <span data-feather="layers"></span>Asignaciones
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/grupos administrador.html">
+                            <a class="nav-link" href="grupos administrador.html">
                                 <span data-feather="layers"></span>Grupos
                             </a>
                         </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pasantes/pasantes.html">
+                                <span data-feather="layers"></span>Pasantes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="chat admin.php">
+                                <span data-feather="layers"></span>Chat
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="enviar correo.html">
+                                <span data-feather="layers"></span>Enviar correo
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -118,61 +123,59 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['esta
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Agregar asignaciones</h1>
-
                 </div>
 
-<main role="main">
-    <div style="margin-top: 2%;">
+                <main role="main">
+                    <div style="margin-top: 2%;">
+                        <div class="card">
+                            <div class="card-header bg-info text-light" >
+                                <a href="../../../admin/asignaciones administrador.php" class="btn btn-warning"> Volver Atrás</a> Creando asignaciones
+                            </div> 
 
-<div class="card">
-  <div class="card-header bg-info text-light" >
- <a href="../../../admin/asignaciones administrador.php" class="btn btn-warning"> Volver Atras</a> Creando asignaciones
-  </div> 
-
-
-  <div class="card-body">
-  <form action="add.php" method="POST">
-  <div class="form-group">
-    <label for="nombre">Titulo de la asignacion:</label>
-    <input type="text" class="form-control" id="nombre" name="nombre">
-  </div>
-  <div class="form-group">
-    <label for="descripcion">Descripcion de la asignacion:</label>
-    <input type="text" class="form-control" id="descripcion" name="descripcion">
-  </div>
+                            <div class="card-body">
+                                <form action="add.php" method="POST">
+                                <div class="form-group">
+                                    <label for="nombre">Título de la asignación:</label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre">
+                                </div>
+                                <div class="form-group">
+                                    <label for="descripcion">Descripción de la asignación:</label>
+                                    <input type="text" class="form-control" id="descripcion" name="descripcion">
+                                </div>
   
-  <div class="form-group">
-    <label for="estatus">Estatus de la asignacion:</label>
-    <select class="form-control" id="estatus" name="estatus">
+                                <div class="form-group">
+                                    <label for="estatus">Estatus de la asignación:</label>
+                                    <select class="form-control" id="estatus" name="estatus">
+                                        
+                                        <?php   foreach($estatus as $id => $text):?>
 
-   <?php   foreach($estatus as $id => $text):?>
+                                        <option value="<?php  echo $id; ?>">  <?php echo $text; ?></option>
 
-   <option value="<?php  echo $id; ?>">  <?php echo $text; ?></option>
+                                        <?php endforeach;?>
+                                    </select>
+                                </div>
 
-    <?php endforeach;?>
-    </select>
-    </div>
+                                <div class="form-group">
+                                    <label for="grupo">Grupo encargado de la asignación:</label>
+                                    <select class="form-control" id="grupo" name="grupo">
 
-  <div class="form-group">
-    <label for="grupo">Grupo encargado de la asignacion:</label>
-    <select class="form-control" id="grupo" name="grupo">
+                                    <?php   foreach($grupo as $id => $text):?>
 
-    <?php   foreach($grupo as $id => $text):?>
+                                    <option value="<?php  echo $id; ?>">  <?php echo $text; ?></option>
 
-<option value="<?php  echo $id; ?>">  <?php echo $text; ?></option>
-
- <?php endforeach;?>
+                                    <?php endforeach;?>
     
-    </select>
+                                    </select>
+                                </div>
+
+                                <button type="submit" class=" btn btn-success">Guardar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </main>
+        </div>
     </div>
-
-    <button type="submit" class=" btn btn-success">Guardar</button>
-
-</form>
-  </div>
-</div>
-
-
-  
-</main>
-
+</body>
+</html>

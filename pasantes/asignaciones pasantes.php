@@ -1,38 +1,32 @@
-<?php 
+<?php
 
 include '../assets/php/ayuda/utilidad.php';
 
 session_start();
 
-$_SESSION['estudiantes'] = isset($_SESSION['estudiantes'])? $_SESSION['estudiantes']: array();
+$_SESSION['estudiantes'] = isset($_SESSION['estudiantes']) ? $_SESSION['estudiantes'] : array();
 
 $listadoEstudiantes = $_SESSION['estudiantes'];
 
-if(!empty($listadoEstudiantes)){
+if (!empty($listadoEstudiantes)) {
 
-if(isset($_GET['$grupoId'])){
-
-
-  $listadoEstudiantes = searchProperty ($listadoEstudiantes,'grupo',$_GET['grupoId']);   
-
-}
+    if (isset($_GET['$grupoId'])) {
+        $listadoEstudiantes = searchProperty($listadoEstudiantes, 'grupo', $_GET['grupoId']);
+    }
 }
 
-if(!empty($listadoEstudiantes)){
+if (!empty($listadoEstudiantes)) {
 
-  if(isset($_GET['$EstatusId'])){
-  
-  
-    $listadoEstudiantes = searchProperty ($listadoEstudiantes,'estatus',$_GET['EstatusId']);   
-  
-  }
-  }
-
+    if (isset($_GET['$EstatusId'])) {
+        $listadoEstudiantes = searchProperty($listadoEstudiantes, 'estatus', $_GET['EstatusId']);
+    }
+}
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,13 +39,13 @@ if(!empty($listadoEstudiantes)){
 
     <link rel="icon" href="../assets/img/social-icon.ico">
 </head>
-<body>
 
+<body>
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Pasantes ALPHA AIlogic</a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
@@ -66,7 +60,7 @@ if(!empty($listadoEstudiantes)){
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
 
-                    <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link" href="pasantes.html">
                                 <span data-feather="layers"></span>Pasantes
                             </a>
@@ -98,46 +92,43 @@ if(!empty($listadoEstudiantes)){
                     </ul>
                 </div>
             </nav>
+
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Asignaciones pasantes</h1>
                 </div>
+
                 <div class="row">
+                    <?php if (empty($listadoEstudiantes)) : ?>
+                    <?php else : ?>
+                        <?php foreach ($listadoEstudiantes as $estudiante) :  ?>
 
-                    <?php if(empty($listadoEstudiantes)): ?>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <?php echo $estudiante['nombre']; ?>
+                                    </h5>
 
-                    <?php  else:?>
+                                    <p class="card-text">
+                                        <?php echo $estudiante['descripcion']; ?>
+                                    </p>
 
-                    <?php   foreach($listadoEstudiantes as $estudiante):  ?>
+                                    <h6 class="card-subtitle mb-2 text-muted">
+                                        <?php echo getEstatusName($estudiante['estatus']); ?>
+                                    </h6>
 
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                <?php echo $estudiante['nombre'];?>
-                            </h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">
+                                        <?php echo  getGrupoName($estudiante['grupo']); ?>
+                                    </h6>
 
-                            <p class="card-text">
-                                <?php echo $estudiante['descripcion']; ?>
-                            </p>
-
-                            <h6 class="card-subtitle mb-2 text-muted">
-                                <?php echo getEstatusName($estudiante['estatus']); ?>
-                            </h6>
-
-                            <h6 class="card-subtitle mb-2 text-muted">
-                                <?php echo  getGrupoName($estudiante['grupo']); ?>
-                            </h6>
-
-                            <a href="../assets/php/editar/detalles asignaciones pasantes.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Mas acerca de la asignacion</a>
-
-                        </div>
-                    </div>
-
-                    <?php endforeach; ?>
-
-                    <?php   endif;?>
+                                    <a href="../assets/php/editar/detalles asignaciones pasantes.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Más acerca de la asignacion</a>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
             </main>
-            </div>
         </div>
+    </div>
 </body>
+
 </html>

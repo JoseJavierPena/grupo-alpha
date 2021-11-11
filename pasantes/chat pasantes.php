@@ -11,26 +11,21 @@
     <link rel="stylesheet" type=" text/css" href="../assets/css/style chat pasante.css" media="screen">
     <title>Chat</title>
 
-
-
     <link rel="icon" href="../assets/img/social-icon.ico">
     <script src="https://kit.fontawesome.com/0f48d8c00d.js"></script>
-
-
 
 </head>
 
 <body>
-
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Pasantes ALPHA AIlogic</a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="../logins/login.html">Cerrar sesion</a>
+                <a class="nav-link px-3" href="../logins/login.html">Cerrar sesión</a>
             </div>
         </div>
     </header>
@@ -69,7 +64,6 @@
                                 <span data-feather="layers"></span>Chat
                             </a>
                         </li>
-
                     </ul>
                 </div>
             </nav>
@@ -77,17 +71,11 @@
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Chat pasantes ALPHA</h1>
-
-
                 </div>
 
                 <div class="container">
-
                     <center>
-
-
-
-                        <h2>Registrese o Inicie seccion si ya esta registrado</h2>
+                        <h2>Regístrese o Inicie sesión si ya está registrado</h2>
                     </center>
                     </br>
                     <form class="form-horizontal" method="post" action="chat/add_user.php">
@@ -131,12 +119,9 @@
                                     </div>
                                 </div>
                     </form>
-
-                    <a type="submit" class="btn btn-primary" href="chat/login.php">Iniciar seccion</a>
+                    <a type="submit" class="btn btn-primary" href="chat/login.php">Iniciar sesión</a>
                 </div>
             </main>
-
-
         </div>
     </div>
 </body>

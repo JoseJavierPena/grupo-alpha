@@ -1,23 +1,14 @@
+<?php
 
+include '../assets/php/ayuda/utilidad.php';
 
+session_start();
 
-    <?php 
-           
-            include '../assets/php/ayuda/utilidad.php';
-            
-            session_start();
+$_SESSION['estudiantes'] = isset($_SESSION['estudiantes']) ? $_SESSION['estudiantes'] : array();
 
-            $_SESSION['estudiantes'] = isset($_SESSION['estudiantes'])? $_SESSION['estudiantes']: array();
-            
-            $listadoEstudiantes = $_SESSION['estudiantes'];
-            
-           
-    
-            
-            ?>
+$listadoEstudiantes = $_SESSION['estudiantes'];
 
-
-
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,13 +25,13 @@
     <link rel="icon" href="../assets/img/social-icon.ico">
 
 </head>
-<body>
 
+<body>
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Pasantes ALPHA AIlogic</a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
@@ -104,7 +95,6 @@
                                 <span data-feather="layers"></span>Enviar correo
                             </a>
                         </li>
-
                     </ul>
                 </div>
             </nav>
@@ -114,54 +104,53 @@
                     <h1 class="h2">Asignaciones</h1>
 
                 </div>
-      
-            <main role="main">              
-                        <p>
-                            <a href="../assets/php/insertar/add.php" class="btn btn-primary my-2">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Crear asignación </font>
-                                </font>
-                            </a>
-                        </p>
-                        <hr class="my-4">
 
-                        <div class="row">
+                <main role="main">
+                    <p>
+                        <a href="../assets/php/insertar/add.php" class="btn btn-primary my-2">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Crear asignación </font>
+                            </font>
+                        </a>
+                    </p>
+                    <hr class="my-4">
 
-                            <?php if(empty($listadoEstudiantes)): ?>
-                            <?php  else:?>
-                            <?php   foreach($listadoEstudiantes as $estudiante):  ?>
+                    <div class="row">
 
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">
-                                        <?php echo $estudiante['nombre'];?>
-                                    </h5>
+                        <?php if (empty($listadoEstudiantes)) : ?>
+                        <?php else : ?>
+                            <?php foreach ($listadoEstudiantes as $estudiante) :  ?>
 
-                                    <p class="card-text">
-                                        <?php echo $estudiante['descripcion']; ?>
-                                    </p>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <?php echo $estudiante['nombre']; ?>
+                                        </h5>
 
-                                    <h6 class="card-subtitle mb-2 text-muted">
-                                        <?php echo getEstatusName($estudiante['estatus']); ?>
-                                    </h6>
+                                        <p class="card-text">
+                                            <?php echo $estudiante['descripcion']; ?>
+                                        </p>
 
-                                    <h6 class="card-subtitle mb-2 text-muted">
-                                        <?php echo  getGrupoName($estudiante['grupo']); ?>
-                                    </h6>
+                                        <h6 class="card-subtitle mb-2 text-muted">
+                                            <?php echo getEstatusName($estudiante['estatus']); ?>
+                                        </h6>
 
-                                    <a href="../assets/php/editar/editar asignaciones administrador.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Editar</a>
+                                        <h6 class="card-subtitle mb-2 text-muted">
+                                            <?php echo  getGrupoName($estudiante['grupo']); ?>
+                                        </h6>
 
-                                    <a href="../assets/php/borrar/eliminar asignaciones administrador.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Borrar</a>
+                                        <a href="../assets/php/editar/editar asignaciones administrador.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Editar</a>
+
+                                        <a href="../assets/php/borrar/eliminar asignaciones administrador.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Borrar</a>
+                                    </div>
                                 </div>
-                            </div>
                             <?php endforeach; ?>
-                            <?php   endif;?>
-                        </div>
+                        <?php endif; ?>
                     </div>
-                </div>
+                </main>
+            </main>
         </div>
-        </main>
-    </div>
     </div>
 </body>
+
 </html>

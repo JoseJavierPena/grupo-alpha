@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,13 +15,14 @@
     <script src="https://kit.fontawesome.com/0f48d8c00d.js"></script>
 
 </head>
+
 <body>
 
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Pasantes ALPHA AIlogic.</a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
@@ -84,14 +86,13 @@
                                 <span data-feather="layers"></span>Enviar correo
                             </a>
                         </li>
-
                     </ul>
                 </div>
             </nav>
+
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Infomación de evaluación pasantes</h1>
-
                 </div>
                 <h2>Toda la información de los pasantes que completaron las evaluaciones</h2>
                 <br>
@@ -99,36 +100,34 @@
                     <table class="table table-striped table-sm">
                         <thead>
                             <tr>
-                            
                                 <th scope="col">ID</th>
                                 <th scope="col">Repositorio</th>
                                 <th scope="col">Linkedin</th>
                                 <th scope="col">Portafolio</th>
                                 <th scope="col">Curriculum</th>
-                                <th scope="col">ID Pasantes</th>                                                                                                                                
-                                
+                                <th scope="col">ID Pasantes</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <?php
-                                 $conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
-                                 $sql="SELECT Id,repositorio,linkedIn,portafolio,curriculum,Id_formulario  FROM evaluaciones ";
-                                 $resultado= mysqli_query($conexion,$sql);
-                                 while($mostrar= mysqli_fetch_row($resultado)){
-                                    ?>   
-                                    <tr>
-                                        <td><?php echo $mostrar['0']?></td>
-                                        <td><?php echo $mostrar['1']?></td>
-                                        <td><?php echo $mostrar['2']?></td>
-                                        <td><?php echo $mostrar['3']?></td>
-                                        <td><?php echo $mostrar['4']?></td>
-                                        <td><?php echo $mostrar['5']?></td>   
-                                 </tr>
-                                 <?php
-                                 }                                                             
-                                ?>                                                                                                
+                                $conexion = mysqli_connect("localhost:8111", "root", "", "pasantes alpha db");
+                                $sql = "SELECT Id,repositorio,linkedIn,portafolio,curriculum,Id_formulario  FROM evaluaciones ";
+                                $resultado = mysqli_query($conexion, $sql);
+                                while ($mostrar = mysqli_fetch_row($resultado)) {
+                                ?>
+                            <tr>
+                                <td><?php echo $mostrar['0'] ?></td>
+                                <td><?php echo $mostrar['1'] ?></td>
+                                <td><?php echo $mostrar['2'] ?></td>
+                                <td><?php echo $mostrar['3'] ?></td>
+                                <td><?php echo $mostrar['4'] ?></td>
+                                <td><?php echo $mostrar['5'] ?></td>
                             </tr>
+                        <?php
+                                }
+                        ?>
+                        </tr>
                         </tbody>
                     </table>
                 </div>
@@ -136,4 +135,5 @@
         </div>
     </div>
 </body>
+
 </html>
