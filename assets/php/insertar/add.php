@@ -93,7 +93,7 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['esta
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/recursos.html">
+                            <a class="nav-link" href="../../../admin/recursos.php">
                                 <span data-feather="layers"></span>Recursos
                             </a>
                         </li>

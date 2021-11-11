@@ -30,7 +30,7 @@
 
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="../logins/login.html">Cerrar sesion</a>
+                <a class="nav-link px-3" href="../logins/login.html">Cerrar sesión</a>
             </div>
         </div>
     </header>
@@ -47,17 +47,17 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="informacion de evaluaciones pasantes.php">
-                                <span data-feather="file"></span>Informacion de evaluaciones pasantes
+                                <span data-feather="file"></span>Información de evaluaciones pasantes
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="seguimiento de recursos.php">
-                                <span data-feather="bar-chart-2"></span> Seguimiento de recurso
+                                <span data-feather="bar-chart-2"></span> Seguimiento de recursos
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="recursos.html">
+                            <a class="nav-link" href="recursos.php">
                                 <span data-feather="layers"></span>Recursos
                             </a>
                         </li>
@@ -110,7 +110,7 @@
 
 
 
-                        <h2>Registrese o Inicie seccion si ya esta registrado</h2>
+                        <h2>Registrese o Inicie sesión si ya esta registrado</h2>
                     </center>
                     </br>
                     <form class="form-horizontal" method="post" action="chat/add_user.php">
@@ -155,7 +155,7 @@
                                 </div>
                     </form>
 
-                    <a type="submit" class="btn btn-primary" href="chat/login.php">Iniciar seccion</a>
+                    <a type="submit" class="btn btn-primary" href="chat/login.php">Iniciar sesión</a>
                 </div>
 
             </main>
