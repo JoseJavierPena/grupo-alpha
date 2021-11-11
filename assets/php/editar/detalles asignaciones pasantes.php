@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include '../ayuda/utilidad.php';
 
@@ -6,44 +6,39 @@ include '../ayuda/utilidad.php';
 
 session_start();
 
-if(isset($_GET['id'])){
+if (isset($_GET['id'])) {
 
-  $estudianteid = $_GET['id'];
+    $estudianteid = $_GET['id'];
 
-  $_SESSION['estudiantes'] = isset($_SESSION['estudiantes'])? $_SESSION['estudiantes']: array();
+    $_SESSION['estudiantes'] = isset($_SESSION['estudiantes']) ? $_SESSION['estudiantes'] : array();
 
-  $estudiantes =  $_SESSION['estudiantes'];
+    $estudiantes =  $_SESSION['estudiantes'];
 
-  $element = searchProperty($estudiantes,'id',$estudianteid)[0];
-  $elementIndex = getIndexElement($estudiantes,'id',$estudianteid);
-
-
+    $element = searchProperty($estudiantes, 'id', $estudianteid)[0];
+    $elementIndex = getIndexElement($estudiantes, 'id', $estudianteid);
 
 
-  if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['estatus']) && isset($_POST['asignacion']) && isset($_POST['grupo'])){
 
 
-  $newEstudiante = [ 'id'=>$estudianteid , 'nombre'=> $_POST['nombre'],
-    'descripcion'=>$_POST['descripcion'],'estatus'=>$_POST['estatus'], 'grupo'=>$_POST['grupo'],'asignacion'=>$_POST['asignacion']   ];
-
-    $estudiantes[$elementIndex] = $newEstudiante;
+    if (isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['estatus']) && isset($_POST['asignacion']) && isset($_POST['grupo'])) {
 
 
-    $_SESSION['estudiantes']=$estudiantes; 
+        $newEstudiante = [
+            'id' => $estudianteid, 'nombre' => $_POST['nombre'],
+            'descripcion' => $_POST['descripcion'], 'estatus' => $_POST['estatus'], 'grupo' => $_POST['grupo'], 'asignacion' => $_POST['asignacion']
+        ];
 
- header("Location:../../../pasantes/asignaciones pasantes.php");
- exit();
-
-}
+        $estudiantes[$elementIndex] = $newEstudiante;
 
 
-  
-}
+        $_SESSION['estudiantes'] = $estudiantes;
 
-else{
-  header("Location:../../../pasantes/asignaciones pasantes.php");
- exit();
-
+        header("Location:../../../pasantes/asignaciones pasantes.php");
+        exit();
+    }
+} else {
+    header("Location:../../../pasantes/asignaciones pasantes.php");
+    exit();
 }
 
 
@@ -72,25 +67,34 @@ else{
 
 <body>
 
-    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Pasantes ALPHA AIlogic</a>
-        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <nav class="navbar navbar-dark bg-dark  fixed-top ">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <strong>AILogic</strong>
+            </a>
 
-        <div class="navbar-nav">
-            <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="../../../logins/login.html">Cerrar sesion</a>
+            <button type="button" class="navbar-toggler d-md-none" data-toggle="collapse" data-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Desplegar menú de navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/pasantes.html"> Pasantes </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/asignaciones pasantes.php">Asignaciones</a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/grupos pasantes.html"> Grupo </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/chat pasantes.php"> Chat </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../logins/login.html">Cerrar sesión</a> </li>
+                </ul>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <div class="container-fluid">
+    <div class="container-fluid mt-5">
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
-                    <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link" href="../../../pasantes/pasantes.html">
                                 <span data-feather="layers"></span>Pasantes
                             </a>
@@ -114,12 +118,17 @@ else{
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="../../../pasantes/chat pasantes.php">
-                                <span data-feather="layers"></span>Chat
+                        <li class="nav-item ">
+                            <a class="nav-link " href="../../../pasantes/chat pasantes.php">
+                                <span data-feather="layers "></span>Chat
                             </a>
                         </li>
 
+                        <li class="nav-item ">
+                            <a class="nav-link " href="../../../logins/login.html">
+                                <span data-feather="layers "></span>Cerrar sesión
+                            </a>
+                        </li>
 
                     </ul>
                 </div>
@@ -132,85 +141,89 @@ else{
                 </div>
 
 
-<main role="main">
-    <div style="margin-top: 2%;">
+                <main role="main">
+                    <div style="margin-top: 2%;">
 
-<div class="card">
-  <div class="card-header bg-info  text-light" >
- <a href="../../../pasantes/asignaciones pasantes.php" class="btn btn-warning"> Volver Atras</a>
-  </div> 
-  <div class="card-body">
+                        <div class="card">
+                            <div class="card-header bg-info  text-light">
+                                <a href="../../../pasantes/asignaciones pasantes.php" class="btn btn-warning"> Volver Atras</a>
+                            </div>
+                            <div class="card-body">
 
-  <form action="detalles asignaciones pasantes.php?id=<?php echo $element['id']?>" method="POST">
-  <div class="form-group">
-    <label for="nombre">Titulo de la asignacion:</label>
-    <input type="text" value="<?php echo $element['nombre']?>"  class="form-control" id="nombre" name="nombre" readonly="readonly">
-  </div>
+                                <form action="detalles asignaciones pasantes.php?id=<?php echo $element['id'] ?>" method="POST">
+                                    <div class="form-group">
+                                        <label for="nombre">Titulo de la asignacion:</label>
+                                        <input type="text" value="<?php echo $element['nombre'] ?>" class="form-control" id="nombre" name="nombre" readonly="readonly">
+                                    </div>
 
-  <div class="form-group">
-    <label for="descripcion">Descripcion de la asignacion:</label>
-    <input type="text"value="<?php echo $element['descripcion']?>"  class="form-control" id="descripcion" name="descripcion" readonly="readonly">
-  </div>
-  
-  <div class="form-group">
-    <label for="estatus">Estatus de la asignacion:</label>
-    <select  class="form-control" id="estatus" name="estatus">
+                                    <div class="form-group">
+                                        <label for="descripcion">Descripcion de la asignacion:</label>
+                                        <input type="text" value="<?php echo $element['descripcion'] ?>" class="form-control" id="descripcion" name="descripcion" readonly="readonly">
+                                    </div>
 
-   <?php   foreach($estatus as $id => $text):?>
+                                    <div class="form-group">
+                                        <label for="estatus">Estatus de la asignacion:</label>
+                                        <select class="form-control" id="estatus" name="estatus">
 
-    <?php if($id == $element ['estatus']):?>
-      
-   <option   selected value="<?php  echo $id; ?>">  <?php echo $text; ?></option>
+                                            <?php foreach ($estatus as $id => $text) : ?>
 
-    <?php else:  ?>
-      
-   <option value="<?php  echo $id; ?>">  <?php echo $text; ?></option>
+                                                <?php if ($id == $element['estatus']) : ?>
 
-    <?php endif; ?>
+                                                    <option selected value="<?php echo $id; ?>"> <?php echo $text; ?></option>
 
+                                                <?php else :  ?>
 
+                                                    <option value="<?php echo $id; ?>"> <?php echo $text; ?></option>
 
-    <?php endforeach;?>
-    </select>
-    </div>
-
-  <div class="form-group">
-    <label for="grupo">Grupo encargado de la asignacion:</label>
-    <select class="form-control" id="grupo" name="grupo" readonly="readonly">
-
-    <?php   foreach($grupo as $id => $text):?>
-
-      <?php if($id == $element ['grupo']):?>
-      
-      <option   selected value="<?php  echo $id; ?>">  <?php echo $text; ?> </option>
-   
-       <?php else:  ?>
-         
-      <option value="<?php  echo $id; ?>">  <?php echo $text; ?></option>
-   
-       <?php endif; ?>
+                                                <?php endif; ?>
 
 
- <?php endforeach;?>
-    
-    </select>
-    </div>
+
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="grupo">Grupo encargado de la asignacion:</label>
+                                        <select class="form-control" id="grupo" name="grupo" readonly="readonly">
+
+                                            <?php foreach ($grupo as $id => $text) : ?>
+
+                                                <?php if ($id == $element['grupo']) : ?>
+
+                                                    <option selected value="<?php echo $id; ?>"> <?php echo $text; ?> </option>
+
+                                                <?php else :  ?>
+
+                                                    <option value="<?php echo $id; ?>"> <?php echo $text; ?></option>
+
+                                                <?php endif; ?>
 
 
-    <div class="col-sm-6">
-                    <label for="asignacion" class="form-label"> Subir enlace de la asignacion aqui:</label>
-                    <input type="url" class="form-control" id="asignacion" name="asignacion" placeholder="" value="" required="">
-                   
-                </div>
-                <br>
+                                            <?php endforeach; ?>
 
-    <button type="submit" class=" btn btn-success">Guardar</button>
-
-</form>
-  </div>
-</div>
+                                        </select>
+                                    </div>
 
 
-  
-</main>
+                                    <div class="col-sm-6">
+                                        <label for="asignacion" class="form-label"> Subir enlace de la asignacion aqui:</label>
+                                        <input type="url" class="form-control" id="asignacion" name="asignacion" placeholder="" value="" required="">
 
+                                    </div>
+                                    <br>
+
+                                    <button type="submit" class=" btn btn-success">Guardar</button>
+
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- ARCHIVOS BOOTSTRAP JAVASCRIPT -->
+                        <script src="../../../assets/js/jquery-3.3.1.min.js"></script>
+                        <script src="../../../assets/js/popper.min.js"></script>
+                        <script src="../../../assets/js/bootstrap.min.js"></script>
+
+
+
+                </main>
