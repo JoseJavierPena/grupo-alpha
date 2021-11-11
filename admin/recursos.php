@@ -107,7 +107,7 @@ $listadoEstudiantes = $_SESSION['estudiantes'];
 
                 <main role="main">
                 <p>
-                    <a href="../assets/php/insertar/add.php" class="btn btn-primary my-2">
+                    <a href="../assets/php/insertar/add recursos.php" class="btn btn-primary my-2">
                         <font style="vertical-align:  inherit;">
                             <font style="vertical-align: inherit;">
                                 Crear recurso                   
@@ -134,9 +134,9 @@ $listadoEstudiantes = $_SESSION['estudiantes'];
                                 <?php echo getGrupoName($estudiante['grupo']); ?>
                             </h6>
 
-                            <a href="../assets/php/editar/editar asignaciones administrador.php?id=<?php echo $estudiante['id']; ?> " class="card-link">Editar</a>                        
+                            <a href="../assets/php/editar/editar recursos.php?php echo $estudiante['id']; ?> " class="card-link">Editar</a>                        
 
-                            <a href="../assets/php/borrar/eliminar asignaciones administrador.php?id=<?php echo $estudiante['id']; ?> " class="card-link">Borrar</a>
+                            <a href="../assets/php/borrar/eliminar recursos.php?id=<?php echo $estudiante['id']; ?> " class="card-link">Borrar</a>
                         </div>
                     </div>
                     <?php endforeach;?>
