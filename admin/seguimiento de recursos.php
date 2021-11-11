@@ -19,20 +19,37 @@
 
 <body>
 
-    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Pasantes ALPHA AIlogic</a>
-        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+ 
+<nav class="navbar navbar-dark bg-dark  fixed-top ">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <strong>AILogic</strong>
+            </a>
 
-        <div class="navbar-nav">
-            <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="../logins/login.html">Cerrar sesion</a>
+            <button type="button" class="navbar-toggler d-md-none" data-toggle="collapse" data-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Desplegar menú de navegación">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"> <a class="nav-link " href="Pasantes activos.php"> Pasantes activos </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="informacion de evaluaciones pasantes.php"> Informacion de evaluaciones pasantes </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="seguimiento de recursos.php"> Seguimiento de recursos </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="recursos.html"> Recursos </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="asignaciones administrador.php"> Asignaciones</a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="grupos administrador.html"> Grupos </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../pasantes/pasantes.html"> Pasantes </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="chat admin.php">Chat</a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="enviar correo.html"> enviar correo </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../logins/login.html"> Cerrar sesión </a> </li>
+                </ul>
             </div>
-        </div>
-    </header>
+        </div> 
+    </nav>
 
-    <div class="container-fluid">
+ 
+
+    <div class="container-fluid mt-5">
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3">
@@ -78,7 +95,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="chat admin.php">
-                                <span data-feather="layers"></span>chat
+                                <span data-feather="layers"></span>Chat
                             </a>
                         </li>
                         <li class="nav-item">
@@ -86,6 +103,13 @@
                                 <span data-feather="layers"></span>Enviar correo
                             </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../logins/login.html">
+                                <span data-feather="layers"></span>Cerrar sesión
+                             </a>
+                        </li>
+
                     </ul>
                 </div>
             </nav>
@@ -158,6 +182,11 @@
 
         </div>
     </div>
+
+        <!-- ARCHIVOS BOOTSTRAP JAVASCRIPT -->
+        <script src="../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../assets/js/popper.min.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>
 
 </body>
 
