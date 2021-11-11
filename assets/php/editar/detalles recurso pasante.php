@@ -1,3 +1,54 @@
+<?php 
+
+include '../ayuda/utilidad recurso.php';
+
+
+
+session_start();
+
+if(isset($_GET['id'])){
+
+  $estudianteid = $_GET['id'];
+
+  $_SESSION['pasantes'] = isset($_SESSION['pasantes'])? $_SESSION['pasantes']: array();
+
+  $estudiantes =  $_SESSION['pasantes'];
+
+  $element = searchProperty($estudiantes,'id',$estudianteid)[0];
+  $elementIndex = getIndexElement($estudiantes,'id',$estudianteid);
+
+
+
+
+  if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['recurso']) && isset($_POST['grupo'])){
+
+
+  $newEstudiante = [ 'id'=>$estudianteid , 'nombre'=> $_POST['nombre'],
+    'descripcion'=>$_POST['descripcion'], 'grupo'=>$_POST['grupo'],'recurso'=>$_POST['recurso']   ];
+
+    $estudiantes[$elementIndex] = $newEstudiante;
+
+
+    $_SESSION['pasantes']=$estudiantes; 
+
+ header("Location:../../../pasantes/recursos pasantes.php");
+ exit();
+
+}
+
+
+  
+}
+
+else{
+  header("Location:../../../pasantes/recursos pasantes.php");
+ exit();
+
+}
+
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,13 +60,11 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
     <link rel="stylesheet" type=" text/css" href="../../css/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" type=" text/css" href="../../css/style pasantes activos.css" media="screen">
-    <title>Grupo BETA</title>
-
+    <link rel="stylesheet" type=" text/css" href="../../css/style asignaciones administrador.css" media="screen">
+    <title>Detalle y entrega de asignaciones</title>
 
 
     <link rel="icon" href="../../img/social-icon.ico">
-    <script src="https://kit.fontawesome.com/0f48d8c00d.js"></script>
 
 
 
@@ -70,61 +119,77 @@
                                 <span data-feather="layers"></span>Chat
                             </a>
                         </li>
+
                     </ul>
                 </div>
-
             </nav>
+
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Grupo BETA</h1>
+                    <h1 class="h2">Informacion del recurso</h1>
 
-                  
                 </div>
 
 
-                <h2>Miembros</h2>
-                <div class="table-responsive">
-                    <table class="table table-striped table-sm">
-                        <thead>
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">NOMBRE</th>
-                                <th scope="col">Apellido</th> 
-                                <th scope="col">Correo</th>
-                             
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
-                            $sql="SELECT id,nombre,apellido,correo FROM grupob";
-                            $resultado= mysqli_query($conexion,$sql);
-                            while($mostra= mysqli_fetch_row($resultado)){
-                                ?>   
-                                <tr>
-                                    <td><?php echo $mostra['0']?></td>
-                                    <td><?php echo $mostra['1']?></td>
-                                    <td><?php echo $mostra['2']?></td>
-                                    <td><?php echo $mostra['3']?></td>
-                                   
-                                    
-                                   
+<main role="main">
+    <div style="margin-top: 2%;">
 
-                                </tr>
-                                <?php
-                            }
-                            ?>
+<div class="card">
+  <div class="card-header bg-info  text-light" >
+ <a href="../../../pasantes/recursos pasantes.php" class="btn btn-warning"> Volver Atras</a>
+  </div> 
+  <div class="card-body">
 
-                            
-                           
+  <form action="detalles recursos pasante.php?id=<?php echo $element['id']?>" method="POST">
+  <div class="form-group">
+    <label for="nombre">Titulo del recurso:</label>
+    <input type="text" value="<?php echo $element['nombre']?>"  class="form-control" id="nombre" name="nombre" readonly="readonly">
+  </div>
 
-                        </tbody>
-                    </table>
-                </div>
+  <div class="form-group">
+    <label for="descripcion">Descripcion del recurso:</label>
+    <input type="text"value="<?php echo $element['descripcion']?>"  class="form-control" id="descripcion" name="descripcion" readonly="readonly">
+  </div>
+  
+ 
 
-            </main>
+  <div class="form-group">
+    <label for="grupo">Grupo asignado del recurso:</label>
+    <select class="form-control" id="grupo" name="grupo" readonly="readonly">
+
+    <?php   foreach($grupo as $id => $text):?>
+
+      <?php if($id == $element ['grupo']):?>
+      
+      <option   selected value="<?php  echo $id; ?>">  <?php echo $text; ?> </option>
+   
+       <?php else:  ?>
+         
+      <option value="<?php  echo $id; ?>">  <?php echo $text; ?></option>
+   
+       <?php endif; ?>
 
 
-        </div>
+ <?php endforeach;?>
+    
+    </select>
     </div>
-</body>
+
+
+    <div class="col-sm-6">
+                    <label for="recurso" class="form-label"> Subir enlace de la asignacion aqui:</label>
+                    <input type="url"value="<?php echo $element['recurso']?>" class="form-control" id="recurso" readonly="readonly" >
+                   
+                </div>
+                <br>
+
+    
+
+</form>
+  </div>
+</div>
+
+
+  
+</main>
+

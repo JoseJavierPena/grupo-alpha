@@ -20,11 +20,11 @@ if(isset($_GET['id'])){
 
 
 
-  if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['estatus']) && isset($_POST['grupo'])){
+  if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['estatus']) && isset($_POST['asignacion']) && isset($_POST['grupo'])){
 
 
   $newEstudiante = [ 'id'=>$estudianteid , 'nombre'=> $_POST['nombre'],
-    'descripcion'=>$_POST['descripcion'],'estatus'=>$_POST['estatus'], 'grupo'=>$_POST['grupo']  ];
+    'descripcion'=>$_POST['descripcion'],'estatus'=>$_POST['estatus'], 'grupo'=>$_POST['grupo'],'asignacion'=>$_POST['asignacion']   ];
 
     $estudiantes[$elementIndex] = $newEstudiante;
 
@@ -92,22 +92,34 @@ else{
                     <ul class="nav flex-column">
                     <li class="nav-item">
                             <a class="nav-link" href="../../../pasantes/pasantes.html">
-                                <span data-feather=" layers "></span>Pasantes
+                                <span data-feather="layers"></span>Pasantes
                             </a>
                         </li>
 
-
-                        <li class="nav-item ">
-                            <a class="nav-link " href="../../../pasantes/asignaciones pasantes.php ">
-                                <span data-feather="layers "></span>Asignaciones
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../pasantes/asignaciones pasantes.php">
+                                <span data-feather="layers"></span>Asignaciones
                             </a>
                         </li>
 
-                        <li class="nav-item ">
-                            <a class="nav-link " href="../../../pasantes/grupos pasantes.html ">
-                                <span data-feather="layers "></span>Grupos
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../pasantes/grupos pasantes.html">
+                                <span data-feather="layers"></span>Grupos
                             </a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../pasantes/recursos pasantes.php">
+                                <span data-feather="layers"></span>Recursos
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../pasantes/chat pasantes.php">
+                                <span data-feather="layers"></span>Chat
+                            </a>
+                        </li>
+
 
                     </ul>
                 </div>
@@ -115,7 +127,7 @@ else{
 
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Detalle y entrega de la asignacione</h1>
+                    <h1 class="h2">Detalle y entrega de la asignacion</h1>
 
                 </div>
 
@@ -186,11 +198,10 @@ else{
 
 
     <div class="col-sm-6">
-                    <label for="First_name" class="form-label"> Subir asignacion aqui:</label>
-                    <input type="file" class="form-control" id="asignacion" name="asignacion" placeholder="" value="" required="">
+                    <label for="asignacion" class="form-label"> Subir enlace de la asignacion aqui:</label>
+                    <input type="url" class="form-control" id="asignacion" name="asignacion" placeholder="" value="" required="">
                    
                 </div>
-
                 <br>
 
     <button type="submit" class=" btn btn-success">Guardar</button>

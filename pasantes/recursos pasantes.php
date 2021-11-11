@@ -1,27 +1,25 @@
-<?php
+<?php 
 
-include '../assets/php/ayuda/utilidad.php';
+include '../assets/php/ayuda/utilidad recurso.php';
 
 session_start();
 
-$_SESSION['estudiantes'] = isset($_SESSION['estudiantes'])? $_SESSION['estudiantes']: array();
+$_SESSION['pasantes'] = isset($_SESSION['pasantes'])? $_SESSION['pasantes']: array();
 
-$listadoEstudiantes = $_SESSION['estudiantes'];
+$listadoEstudiantes = $_SESSION['pasantes'];
 
-if(!empty($listadoEstudiantes)) {
-    if(isset($_GET['$grupoId'])) {
-        $listadoEstudiantes = searchProperty($listadoEstudiantes, 'grupo', $_GET['grupoId']);
+if(!empty($listadoEstudiantes)){
 
-    }
+if(isset($_GET['$grupoId'])){
+
+
+  $listadoEstudiantes = searchProperty ($listadoEstudiantes,'grupo',$_GET['grupoId']);   
+
 }
-
-if(!empty($listadoEstudiantes)) {
-    if(isset($_GET['EstatusId'])) {
-        $listadoEstudiantes = searchProperty($listadoEstudiantes, 'estatus', $_GET['EstatusId']);
-    }
 }
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -109,15 +107,16 @@ if(!empty($listadoEstudiantes)) {
                                 <?php echo $estudiante['descripcion']; ?>
                             </p>
 
-                            <h6 class="card-subtitle mb-2 text-muted">
-                                <?php echo getEstatusName($estudiante['estatus']); ?>
-                            </h6>
 
                             <h6 class="card-subtitle mb-2 text-muted">
                                 <?php echo getGrupoName($estudiante['grupo']); ?>
                             </h6>
 
-                            <a href="../assets/php/editar/detalles asignaciones pasantes.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Más acerca del recurso</a>
+                            <p class="card-text">
+                                <?php echo $estudiante['recurso']; ?>
+                            </p>
+
+                            <a href="../assets/php/editar/detalles recurso pasante.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Más acerca del recurso</a>
                         </div>
                     </div>
                     <?php endforeach; ?>

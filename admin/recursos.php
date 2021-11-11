@@ -1,15 +1,18 @@
-<?php
 
-include '../assets/php/ayuda/utilidad.php';
+    <?php 
+           
+           include '../assets/php/ayuda/utilidad recurso.php';
+           
+           session_start();
 
-session_start();
-
-$_SESSION['estudiantes'] = isset($_SESSION['estudiantes'])
-? $_SESSION['estudiantes']: array();
-
-$listadoEstudiantes = $_SESSION['estudiantes'];
-
-?>
+           $_SESSION['pasantes'] = isset($_SESSION['pasantes'])? $_SESSION['pasantes']: array();
+           
+           $listadoEstudiantes = $_SESSION['pasantes'];
+           
+          
+   
+           
+           ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -139,9 +142,13 @@ $listadoEstudiantes = $_SESSION['estudiantes'];
                                 <?php echo getGrupoName($estudiante['grupo']); ?>
                             </h6>
 
-                            <a href="../assets/php/editar/editar recursos.php?php echo $estudiante['id']; ?> " class="card-link">Editar</a>                        
+                            <p class="card-text">
+                               <?php echo $estudiante['recurso'] ?> 
+                            </p>
+                            
+                            <a href="../assets/php/editar/editar recursos.php?id=<?php echo $estudiante['id']; ?> " class="card-link">Editar</a>                        
 
-                            <a href="../assets/php/borrar/eliminar recursos.php?id=<?php echo $estudiante['id']; ?> " class="card-link">Borrar</a>
+                            <a href="../assets/php/borrar/eliminar recursos.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Borrar</a>
                         </div>
                     </div>
                     <?php endforeach;?>

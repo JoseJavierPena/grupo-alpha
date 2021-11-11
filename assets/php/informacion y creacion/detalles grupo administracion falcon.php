@@ -44,13 +44,13 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="../../../admin/informacion de evaluaciones pasantes.php">
-                                <span data-feather="file"></span>Informacion de evaluaciones pasantes
+                                <span data-feather="file"></span>Información de evaluaciones pasantes
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="../../../admin/seguimiento de recursos.php">
-                                <span data-feather="bar-chart-2"></span> Seguimiento de recurso
+                                <span data-feather="bar-chart-2"></span> Seguimiento de recursos
                             </a>
                         </li>
                         <li class="nav-item">
@@ -80,6 +80,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="../../../admin/chat admin.php">
                                 <span data-feather="layers"></span>Chat
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../admin/enviar correo.html">
+                                <span data-feather="layers"></span>Enviar correo
                             </a>
                         </li>
                     </ul>

@@ -25,7 +25,7 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['esta
 
 
     array_push($estudiantes,[ 'id'=>$estudianteid , 'nombre'=> $_POST['nombre'],
-    'descripcion'=>$_POST['descripcion'],'estatus'=>$_POST['estatus'], 'grupo'=>$_POST['grupo']]);
+    'descripcion'=>$_POST['descripcion'],'estatus'=>$_POST['estatus'],'asignacion'=>$_POST['asignacion'],  'grupo'=>$_POST['grupo']]);
 
 
     $_SESSION['estudiantes']=$estudiantes; 
@@ -77,19 +77,19 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['esta
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../../../admin/Pasantes activos.html">
+                            <a class="nav-link active" aria-current="page" href="../../../admin/Pasantes activos.php">
                                 <span data-feather="home">Pasantes activos</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/informacion de evaluaciones pasantes.html">
-                                <span data-feather="file"></span>Informacion de evaluaciones pasantes
+                            <a class="nav-link" href="../../../admin/informacion de evaluaciones pasantes.php">
+                                <span data-feather="file"></span>Información de evaluaciones pasantes
                             </a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="../../../admin/seguimiento de recursos.php">
-                                <span data-feather="bar-chart-2"></span> Seguimiento de recurso
+                                <span data-feather="bar-chart-2"></span> Seguimiento de recursos
                             </a>
                         </li>
                         <li class="nav-item">
@@ -108,6 +108,22 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['esta
                         <li class="nav-item">
                             <a class="nav-link" href="../../../admin/grupos administrador.html">
                                 <span data-feather="layers"></span>Grupos
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../pasantes/pasantes.html">
+                                <span data-feather="layers"></span>Pasantes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../admin/chat admin.php">
+                                <span data-feather="layers"></span>Chat
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../admin/enviar correo.html">
+                                <span data-feather="layers"></span>Enviar correo
                             </a>
                         </li>
 
@@ -165,7 +181,11 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['esta
     
     </select>
     </div>
-
+    <div class="col-sm-6">
+                    <label for="asignacion" class="form-label"> Subir enlace de la asignacion aqui:</label>
+                    <input type="url" class="form-control" id="asignacion" name="asignacion" >
+                   
+                </div>
     <button type="submit" class=" btn btn-success">Guardar</button>
 
 </form>
