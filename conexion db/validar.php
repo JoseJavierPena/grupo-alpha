@@ -13,10 +13,19 @@ $resultado=mysqli_query($conexion,$consulta);
 $filas=mysqli_fetch_array($resultado);
 
 if($filas['id_cargo']==1){ //administrador
-    header("location:../admin/pasantes activos.php");
+    echo'<script type="text/javascript">
+    alert("Ha iniciado seccion en el sitio de administracion");
+    window.location.href="../admin/pasantes activos.php"
+    </script>';
+    
+   
 
 }else if($filas['id_cargo']==2){ //pasantes
-header("location:../pasantes/pasantes.html");
+    echo'<script type="text/javascript">
+    alert("Ha iniciado seccion en el citio de pasantes");
+    window.location.href="../pasantes/pasantes.html"
+    </script>';
+
 }
 else{
 
