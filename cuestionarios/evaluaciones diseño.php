@@ -18,24 +18,19 @@ include ("../conexion db/db.php")
     </head>
 
     <body>
-
-        <div class="container">
-            <main>
-                <div class="py-5 text-center">
-                    <img class="d-block mx-auto mb-4" src="../assets/img/horizontal/oscuro/medium.png" alt="" width="400" height="100">
-                    <h2>Evaluaciones</h2>
-
-                    <p class="lead">Aquí nos suministrará su curriculum y repositorios para ver su rendimiento en programación, base de datos y análisis de sistema. </p>
+        <div class="container ">
+            <form method="POST" action="evaluaciones.php" enctype="multipart/form-data" class="border mt-5  p-5 rounded  shadow col-12 mb-5">
+                 
+                 <div class="py-5 text-center">
+                   <img class="d-block mx-auto mb-4" src="../assets/img/horizontal/oscuro/small.png" alt="">
                 </div>
 
-                <div class="evaluaciones">
-                    <h4 class="evaluaciones">Evaluación</h4>
-                    <hr class="my-4">
-                    <form method="POST" action="evaluaciones.php" enctype="multipart/form-data">
+                <h2>Evaluaciones</h2>
+                <p class="lead mb-5">Aquí nos suministrará su curriculum y repositorios para ver su rendimiento en programación, base de datos y análisis de sistema. </p>
 
-                    <div class="evaluaciones">
-                                <label for="Id_formulario" class="form-label">¿Cuál pasante es usted?: </label>
-                                <select name="Id_formulario" required>
+                    <div class="form-group col-md-12">
+                                <label for="Id_formulario" class="form-label"><b>¿Cuál pasante es usted?: </b></label>
+                                <select name="Id_formulario" class="form-control" required>
                                     <?php 
 
                                     $sql="select * from formulario";
@@ -48,40 +43,42 @@ include ("../conexion db/db.php")
                             </select>
                             </div>
 
-                        <div class="evaluaciones">
-                            <label for="repositorio" class="form-label">Repositorio: </label>
-                            <input type="url" class="form-repo" name="repositorio" placeholder="Agregue el enlace" required>
+                        <div class="form-group col-md-12">
+                            <label for="repositorio" class="form-label"><b>Repositorio:</b> </label>
+                            <input type="url" class="form-control" name="repositorio" placeholder="Agregue el enlace" required>
                         </div>
 
-                        <div class="evaluaciones">
-                            <label for="linkedin" class="form-label">LinkedIn: </label>
-                            <input type="url" class="form-linkedin" name="linkedin" placeholder="Agregue el enlace " required>
+                        <div class="form-group col-md-12">
+                            <label for="linkedin" class="form-label"><b>LinkedIn:</b> </label>
+                            <input type="url" class="form-control" name="linkedin" placeholder="Agregue el enlace " required>
                         </div>
 
-                        <div class="evaluaciones">
+                        <div class="form-group col-md-12">
                             <label for="portfolio" class="form-label">Portafolio: </label>
-                            <input type="url" class="form-portfolio" name="portafolio" placeholder="Agregue el enlace " required>
+                            <input type="url" class="form-control" name="portafolio" placeholder="Agregue el enlace " required>
                         </div>
 
-                        <div class="evaluaciones">
-                            <label for="curriculum" class="form-label">Curriculum: </label>
-                            <input type="file" class="form-cv" name="curriculum" required>
+                        <div class="form-group col-md-12">
+                            <label for="curriculum" class="form-label"><b>Curriculum:</b> </label>
+                            <input type="file" class="form-control" name="curriculum" required>
                             <div class="invalid-feedback">
                                 Un archivo .pdf es requerido.
                             </div>                        
                             <hr class="my-4">
-                            <button class=" btn btn-primary btn-lg" type="submit">Enviar y continuar</button>
+                            <button class=" btn btn-lg w-100 text-white" type="submit" style="background:#39ace7;">Enviar y continuar</button>
 
                         </div>
-                    </form>
-                </div>
-            </main>
-            <footer class="my-5 pt-5 text-muted text-center text-small">
-                <p class="mb-1">© 2021 Pasantes ALPHA AIlogic</p>
-                <ul class="list-inline">
-                </ul>
-            </footer>
+
+                     <footer class="my-5 pt-5 text-muted text-center text-small">
+                          <p class="mb-1">© 2021 Pasantes ALPHA AIlogic</p>
+                          <ul class="list-inline">
+                        </ul>
+                     </footer>
+            </form>
         </div>
+
+
+
+
     </body>
-    </html>
     </html>

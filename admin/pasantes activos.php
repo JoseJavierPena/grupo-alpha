@@ -78,6 +78,11 @@
                                 <span data-feather="layers"></span>Chat
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="enviar correo.html">
+                                <span data-feather="layers"></span>Enviar correo
+                            </a>
+                        </li>
 
                     </ul>
                 </div>
@@ -88,7 +93,7 @@
                     <h1 class="h2">Registrar pasante</h1>
 
                     <p>
-                        <a href="../cuestionarios/Formulario.html" class="btn btn-primary my-2">
+                        <a href="registrar pasante.html" class="btn btn-primary my-2">
                             <font style="vertical-align: inherit;">
                                 <font style=" vertical-align: inherit;">Registrar</font>
                             </font>

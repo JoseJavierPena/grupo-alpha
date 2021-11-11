@@ -95,6 +95,11 @@ $listadoEstudiantes = $_SESSION['estudiantes'];
                                 <span data-feather="layers"></span>Chat
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="enviar correo.html">
+                                <span data-feather="layers"></span>Enviar correo
+                            </a>
+                        </li>
 
                     </ul>
                 </div>
