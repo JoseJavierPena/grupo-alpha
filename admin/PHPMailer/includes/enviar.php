@@ -6,6 +6,7 @@ include "Exception.php";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+
 $imail=$_POST['correo'];
 $Subject=$_POST['asunto'];
 $Body=$_POST['mensaje'];
@@ -18,7 +19,7 @@ $mail->SMTPAuth = "true";
 $mail->SMTPSecure = "tls";
 $mail->Port = "587";
 $mail->Username = "ramonantoniosantoscuevas73@gmail.com";
-$mail->Password = "809ramon";
+$mail->Password = "809ramon1510";
 $mail->isHTML(true);
 $mail->setFrom($imail);
 $mail->Subject = $Subject;
@@ -35,3 +36,5 @@ if($mail->Send()){
 
 
 }
+
+?>
