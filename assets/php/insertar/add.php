@@ -103,7 +103,7 @@ if (isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['est
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="recursos.php">
+                            <a class="nav-link" href="../../../admin/recursos.php">
                                 <span data-feather="layers"></span>Recursos
                             </a>
                         </li>
@@ -115,7 +115,7 @@ if (isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['est
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="grupos administrador.html">
+                            <a class="nav-link" href="../../../admin/grupos administrador.html">
                                 <span data-feather="layers"></span>Grupos
                             </a>
                         </li>
