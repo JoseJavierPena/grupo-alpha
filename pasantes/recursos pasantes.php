@@ -54,6 +54,7 @@ if (!empty($listadoEstudiantes)) {
                     <li class="nav-item"> <a class="nav-link " href="pasantes.html"> Pasantes </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="asignaciones pasantes.php">Asignaciones</a> </li>
                     <li class="nav-item"> <a class="nav-link " href="grupos pasantes.html"> Grupo </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="recursos pasantes.php"> Recurso</a> </li>
                     <li class="nav-item"> <a class="nav-link " href="chat pasantes.php"> Chat </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../logins/login.html">Cerrar sesión</a> </li>
                 </ul>
@@ -91,6 +92,11 @@ if (!empty($listadoEstudiantes)) {
                         <li class="nav-item">
                             <a class="nav-link" href="chat pasantes.php">
                                 <span data-feather="layers"></span>Chat
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../logins/login.html">
+                                <span data-feather="layers"></span>Cerrar sesión
                             </a>
                         </li>
                     </ul>
