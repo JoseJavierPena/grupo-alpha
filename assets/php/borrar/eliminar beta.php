@@ -2,7 +2,7 @@
 $id=$_GET['id']; 
  
 //base de datos 
-$conexion=mysqli_connect("localhost:8111","root","","epiz_30368770_pasantesalphadb"); 
+$conexion=mysqli_connect("sql204.epizy.com","epiz_30368770","h7iA6zeqMya9","epiz_30368770_pasantesalphadb"); 
 //eliminar datos del formulario 
 $sql="DELETE FROM grupob WHERE id LIKE $id"; 
 $ejecutar = mysqli_query ($conexion,$sql) or die (mysqli_error($conexion)); 

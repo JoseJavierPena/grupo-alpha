@@ -8,7 +8,7 @@ $id_cargo=$_POST['id_cargo'];
 session_start();
 $_SESSION['nombre']=$nombre;
 
-$conexion=mysqli_connect("localhost:8111","root","","epiz_30368770_pasantesalphadb");
+$conexion=mysqli_connect("sql204.epizy.com","epiz_30368770","h7iA6zeqMya9","epiz_30368770_pasantesalphadb");
 
 $consulta="INSERT INTO  login(nombre,contraseña,id_cargo) values('$nombre','$contraseña','$id_cargo')";
 $resultado=mysqli_query($conexion,$consulta);
