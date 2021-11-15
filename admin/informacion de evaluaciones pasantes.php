@@ -133,7 +133,7 @@
                         <tbody>
                             <tr>
                                 <?php
-                                $conexion = mysqli_connect("localhost:8111", "root", "", "pasantes alpha db");
+                                $conexion = mysqli_connect("localhost:8111", "root", "", "epiz_30368770_pasantesalphadb");
                                 $sql = "SELECT Id,repositorio,linkedIn,portafolio,curriculum,Id_formulario  FROM evaluaciones ";
                                 $resultado = mysqli_query($conexion, $sql);
                                 while ($mostrar = mysqli_fetch_row($resultado)) {

@@ -10,7 +10,7 @@ $direccion=$_POST['direccion'];
 $donde_vives=$_POST['donde_vives'];
 $correo=$_POST['correo'];
 //base de datos
-$conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
+$conexion=mysqli_connect("localhost:8111","root","","epiz_30368770_pasantesalphadb");
 $sql = "INSERT INTO  formulario values(Id_formulario,'$nombre','$apellido','$cedula','$universidad','$telefono',
 '$direccion','$donde_vives','$correo')";
  $ejecutar = mysqli_query ($conexion,$sql) or die (mysqli_error($conexion));

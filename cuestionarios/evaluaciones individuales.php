@@ -1,6 +1,6 @@
 <?php
 
-$conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
+$conexion=mysqli_connect("localhost:8111","root","","epiz_30368770_pasantesalphadb");
 
 $question1 = $_POST['question1'];
 $question2 = $_POST['question2'];

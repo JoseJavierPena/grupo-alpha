@@ -5,7 +5,7 @@ $contraseña=$_POST['contraseña'];
 session_start();
 $_SESSION['nombre']=$nombre;
 
-$conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
+$conexion=mysqli_connect("localhost:8111","root","","epiz_30368770_pasantesalphadb");
 
 $consulta="select * from  login where nombre ='$nombre' and contraseña='$contraseña'";
 $resultado=mysqli_query($conexion,$consulta);

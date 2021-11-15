@@ -118,7 +118,7 @@
                         </thead>
                         <tbody>
                             <?php
-                            $conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
+                            $conexion=mysqli_connect("localhost:8111","root","","epiz_30368770_pasantesalphadb");
                             $sql="SELECT id,nombre,apellido,correo FROM grupob";
                             $resultado= mysqli_query($conexion,$sql);
                             while($mostra= mysqli_fetch_row($resultado)){
