@@ -2,7 +2,7 @@
 $id=$_GET['id']; 
  
 //base de datos 
-$conexion=mysqli_connect("sql204.epizy.com","epiz_30368770","h7iA6zeqMya9","epiz_30368770_pasantesalphadb"); 
+$conexion = mysqli_connect("sql311.epizy.com", "epiz_30380597", "vrWDL7tBbrIJUBa", "epiz_30380597_grupoAlpha");
 //eliminar datos del formulario 
 $sql="DELETE FROM grupoe WHERE id LIKE $id"; 
 $ejecutar = mysqli_query ($conexion,$sql) or die (mysqli_error($conexion)); 
@@ -15,6 +15,4 @@ header("location:../informacion y creacion/detalles grupo administRacion elecon.
 else { 
    
    echo  "Hay un error"; 
-} 
- 
-?>
+}

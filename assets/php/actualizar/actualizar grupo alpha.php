@@ -4,7 +4,7 @@ $nombre=$_POST['nombre'];
 $apellido=$_POST['apellido'];
 $correo=$_POST['correo'];
 //base de datos
-$conexion=mysqli_connect("sql204.epizy.com","epiz_30368770","h7iA6zeqMya9","epiz_30368770_pasantesalphadb");
+$conexion = mysqli_connect("sql311.epizy.com", "epiz_30380597", "vrWDL7tBbrIJUBa", "epiz_30380597_grupoAlpha");
 //actualizacion del formulario
 $sql="UPDATE grupo SET nombre='$nombre', apellido='$apellido',correo='$correo'";
 $ejecutar = mysqli_query ($conexion,$sql) or die (mysqli_error($conexion));
@@ -18,4 +18,3 @@ else {
   
    echo  "Hay un error";
 }
-?>

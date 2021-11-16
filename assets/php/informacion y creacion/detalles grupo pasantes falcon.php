@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,26 +22,26 @@
 
 <body>
 
-<nav class="navbar navbar-dark bg-dark  fixed-top ">
+    <nav class="navbar navbar-dark bg-dark  fixed-top ">
         <div class="container">
             <a href="#" class="navbar-brand">
                 <strong>AILogic</strong>
             </a>
 
             <button type="button" class="navbar-toggler d-md-none" data-toggle="collapse" data-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Desplegar menú de navegación">
-               <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/pasantes.html"> Pasantes  </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/pasantes.html"> Pasantes </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../pasantes/asignaciones pasantes.php"> Asignaciones </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../pasantes/grupos pasantes.html"> Grupos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../pasantes/chat pasantes"> Recursos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../logins/login.html"> Cerrar sección</a> </li>
                 </ul>
             </div>
-        </div> 
+        </div>
     </nav>
 
     <div class="container-fluid">
@@ -50,7 +49,7 @@
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
-                    <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link" href="../../../pasantes/pasantes.html">
                                 <span data-feather="layers"></span>Pasantes
                             </a>
@@ -86,10 +85,10 @@
                             </a>
                         </li>
 
-                        
+
                         <li class="nav-item ">
                             <a class="nav-link " href="../../../logins/login.html ">
-                                <span data-feather="layers "></span>Cerrar 
+                                <span data-feather="layers "></span>Cerrar
                             </a>
                         </li>
                     </ul>
@@ -100,7 +99,7 @@
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Grupo FALCON</h1>
 
-                   
+
                 </div>
 
 
@@ -111,35 +110,35 @@
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">NOMBRE</th>
-                                <th scope="col">Apellido</th> 
+                                <th scope="col">Apellido</th>
                                 <th scope="col">Correo</th>
-                                
+
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                            $conexion=mysqli_connect("sql204.epizy.com","epiz_30368770","h7iA6zeqMya9","epiz_30368770_pasantesalphadb");
-                            $sql="SELECT id,nombre,apellido,correo FROM grupof";
-                            $resultado= mysqli_query($conexion,$sql);
-                            while($mostrar= mysqli_fetch_row($resultado)){
-                                ?>   
+                            $conexion = mysqli_connect("sql311.epizy.com", "epiz_30380597", "vrWDL7tBbrIJUBa", "epiz_30380597_grupoAlpha");
+                            $sql = "SELECT id,nombre,apellido,correo FROM grupof";
+                            $resultado = mysqli_query($conexion, $sql);
+                            while ($mostrar = mysqli_fetch_row($resultado)) {
+                            ?>
                                 <tr>
-                                    <td><?php echo $mostrar['0']?></td>
-                                    <td><?php echo $mostrar['1']?></td>
-                                    <td><?php echo $mostrar['2']?></td>
-                                    <td><?php echo $mostrar['3']?></td>
-                                   
-                                    
-                                    
-                                   
+                                    <td><?php echo $mostrar['0'] ?></td>
+                                    <td><?php echo $mostrar['1'] ?></td>
+                                    <td><?php echo $mostrar['2'] ?></td>
+                                    <td><?php echo $mostrar['3'] ?></td>
+
+
+
+
 
                                 </tr>
-                                <?php
+                            <?php
                             }
                             ?>
 
-                            
-                           
+
+
 
                         </tbody>
                     </table>
@@ -147,10 +146,10 @@
 
             </main>
 
-              <!-- ARCHIVOS BOOTSTRAP JAVASCRIPT -->
-              <script src="../../../assets/js/jquery-3.3.1.min.js"></script>
-              <script src="../../../assets/js/popper.min.js"></script>
-              <script src="../../../assets/js/bootstrap.min.js"></script>
+            <!-- ARCHIVOS BOOTSTRAP JAVASCRIPT -->
+            <script src="../../../assets/js/jquery-3.3.1.min.js"></script>
+            <script src="../../../assets/js/popper.min.js"></script>
+            <script src="../../../assets/js/bootstrap.min.js"></script>
 
 
         </div>
