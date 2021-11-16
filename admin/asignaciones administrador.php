@@ -144,7 +144,7 @@ $listadoEstudiantes = $_SESSION['estudiantes'];
                     <?php else : ?>
                         <?php foreach ($listadoEstudiantes as $estudiante) :  ?>
 
-                            <div class="card">
+                            <div class="card mx-2">
                                 <div class="card-body">
                                     <h5 class="card-title">
                                         <?php echo $estudiante['nombre']; ?>

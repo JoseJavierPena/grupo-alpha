@@ -55,6 +55,7 @@ if (!empty($listadoEstudiantes)) {
                 <li class="nav-item"> <a class="nav-link " href="pasantes.html"> Pasantes </a> </li>
                 <li class="nav-item"> <a class="nav-link " href="asignaciones pasantes.php">Asignaciones</a> </li>
                 <li class="nav-item"> <a class="nav-link " href="grupos pasantes.html"> Grupo </a> </li>
+                <li class="nav-item"> <a class="nav-link " href="recursos pasantes.php"> Recurso</a> </li>
                 <li class="nav-item"> <a class="nav-link " href="chat pasantes.php"> Chat </a> </li>
                 <li class="nav-item"> <a class="nav-link " href="../logins/login.html">Cerrar sesión</a> </li>
             </ul>
@@ -109,7 +110,7 @@ if (!empty($listadoEstudiantes)) {
             </div>
         </nav>
 
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 ">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">Asignaciones pasantes</h1>
             </div>
@@ -119,7 +120,7 @@ if (!empty($listadoEstudiantes)) {
                 <?php else : ?>
                     <?php foreach ($listadoEstudiantes as $estudiante) :  ?>
 
-                        <div class="card">
+                        <div class="card mx-2">
                             <div class="card-body">
                                 <h5 class="card-title">
                                     <?php echo $estudiante['nombre']; ?>
@@ -136,6 +137,10 @@ if (!empty($listadoEstudiantes)) {
                                 <h6 class="card-subtitle mb-2 text-muted">
                                     <?php echo  getGrupoName($estudiante['grupo']); ?>
                                 </h6>
+
+                                <p class="card-text">
+                                    <?php echo $estudiante['asignacion']; ?>
+                                </p>
 
                                 <a href="../assets/php/editar/detalles asignaciones pasantes.php?id=<?php echo $estudiante['id']; ?>" class="card-link">Más acerca de la asignacion</a>
                             </div>

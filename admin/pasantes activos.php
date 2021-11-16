@@ -142,7 +142,7 @@
                         </thead>
                         <tbody>
                             <?php
-                            $conexion = mysqli_connect("localhost:8111", "root", "", "pasantes alpha db");
+                            $conexion = mysqli_connect("sql311.epizy.com", "epiz_30380597", "vrWDL7tBbrIJUBa", "epiz_30380597_grupoAlpha");
                             $sql = "SELECT Id_formulario,Nombre,Apellido,Cedula,Universidad,Telefono,Direccion,Donde_Vives,Correo FROM formulario";
                             $resultado = mysqli_query($conexion, $sql);
                             while ($mostrar = mysqli_fetch_row($resultado)) {

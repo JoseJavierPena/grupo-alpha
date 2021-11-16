@@ -64,6 +64,8 @@ include("../conexion db/db.php")
                     Un archivo .pdf es requerido.
                 </div>
             </div>
+            <hr class="my-4 ">
+                    <button class=" btn btn-lg w-100  text-white" type="submit">Enviar y continuar</button>
         </form>
     </div>
 </body>

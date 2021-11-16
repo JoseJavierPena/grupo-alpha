@@ -8,7 +8,6 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
     <link rel="stylesheet" type=" text/css" href="../assets/css/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" type=" text/css" href="../assets/css/style chat admin.css" media="screen">
     <title>Chat</title>
 
     <link rel="icon" href="../assets/img/social-icon.ico">
@@ -117,9 +116,23 @@
 
                 <div class="container">
                     <center>
-                        <h2>Regístrese o Inicie sesión si ya está registrado</h2>
+                        <h2>Inicie sesión si ya está registrado</h2>
                     </center>
                     </br>
+
+                    <center>
+                    <a type="submit" class="btn btn-primary mx-5 px-4" href="chat/login.php">Iniciar sesión</a>
+                    </center>
+
+                    <br>
+                    
+                    <center>
+                        <h2>O Registrate</h2>
+                    </center>
+
+                    <br>
+
+
                     <form class="form-horizontal" method="post" action="chat/add_user.php">
                         <div class="form-group">
                             <label class="control-label col-sm-2 col-sm-offset-2" for="name">Nombre:</label>
@@ -155,13 +168,14 @@
                                     </div>
                                 </div>
 
+                                
+
                                 <div class="form-group">
                                     <div class="col-sm-offset-4 col-sm-8">
-                                        <button type="submit" class="btn1 btn-primary">Regístrate aquí</button>
+                                    <button type="submit" class="btn btn-primary mx-4 mb-2">Regístrate aquí</button>
                                     </div>
                                 </div>
                     </form>
-                    <a type="submit" class="btn btn-primary" href="chat/login.php">Iniciar sesión</a>
                 </div>
             </main>
         </div>
