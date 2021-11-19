@@ -48,31 +48,31 @@ if (isset($_SESSION['name'])) {
 
     <body>
         <nav class="navbar navbar-dark bg-dark  fixed-top ">
-        <div class="container">
-            <a href="#" class="navbar-brand">
-                <strong>AILogic</strong>
-            </a>
+            <div class="container">
+                <a href="#" class="navbar-brand">
+                    <strong>AILogic</strong>
+                </a>
 
-            <button type="button" class="navbar-toggler d-md-none" data-toggle="collapse" data-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Desplegar menú de navegación">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <button type="button" class="navbar-toggler d-md-none" data-toggle="collapse" data-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Desplegar menú de navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"> <a class="nav-link " href="../Pasantes activos.php"> Pasantes activos </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../informacion de evaluaciones pasantes.php"> Información de evaluaciones pasantes </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../seguimiento de recursos.php"> Seguimiento de recursos </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../recursos.html"> Recursos </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../asignaciones administrador.php"> Asignaciones</a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../grupos administrador.html"> Grupos </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../../pasantes/pasantes.html"> Pasantes </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../chat admin.php">Chat</a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../enviar correo.html"> Enviar correo </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../../logins/login.html"> Cerrar sesión </a> </li>
-                </ul>
+                <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"> <a class="nav-link " href="../pasantes activos.php"> Pasantes activos </a> </li>
+                        <li class="nav-item"> <a class="nav-link " href="../informacion de evaluaciones pasantes.php"> Información de evaluaciones pasantes </a> </li>
+                        <li class="nav-item"> <a class="nav-link " href="../seguimiento de recursos.php"> Seguimiento de recursos </a> </li>
+                        <li class="nav-item"> <a class="nav-link " href="../recursos.php"> Recursos </a> </li>
+                        <li class="nav-item"> <a class="nav-link " href="../asignaciones administrador.php"> Asignaciones</a> </li>
+                        <li class="nav-item"> <a class="nav-link " href="../grupos administrador.html"> Grupos </a> </li>
+                        <li class="nav-item"> <a class="nav-link " href="../../pasantes/pasantes.html"> Pasantes </a> </li>
+                        <li class="nav-item"> <a class="nav-link " href="../chat admin.php">Chat</a> </li>
+                        <li class="nav-item"> <a class="nav-link " href="../enviar correo.html"> Enviar correo </a> </li>
+                        <li class="nav-item"> <a class="nav-link " href="../../logins/login.html"> Cerrar sesión </a> </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
         <div class="container-fluid mt-5">
             <div class="row">
@@ -80,7 +80,7 @@ if (isset($_SESSION['name'])) {
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="../Pasantes activos.php">
+                                <a class="nav-link active" aria-current="page" href="../pasantes activos.php">
                                     <span data-feather="home">Pasantes activos</span>
                                 </a>
                             </li>
@@ -130,7 +130,7 @@ if (isset($_SESSION['name'])) {
                                 </a>
                             </li>
 
-                            
+
 
                         </ul>
                     </div>
@@ -192,7 +192,7 @@ if (isset($_SESSION['name'])) {
         </div>
     </body>
 
-    
+
     <!-- ARCHIVOS BOOTSTRAP JAVASCRIPT -->
     <script src="../../assets/js/jquery-3.3.1.min.js"></script>
     <script src="../../assets/js/popper.min.js"></script>

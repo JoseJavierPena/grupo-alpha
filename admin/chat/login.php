@@ -46,10 +46,10 @@ if ($_POST) {
 
             <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"> <a class="nav-link " href="../Pasantes activos.php"> Pasantes activos </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../pasantes activos.php"> Pasantes activos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../informacion de evaluaciones pasantes.php"> Información de evaluaciones pasantes </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../seguimiento de recursos.php"> Seguimiento de recursos </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../recursos.html"> Recursos </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../recursos.php"> Recursos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../asignaciones administrador.php"> Asignaciones</a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../grupos administrador.html"> Grupos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../pasantes/pasantes.html"> Pasantes </a> </li>
@@ -161,9 +161,9 @@ if ($_POST) {
 </body>
 
 
-    <!-- ARCHIVOS BOOTSTRAP JAVASCRIPT -->
-    <script src="../../assets/js/jquery-3.3.1.min.js"></script>
-    <script src="../../assets/js/popper.min.js"></script>
-    <script src="../../assets/js/bootstrap.min.js"></script>
+<!-- ARCHIVOS BOOTSTRAP JAVASCRIPT -->
+<script src="../../assets/js/jquery-3.3.1.min.js"></script>
+<script src="../../assets/js/popper.min.js"></script>
+<script src="../../assets/js/bootstrap.min.js"></script>
 
 </html>

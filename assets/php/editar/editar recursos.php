@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include '../ayuda/utilidad recurso.php';
 
@@ -6,51 +6,47 @@ include '../ayuda/utilidad recurso.php';
 
 session_start();
 
-if(isset($_GET['id'])){
+if (isset($_GET['id'])) {
 
-  $estudianteid = $_GET['id'];
+    $estudianteid = $_GET['id'];
 
-  $_SESSION['pasantes'] = isset($_SESSION['pasantes'])? $_SESSION['pasantes']: array();
+    $_SESSION['pasantes'] = isset($_SESSION['pasantes']) ? $_SESSION['pasantes'] : array();
 
-  $pasantes =  $_SESSION['pasantes'];
+    $pasantes =  $_SESSION['pasantes'];
 
-  $element = searchProperty($pasantes,'id',$estudianteid)[0];
-  $elementIndex = getIndexElement($pasantes,'id',$estudianteid);
-
-
+    $element = searchProperty($pasantes, 'id', $estudianteid)[0];
+    $elementIndex = getIndexElement($pasantes, 'id', $estudianteid);
 
 
-  if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['recurso']) && isset($_POST['grupo'])){
 
 
-  $newEstudiante = [ 'id'=>$estudianteid , 'nombre'=> $_POST['nombre'],
-    'descripcion'=>$_POST['descripcion'],'recurso'=>$_POST['recurso'], 'grupo'=>$_POST['grupo']  ];
-
-    $pasantes[$elementIndex] = $newEstudiante;
+    if (isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['recurso']) && isset($_POST['grupo'])) {
 
 
-    $_SESSION['pasantes']=$pasantes; 
+        $newEstudiante = [
+            'id' => $estudianteid, 'nombre' => $_POST['nombre'],
+            'descripcion' => $_POST['descripcion'], 'recurso' => $_POST['recurso'], 'grupo' => $_POST['grupo']
+        ];
 
- header("Location:../../../admin/recursos.php");
- exit();
-
-}
+        $pasantes[$elementIndex] = $newEstudiante;
 
 
-  
-}
+        $_SESSION['pasantes'] = $pasantes;
 
-else{
-  header("Location:../../../admin/recursos.php");
- exit();
-
+        header("Location:../../../admin/recursos.php");
+        exit();
+    }
+} else {
+    header("Location:../../../admin/recursos.php");
+    exit();
 }
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="generator" content="Hugo 0.88.1">
@@ -61,11 +57,12 @@ else{
 
     <link rel="icon" href="../../img/social-icon.ico">
 </head>
+
 <body>
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Pasantes ALPHA AIlogic</a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
@@ -79,8 +76,8 @@ else{
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
-                    <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../../../admin/Pasantes activos.php">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../../../admin/pasantes activos.php">
                                 <span data-feather="home">Pasantes activos</span>
                             </a>
                         </li>
@@ -131,7 +128,7 @@ else{
                         </li>
 
 
-                      
+
                     </ul>
                 </div>
             </nav>
@@ -142,50 +139,51 @@ else{
                 </div>
 
                 <main role="main">
-                <div style="margin-top: 2%;">
-                    <div class="card">
-                        <div class="card-header bg-info text-light">
-                            <a href="../../../admin/recursos.php" class="btn btn-warning">
-                                Volver Atrás
-                            </a>
-                            Editando asignación
-                        </div>
+                    <div style="margin-top: 2%;">
+                        <div class="card">
+                            <div class="card-header bg-info text-light">
+                                <a href="../../../admin/recursos.php" class="btn btn-warning">
+                                    Volver Atrás
+                                </a>
+                                Editando asignación
+                            </div>
 
-                        <div class="card-body">
-                            <form action="editar recursos.php?id=<?php echo $element['id']?> " method="POST">                                
+                            <div class="card-body">
+                                <form action="editar recursos.php?id=<?php echo $element['id'] ?> " method="POST">
                                     <div class="form-group">
                                         <label for="nombre">Título del recurso:</label>
-                                        <input type="text"value="<?php echo $element['nombre']?>" class="form-control" id="nombre" name="nombre">
+                                        <input type="text" value="<?php echo $element['nombre'] ?>" class="form-control" id="nombre" name="nombre">
                                     </div>
                                     <div class="form-group">
                                         <label for="descripcion">Descripción del recurso:</label>
-                                        <input type="text" value="<?php echo $element['descripcion']?>" class="form-control" id="descripcion" name="descripcion">
+                                        <input type="text" value="<?php echo $element['descripcion'] ?>" class="form-control" id="descripcion" name="descripcion">
                                     </div>
 
                                     <div class="form-group">
                                         <label for="grupo">Grupo al que irá el recurso:</label>
                                         <select name="grupo" id="grupo" class="form-control">
-                                            <?php foreach($grupo as $id => $text): ?>
-                                            
-                                            <option value="<?php  echo $id; ?>">  <?php echo $text; ?></option>
-                                            
+                                            <?php foreach ($grupo as $id => $text) : ?>
+
+                                                <option value="<?php echo $id; ?>"> <?php echo $text; ?></option>
+
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="recurso" class="form-label">Enlace del recurso:</label>
-                                        <input type="url" value="<?php echo $element['recurso']?>" name="recurso" id="recurso" >
-                                    </div>                             
+                                        <input type="url" value="<?php echo $element['recurso'] ?>" name="recurso" id="recurso">
+                                    </div>
 
-                                    <button type="submit" class="btn btn-success">Guardar</button>                                
-                            </form>
+                                    <button type="submit" class="btn btn-success">Guardar</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </main>
+                </main>
 
         </div>
     </div>
 </body>
+
 </html>

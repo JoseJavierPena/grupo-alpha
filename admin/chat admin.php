@@ -29,10 +29,10 @@
 
             <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"> <a class="nav-link " href="Pasantes activos.php"> Pasantes activos </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="pasantes activos.php"> Pasantes activos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="informacion de evaluaciones pasantes.php"> Información de evaluaciones pasantes </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="seguimiento de recursos.php"> Seguimiento de recursos </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="recursos.html"> Recursos </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="recursos.php"> Recursos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="asignaciones administrador.php"> Asignaciones</a> </li>
                     <li class="nav-item"> <a class="nav-link " href="grupos administrador.html"> Grupos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../pasantes/pasantes.html"> Pasantes </a> </li>
@@ -50,7 +50,7 @@
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="Pasantes activos.php">
+                            <a class="nav-link active" aria-current="page" href="pasantes activos.php">
                                 <span data-feather="home">Pasantes activos</span>
                             </a>
                         </li>
@@ -121,11 +121,11 @@
                     </br>
 
                     <center>
-                    <a type="submit" class="btn btn-primary mx-5 px-4" href="chat/login.php">Iniciar sesión</a>
+                        <a type="submit" class="btn btn-primary mx-5 px-4" href="chat/login.php">Iniciar sesión</a>
                     </center>
 
                     <br>
-                    
+
                     <center>
                         <h2>O Registrate</h2>
                     </center>
@@ -168,11 +168,11 @@
                                     </div>
                                 </div>
 
-                                
+
 
                                 <div class="form-group">
                                     <div class="col-sm-offset-4 col-sm-8">
-                                    <button type="submit" class="btn btn-primary mx-4 mb-2">Regístrate aquí</button>
+                                        <button type="submit" class="btn btn-primary mx-4 mb-2">Regístrate aquí</button>
                                     </div>
                                 </div>
                     </form>

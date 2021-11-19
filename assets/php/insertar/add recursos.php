@@ -1,23 +1,23 @@
-<?php 
+<?php
 
 include '../ayuda/utilidad recurso.php';
 
 session_start();
 
-if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['recurso']) && isset($_POST['grupo'])) {
-    $_SESSION['pasantes'] = isset($_SESSION['pasantes'])? $_SESSION['pasantes']: array();
+if (isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['recurso']) && isset($_POST['grupo'])) {
+    $_SESSION['pasantes'] = isset($_SESSION['pasantes']) ? $_SESSION['pasantes'] : array();
 
     $pasantes = $_SESSION['pasantes'];
 
     $estudianteid = 1;
 
-    if(!empty($pasantes)) {
+    if (!empty($pasantes)) {
         $lastElement = getLastElement($pasantes);
 
         $estudianteid = $lastElement['id'] + 1;
     }
 
-    array_push($pasantes, [ 'id'=>$estudianteid, 'nombre'=> $_POST['nombre'], 'descripcion' => $_POST['descripcion'], 'recurso' => $_POST['recurso'], 'grupo' => $_POST['grupo']]);
+    array_push($pasantes, ['id' => $estudianteid, 'nombre' => $_POST['nombre'], 'descripcion' => $_POST['descripcion'], 'recurso' => $_POST['recurso'], 'grupo' => $_POST['grupo']]);
 
     $_SESSION['pasantes'] = $pasantes;
 
@@ -29,8 +29,9 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['recu
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="generator" content="Hugo 0.88.1">
@@ -41,9 +42,10 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['recu
 
     <link rel="icon" href="../../img/social-icon.ico">
 </head>
+
 <body>
 
-<nav class="navbar navbar-dark bg-dark  fixed-top ">
+    <nav class="navbar navbar-dark bg-dark  fixed-top ">
         <div class="container">
             <a href="#" class="navbar-brand">
                 <strong>AILogic</strong>
@@ -55,10 +57,10 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['recu
 
             <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"> <a class="nav-link " href="../../../admin/Pasantes activos.php"> Pasantes activos </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../admin/pasantes activos.php"> Pasantes activos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../admin/informacion de evaluaciones pasantes.php"> Informacion de evaluaciones pasantes </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../admin/seguimiento de recursos.php"> Seguimiento de recursos </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../../../admin/recursos.html"> Recursos </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../admin/recursos.php"> Recursos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../admin/asignaciones administrador.php"> Asignaciones</a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../admin/grupos administrador.html"> Grupos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../pasantes/pasantes.html"> Pasantes </a> </li>
@@ -72,12 +74,12 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['recu
 
     <div class="container-fluid mt-5">
         <div class="row">
-        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
-                        
-                    <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../../../admin/Pasantes activos.php">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../../../admin/pasantes activos.php">
                                 <span data-feather="home">Pasantes activos</span>
                             </a>
                         </li>
@@ -86,7 +88,7 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['recu
                                 <span data-feather="file"></span>Información de evaluaciones pasantes
                             </a>
                         </li>
-                        
+
 
                         <li class="nav-item">
                             <a class="nav-link" href="../../../admin/seguimiento de recursos.php">
@@ -161,20 +163,18 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['recu
                                     <div class="form-group">
                                         <label for="grupo">Grupo al que irá el recurso:</label>
                                         <select name="grupo" id="grupo" class="form-control">
-                                            <?php foreach($grupo as $id => $text): ?>
-                                            
-                                            <option value="<?php  echo $id; ?>">  <?php echo $text; ?></option>
-                                            
+                                            <?php foreach ($grupo as $id => $text) : ?>
+
+                                                <option value="<?php echo $id; ?>"> <?php echo $text; ?></option>
+
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
 
                                     <div class="form-group">
                                         <label for="recurso" class="form-label">Enlace del recurso:</label>
-                                        <input type="url" name="recurso" id="recurso" 
-                                        placeholder=""
-                                        value="" required="">
-                                    </div>                            
+                                        <input type="url" name="recurso" id="recurso" placeholder="" value="" required="">
+                                    </div>
 
                                     <button type="submit" class="btn btn-success">Guardar</button>
                                 </form>
@@ -186,11 +186,12 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['recu
         </div>
     </div>
 
-    
-                        <!-- ARCHIVOS BOOTSTRAP JAVASCRIPT -->
-                        <script src="../../../assets/js/jquery-3.3.1.min.js"></script>
-                        <script src="../../../assets/js/popper.min.js"></script>
-                        <script src="../../../assets/js/bootstrap.min.js"></script>
+
+    <!-- ARCHIVOS BOOTSTRAP JAVASCRIPT -->
+    <script src="../../../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../../../assets/js/popper.min.js"></script>
+    <script src="../../../assets/js/bootstrap.min.js"></script>
 
 </body>
+
 </html>
