@@ -105,7 +105,7 @@
                                 <th scope="col">Linkedin</th>
                                 <th scope="col">Portafolio</th>
                                 <th scope="col">Curriculum</th>
-                                <th scope="col">ID Pasantes</th>                                                                                                                                
+                                <th scope="col">Nombre Pasante</th>                                                                                                                                
                                 
                             </tr>
                         </thead>
@@ -113,7 +113,7 @@
                             <tr>
                                 <?php
                                  $conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
-                                 $sql="SELECT Id,repositorio,linkedIn,portafolio,curriculum,Id_formulario  FROM evaluaciones ";
+                                 $sql="SELECT Id,repositorio,linkedIn,portafolio,curriculum  FROM evaluaciones e INNER JOIN formulario f ON e.id = f.Nombre ";
                                  $resultado= mysqli_query($conexion,$sql);
                                  while($mostrar= mysqli_fetch_row($resultado)){
                                     ?>   
