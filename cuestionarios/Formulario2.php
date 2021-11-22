@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+include "validar formulario.php";
 
+?>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -97,7 +100,7 @@
                     <hr class="my-4">
 
 
-                    <button type="submit" class="btn w-100 p-2 text-white" style="background-color: #39ace7 ;"><h5>Enviar y continuar</h5></button>
+                    <button type="submit" class="btn w-100 p-2 text-white" name="enviar" style="background-color: #39ace7 ;"><h5>Enviar y continuar</h5></button>
                 </div>
             </form>
 
