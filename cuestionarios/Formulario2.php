@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-include "validar formulario.php";
+//include "validar formulario.php";
 
 ?>
 <head>
