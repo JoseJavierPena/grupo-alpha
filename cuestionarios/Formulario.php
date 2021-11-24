@@ -16,7 +16,7 @@ $validando=$conexion->query($validar);
 if($validando->num_rows>0){
     echo'<script type="text/javascript">
     alert("Mensaje la cedula o el telefono ya estan registrados");
-    window.location.href="/grupo-alpha/cuestionatios/Formulario2.php"
+       window.location.href="/grupo-alpha/cuestionatios/Formulario2.php"
     </script>';
 }else{
 
