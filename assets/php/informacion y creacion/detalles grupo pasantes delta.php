@@ -1,5 +1,19 @@
 
-<!DOCTYPE html>
+
+<?php 
+
+
+session_start();
+
+include'../../../conexion db/db.php';
+
+$usuario = $_SESSION['nombre'];
+if(!isset($usuario)){
+
+    header("location:../../../logins/login.html");
+
+}
+?><!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -36,22 +50,23 @@
 
             <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/pasantes.html"> Pasantes  </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/pasantes.php"> Pasantes </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../pasantes/asignaciones pasantes.php"> Asignaciones </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/grupos pasantes.html"> Grupos </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/chat pasantes"> Recursos </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../../../logins/login.html"> Cerrar sección</a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/grupos pasantes.php"> Grupos </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/chat pasantes.php"> Recursos </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../logins/cerrar.php"> Cerrar sección</a> </li>
                 </ul>
             </div>
-        </div> 
+        </div>
     </nav>
+
     <div class="container-fluid mt-5">
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
-                    <li class="nav-item">
-                            <a class="nav-link" href="../../../pasantes/pasantes.html">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../pasantes/pasantes.php">
                                 <span data-feather="layers"></span>Pasantes
                             </a>
                         </li>
@@ -63,7 +78,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../pasantes/grupos pasantes.html">
+                            <a class="nav-link" href="../../../pasantes/grupos pasantes.php">
                                 <span data-feather="layers"></span>Grupos
                             </a>
                         </li>
@@ -80,16 +95,17 @@
                             </a>
                         </li>
 
+
                         <li class="nav-item ">
-                            <a class="nav-link " href="../../../pasantes/grupos pasantes.html ">
+                            <a class="nav-link " href="../../../pasantes/grupos pasantes.php ">
                                 <span data-feather="layers "></span>Chat
                             </a>
                         </li>
 
-                        
+
                         <li class="nav-item ">
-                            <a class="nav-link " href="../../../logins/login.html ">
-                                <span data-feather="layers "></span>Cerrar 
+                            <a class="nav-link " href="../../../logins/cerrar.php ">
+                                <span data-feather="layers "></span>Cerrar seccion
                             </a>
                         </li>
                     </ul>

@@ -1,5 +1,19 @@
 <?php 
 
+
+session_start();
+
+include'../../../conexion db/db.php';
+
+$usuario = $_SESSION['nombre'];
+if(!isset($usuario)){
+
+    header("location:../../../logins/login.html");
+
+}
+
+
+
 include '../ayuda/utilidad recurso.php';
 
 session_start();
@@ -55,16 +69,16 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['recu
 
             <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"> <a class="nav-link " href="../../../admin/Pasantes activos.php"> Pasantes activos </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../admin/pasantes activos.php"> Pasantes activos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../admin/informacion de evaluaciones pasantes.php"> Informacion de evaluaciones pasantes </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../admin/seguimiento de recursos.php"> Seguimiento de recursos </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../../../admin/recursos.html"> Recursos </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../admin/recursos.php"> Recursos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../admin/asignaciones administrador.php"> Asignaciones</a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../../../admin/grupos administrador.html"> Grupos </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/pasantes.html"> Pasantes </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../admin/grupos administrador.php"> Grupos </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/pasantes.php"> Pasantes </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../admin/admin.php">Chat</a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../../../admin/enviar correo.html"> enviar correo </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../../../logins/login.html"> Cerrar sesión </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../admin/enviar correo.php"> enviar correo </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../logins/cerrar.php"> Cerrar sección </a> </li>
                 </ul>
             </div>
         </div>
@@ -77,7 +91,7 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['recu
                     <ul class="nav flex-column">
                         
                     <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../../../admin/Pasantes activos.php">
+                            <a class="nav-link active" aria-current="page" href="../../../admin/pasantes activos.php">
                                 <span data-feather="home">Pasantes activos</span>
                             </a>
                         </li>
@@ -107,13 +121,13 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['recu
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/grupos administrador.html">
+                            <a class="nav-link" href="../../../admin/grupos administrador.php">
                                 <span data-feather="layers"></span>Grupos
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../pasantes/pasantes.html">
+                            <a class="nav-link" href="../../../pasantes/pasantes.php">
                                 <span data-feather="layers"></span>Pasantes
                             </a>
                         </li>
@@ -123,8 +137,13 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['recu
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/enviar correo.html">
+                            <a class="nav-link" href="../../../admin/enviar correo.php">
                                 <span data-feather="layers"></span>Enviar correo
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../logins/cerrar.php">
+                                <span data-feather="layers"></span>Cerrar seccion
                             </a>
                         </li>
                     </ul>

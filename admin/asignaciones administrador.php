@@ -1,5 +1,19 @@
 <?php
 
+
+session_start();
+
+include'../conexion db/db.php';
+
+$usuario = $_SESSION['nombre'];
+if(!isset($usuario)){
+
+    header("location:../logins/login.html");
+
+}
+
+
+
 include '../assets/php/ayuda/utilidad.php';
 
 session_start();
@@ -44,11 +58,11 @@ $listadoEstudiantes = $_SESSION['estudiantes'];
                 <li class="nav-item"> <a class="nav-link " href="seguimiento de recursos.php"> Seguimiento de recursos </a> </li>
                 <li class="nav-item"> <a class="nav-link " href="recursos.html"> Recursos </a> </li>
                 <li class="nav-item"> <a class="nav-link " href="asignaciones administrador.php"> Asignaciones</a> </li>
-                <li class="nav-item"> <a class="nav-link " href="grupos administrador.html"> Grupos </a> </li>
-                <li class="nav-item"> <a class="nav-link " href="../pasantes/pasantes.html"> Pasantes </a> </li>
-                <li class="nav-item"> <a class="nav-link " href="chat admin.php">Chat</a> </li>
-                <li class="nav-item"> <a class="nav-link " href="enviar correo.html"> Enviar correo </a> </li>
-                <li class="nav-item"> <a class="nav-link " href="../logins/login.html"> Cerrar sesión </a> </li>
+                <li class="nav-item"> <a class="nav-link " href="grupos administrador.php"> Grupos </a> </li>
+                <li class="nav-item"> <a class="nav-link " href="../pasantes/pasantes.php"> Pasantes </a> </li>
+                <li class="nav-item"> <a class="nav-link " href="chat/chatpage.php">Chat</a> </li>
+                <li class="nav-item"> <a class="nav-link " href="enviar correo.php"> Enviar correo </a> </li>
+                <li class="nav-item"> <a class="nav-link " href="../logins/cerrar.php"> Cerrar sesión </a> </li>
             </ul>
         </div>
     </div>
@@ -89,33 +103,33 @@ $listadoEstudiantes = $_SESSION['estudiantes'];
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="grupos administrador.html">
+                        <a class="nav-link" href="grupos administrador.php">
                             <span data-feather="layers"></span>Grupos
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="../pasantes/pasantes.html">
+                        <a class="nav-link" href="../pasantes/pasantes.php">
                             <span data-feather="layers"></span>Pasantes
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="chat admin.php">
+                        <a class="nav-link" href="chat/chatpage.php">
                             <span data-feather="layers"></span>Chat
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="enviar correo.html">
+                        <a class="nav-link" href="enviar correo.php">
                             <span data-feather="layers"></span>Enviar correo
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="../logins/login.html">
-                            <span data-feather="layers"></span>Cerrar sesión
-                        </a>
-                    </li>
+                            <a class="nav-link" href="../logins/cerrar.php">
+                                <span data-feather="layers"></span>Cerrar sesión
+                            </a>
+                        </li>
 
 
                 </ul>
@@ -178,6 +192,7 @@ $listadoEstudiantes = $_SESSION['estudiantes'];
         </main>
     </div>
 </div>
+
 
 
 

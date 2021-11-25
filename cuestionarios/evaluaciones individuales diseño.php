@@ -1,6 +1,7 @@
 <?php
 
-include("../conexion db/db.php")
+include("../conexion db/db.php");
+
 
 ?>
 
@@ -36,58 +37,289 @@ include("../conexion db/db.php")
             <div class="individuales">
 
                 <h4 class="mb-3">Evaluación</h4>
-                <hr class="my-4 ">
+            
+              
+
+            <hr class="my-4 ">
                 <form action="evaluaciones individuales.php" name="insertar" method="post">
-                    <div class="individuales mx-5">
-                        <h3>¿Cuál pasante es usted?</h3>
-                        <select name="Id_formulario" required class="form-control ">
+
+                <input type="hidden" style="text-align: center;" name="Id_formulario" required class="form-control" value="
                             <?php
 
-                            $sql = "select * from formulario";
+                            $sql = "SELECT * FROM formulario ORDER BY Id_formulario DESC LIMIT 1";
                             $bautor = $conexion->query($sql);
                             while ($mostrar = $bautor->fetch_array()) {
-                                echo   "<option value='" . $mostrar['Id_formulario'] . "'> " . $mostrar['1'] . " " . $mostrar['2'] . "</option>";
+                                echo  $mostrar['Id_formulario'];
                             }
                             ?>
-                        </select>
+                        ">
+
+
+                    <div class="individuales mx-5">
+                        <h3>Usuario</h3>
+                        <input type="text" style="text-align: center;"  readonly="readonly" name="nombre" required class="form-control" value="
+                           <?php
+
+                            $sql = "SELECT * FROM formulario ORDER BY Id_formulario DESC LIMIT 1";
+                            $bautor = $conexion->query($sql);
+                            while ($mostrar = $bautor->fetch_array()) {
+                                echo  $mostrar['1'].$mostrar['2'];
+                            }
+                            ?>
+                        ">
                     </div>
 
                     <hr class="my-4 ">
                     <h3>1. Conocimientos en HTML</h3>
                     <div class="individiduales mx-5  mb-5">
-                        <input type="number" class="form-control text-center" name="question1" placeholder="Elija un digito del 1 al 10" required>
+                        <select name="question1" class="form-control text-center"  placeholder="Elija un digito del 1 al 10" required>
+                        <option value="">Elija un digito del 1 al 10</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</select>
                     </div>
                     <hr class="my-4 ">
 
                     <h3>2. Conocimientos en CSS </h3>
                     <div class="individiduales mx-5 mb-5">
-                        <input type="number" class="form-control text-center" name="question2" placeholder="Elija un digito del 1 al 10" required>
-                    </div>
+                    <select name="question2" class="form-control text-center"  placeholder="Elija un digito del 1 al 10" required>
+                    <option value="">Elija un digito del 1 al 10</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</select>
+
+ </div>
 
                     <hr class="my-4 ">
+
                     <h3>3. Conocimientos en JavaScript</h3>
                     <div class="individiduales mx-5  mb-5">
-                        <input type="number" class="form-control text-center" name="question3" placeholder="Elija un digito del 1 al 10" required>
-                    </div>
+                    <select name="question3" class="form-control text-center"  placeholder="Elija un digito del 1 al 10" required>
+                    <option value="">Elija un digito del 1 al 10</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</select>
+
+</div>
 
                     <hr class="my-4 ">
                     <h3>4. Conocimientos en PHP </h3>
                     <div class="individiduales mx-5  mb-5">
-                        <input type="number" class="form-control text-center" name="question4" placeholder="Elija un digito del 1 al 10" required>
-                    </div>
+                    <select name="question4" class="form-control text-center"  placeholder="Elija un digito del 1 al 10" required>
+                    <option value="">Elija un digito del 1 al 10</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</select>
+
+</div>
 
                     <hr class="my-4 ">
-                    <h3>5. Conocimientos en SQL, MySQL y otras base de datos </h3>
+                    <h3>5. Conocimientos en C </h3>
                     <div class="individiduales mx-5  mb-5">
-                        <input type="number" class="form-control text-center" name="question5" placeholder="Elija un digito del 1 al 10" required>
-                    </div>
+                    <select name="question5" class="form-control text-center"  placeholder="Elija un digito del 1 al 10" required>
+                    <option value="">Elija un digito del 1 al 10</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</select>
+
+</div>
+
+                    <hr class="my-4 ">
+                    <h3>6. Conocimientos en C# </h3>
+                    <div class="individiduales mx-5  mb-5">
+                    <select name="question6" class="form-control text-center"  placeholder="Elija un digito del 1 al 10" required>
+<option value="">Elija un digito del 1 al 10</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</select>
+
+</div>
+
+                    <hr class="my-4 "> 
+                    <h3>7. Conocimientos en C++ </h3>
+                    <div class="individiduales mx-5  mb-5">
+                    <select name="question7" class="form-control text-center"  placeholder="Elija un digito del 1 al 10" required>
+<option value="">Elija un digito del 1 al 10</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</select>
+
+
+</div>
+
+            
+                    <hr class="my-4 ">
+                    <h3>8. Conocimientos en SQL</h3>
+                    <div class="individiduales mx-5  mb-5">
+                    <select name="question8" class="form-control text-center" " placeholder="Elija un digito del 1 al 10" required>
+                    <option value="">Elija un digito del 1 al 10</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</select>
+
+</div>
+
+               
+                    <hr class="my-4 ">
+
+                    <h3>9. Conocimientos en ORACLE DATA BASE</h3>
+                    <div class="individiduales mx-5  mb-5">
+                    <select name="question9" class="form-control text-center"  placeholder="Elija un digito del 1 al 10" required>
+                    <option value="">Elija un digito del 1 al 10</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</select>
+
+</div>
+
+                 
+                    <hr class="my-4 ">
+
+                    <h3>10. Conocimientos en MYSQL</h3>
+                    <div class="individiduales mx-5  mb-5">
+                    <select name="question10" class="form-control text-center"  placeholder="Elija un digito del 1 al 10" required>
+                    <option value="">Elija un digito del 1 al 10</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</select>
+
+</div>
 
                     <hr class="my-4 ">
 
-                    <h3>6. Otros lenguajes de programación como : C#. C++. Python y C </h3>
-                    <div class="individiduales mx-5 mb-5">
-                        <input type="number" class="form-control text-center" name="question6" placeholder="Elija un digito del 1 al 10" required>
-                    </div>
+                    <h3>11. Conocimientos en EXCEL</h3>
+                    <div class="individiduales mx-5  mb-5">
+                    <select name="question11" class="form-control text-center" placeholder="Elija un digito del 1 al 10" required>
+                    <option value="">Elija un digito del 1 al 10</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</select>
+
+</div>
+
+                    <hr class="my-4 ">
+
+                      <h3>12. Conocimientos en POWER POINT</h3>
+                    <div class="individiduales mx-5  mb-5">
+                    <select name="question12" class="form-control text-center"  placeholder="Elija un digito del 1 al 10" required>
+                    <option value="">Elija un digito del 1 al 10</option>
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+</select>
+
+</div>
+
+
+
+            
 
                     <hr class="my-4 ">
                     <button class=" btn btn-lg w-100  text-white" type="submit">Enviar y continuar</button>

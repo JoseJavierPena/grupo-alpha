@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8111
--- Tiempo de generación: 03-11-2021 a las 20:55:02
+-- Tiempo de generación: 22-11-2021 a las 07:18:11
 -- Versión del servidor: 10.4.13-MariaDB
 -- Versión de PHP: 7.4.8
 
@@ -33,20 +33,26 @@ CREATE TABLE `individuales` (
   `conociminetoscss` int(11) NOT NULL,
   `conocimientosjavascript` int(11) NOT NULL,
   `conocimientosphp` int(11) NOT NULL,
-  `conocmientossqlmysql` int(11) NOT NULL,
-  `otroslenguajes` int(11) NOT NULL,
-  `Id_formulario` int(11) DEFAULT NULL
+  `conocimientosc` int(11) NOT NULL,
+  `conocimientosch` int(11) NOT NULL,
+  `Id_formulario` int(11) DEFAULT NULL,
+  `conocimientoscm` int(11) NOT NULL,
+  `conocimientossql` int(11) NOT NULL,
+  `conocimientosora` int(11) NOT NULL,
+  `conocimientosmy` int(11) NOT NULL,
+  `conocimientosex` int(11) NOT NULL,
+  `conocimientospo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `individuales`
 --
 
-INSERT INTO `individuales` (`Id`, `conociminetoshtml`, `conociminetoscss`, `conocimientosjavascript`, `conocimientosphp`, `conocmientossqlmysql`, `otroslenguajes`, `Id_formulario`) VALUES
-(1, 2, 4, 5, 5, 3, 8, 31),
-(2, 2, 4, 5, 5, 3, 8, 27),
-(3, 2, 4, 5, 5, 3, 8, 27),
-(5, 4, 7, 4, 6, 10, 10, 32);
+INSERT INTO `individuales` (`Id`, `conociminetoshtml`, `conociminetoscss`, `conocimientosjavascript`, `conocimientosphp`, `conocimientosc`, `conocimientosch`, `Id_formulario`, `conocimientoscm`, `conocimientossql`, `conocimientosora`, `conocimientosmy`, `conocimientosex`, `conocimientospo`) VALUES
+(32, 2, 2, 2, 2, 1, 1, 394, 1, 1, 1, 1, 1, 3),
+(33, 10, 2, 2, 1, 1, 2, 394, 1, 2, 2, 3, 3, 3),
+(34, 0, 0, 0, 0, 0, 0, 394, 0, 0, 0, 0, 0, 0),
+(35, 0, 0, 0, 0, 0, 0, 394, 0, 0, 0, 0, 0, 0);
 
 --
 -- Índices para tablas volcadas
@@ -67,7 +73,7 @@ ALTER TABLE `individuales`
 -- AUTO_INCREMENT de la tabla `individuales`
 --
 ALTER TABLE `individuales`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- Restricciones para tablas volcadas

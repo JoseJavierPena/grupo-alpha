@@ -1,7 +1,16 @@
 <?php 
 
 include '../ayuda/utilidad recurso.php';
+session_start();
 
+include'../../../conexion db/db.php';
+
+$usuario = $_SESSION['nombre'];
+if(!isset($usuario)){
+
+    header("location:../../../logins/login.html");
+
+}
 
 
 session_start();
@@ -78,20 +87,27 @@ else{
     <span class="navbar-toggler-icon"></span>
   </button>
 
-        <div class="navbar-nav">
-            <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="../../../logins/login.html">Cerrar sesion</a>
-            </div>
-        </div>
     </header>
 
-    <div class="container-fluid">
+    <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/pasantes.php"> Pasantes </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/asignaciones pasantes.php">Asignaciones</a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/grupos pasantes.php"> Grupo </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/chat pasantes.php"> Chat </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../logins/cerrar.php">Cerrar sesión</a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-5">
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
-                    <li class="nav-item">
-                            <a class="nav-link" href="../../../pasantes/pasantes.html">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../pasantes/pasantes.php">
                                 <span data-feather="layers"></span>Pasantes
                             </a>
                         </li>
@@ -103,7 +119,7 @@ else{
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../pasantes/grupos pasantes.html">
+                            <a class="nav-link" href="../../../pasantes/grupos pasantes.php">
                                 <span data-feather="layers"></span>Grupos
                             </a>
                         </li>
@@ -114,12 +130,25 @@ else{
                             </a>
                         </li>
 
+                        <li class="nav-item ">
+                            <a class="nav-link " href="../../../pasantes/chat pasantes.php">
+                                <span data-feather="layers "></span>Chat
+                            </a>
+                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="../../../pasantes/chat pasantes.php">
                                 <span data-feather="layers"></span>Chat
                             </a>
                         </li>
 
+                        <li class="nav-item ">
+                            <a class="nav-link " href="../../../logins/cerrar.php">
+                                <span data-feather="layers "></span>Cerrar sesión
+                            </a>
+                        </li>
+
+                    
                     </ul>
                 </div>
             </nav>

@@ -1,5 +1,21 @@
+<?php
+
+session_start();
+
+include'../conexion db/db.php';
+
+$usuario = $_SESSION['nombre'];
+if(!isset($usuario)){
+
+    header("location:../logins/login.html");
+
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,13 +23,12 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
     <link rel="stylesheet" type=" text/css" href="../assets/css/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" type=" text/css" href="../assets/css/style grupos administrador.css" media="screen">
+    <link rel="stylesheet" type=" text/css" href="../assets/css/style grupos pasantes.css" media="screen">
     <title>Grupos</title>
-
     <link rel="icon" href="../assets/img/social-icon.ico">
-
 </head>
-<body>
+
+<body class="body">
 
     <nav class="navbar navbar-dark bg-dark  fixed-top ">
         <div class="container">
@@ -27,94 +42,66 @@
 
             <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"> <a class="nav-link " href="Pasantes activos.php"> Pasantes activos </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="informacion de evaluaciones pasantes.php"> Información de evaluaciones pasantes </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="seguimiento de recursos.php"> Seguimiento de recursos </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="recursos.html"> Recursos </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="asignaciones administrador.php"> Asignaciones</a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="grupos administrador.html"> Grupos </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../pasantes/pasantes.html"> Pasantes </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="chat admin.php">Chat</a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="enviar correo.html"> Enviar correo </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../logins/login.html"> Cerrar sesión </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="pasantes.html"> Pasantes </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="asignaciones pasantes.php">Asignaciones</a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="grupos pasantes.html"> Grupo </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="recursos pasantes.php"> Recurso</a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="chat/chatpage.php"> Chat </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../logins/cerrar.php">Cerrar sección</a> </li>
                 </ul>
             </div>
-        </div> 
+        </div>
     </nav>
-
 
     <div class="container-fluid mt-5">
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3">
-                    <ul class="nav flex-column">
+                <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="Pasantes activos.php">
-                                <span data-feather="home">Pasantes activos</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="informacion de evaluaciones pasantes.php">
-                                <span data-feather="file"></span>Información de evaluaciones pasantes
+                            <a class="nav-link" href="pasantes.php">
+                                <span data-feather="layers"></span>Pasantes
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="seguimiento de recursos.php">
-                                <span data-feather="bar-chart-2"></span> Seguimiento de recursos
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="recursos.php">
-                                <span data-feather="layers"></span>Recursos
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="asignaciones administrador.php">
+                            <a class="nav-link" href="asignaciones pasantes.php">
                                 <span data-feather="layers"></span>Asignaciones
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="grupos administrador.html">
+                            <a class="nav-link" href="grupos pasantes.php">
                                 <span data-feather="layers"></span>Grupos
                             </a>
                         </li>
-
                         <li class="nav-item">
-                            <a class="nav-link" href="../pasantes/pasantes.html">
-                                <span data-feather="layers"></span>Pasantes
+                            <a class="nav-link" href="recursos pasantes.php">
+                                <span data-feather="layers"></span>Recursos
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="chat admin.php">
+                            <a class="nav-link" href="chat/chatpage.php">
                                 <span data-feather="layers"></span>Chat
                             </a>
                         </li>
-                        
                         <li class="nav-item">
-                            <a class="nav-link" href="enviar correo.html">
-                                <span data-feather="layers"></span>Enviar correo
+                            <a class="nav-link" href="../logins/cerrar.php">
+                                <span data-feather="layers"></span>Cerrar sección
                             </a>
                         </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="../logins/login.html">
-                                <span data-feather="layers"></span>Cerrar sesión
-                             </a>
-                        </li>
-
                     </ul>
                 </div>
             </nav>
-
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h1 class="h2">Grupos</h1>
                 </div>
 
+
                 <div class="container px-4 py-5" id="custom-cards">
+
+
                     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
                         <div class="col mb-3">
                             <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
@@ -126,7 +113,7 @@
                                         </li>
                                         <li class="d-flex align-items-center me-3">
                                             <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-                                            <small><a href="../assets/php/informacion y creacion/detalles grupo administracion alpha.php">Información del grupo</a></small>
+                                            <small><a href="../assets/php/informacion y creacion/detalles grupo pasantes alpha.php">Informacion del grupo</a></small>
                                         </li>
 
                                     </ul>
@@ -144,7 +131,7 @@
                                         </li>
                                         <li class="d-flex align-items-center me-3">
                                             <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-                                            <small><a href="../assets/php/informacion y creacion/detalles grupo administracion beta.php">Información del grupo</a></small>
+                                            <small><a href="../assets/php/informacion y creacion/detalles grupo pasantes beta.php">Informacion del grupo</a></small>
                                         </li>
 
                                     </ul>
@@ -162,14 +149,17 @@
                                         </li>
                                         <li class="d-flex align-items-center me-3">
                                             <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-                                            <small><a href="../assets/php/informacion y creacion/detalles grupo administracion central.php">Información del grupo</a></small>
+                                            <small><a href="../assets/php/informacion y creacion/detalles grupo pasantes central.php">Informacion del grupo</a></small>
                                         </li>
+
                                     </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
 
                 <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
                     <div class="col mb-3">
@@ -182,7 +172,7 @@
                                     </li>
                                     <li class="d-flex align-items-center me-3">
                                         <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-                                        <small><a href="../assets/php/informacion y creacion/detalles grupo administracion delta.php">Información del grupo</a></small>
+                                        <small><a href="../assets/php/informacion y creacion/detalles grupo pasantes delta.php">Informacion del grupo</a></small>
                                     </li>
 
                                 </ul>
@@ -200,13 +190,14 @@
                                     </li>
                                     <li class="d-flex align-items-center me-3">
                                         <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-                                        <small><a href="../assets/php/informacion y creacion/detalles grupo administracion elecon.php">Información del grupo</a></small>
+                                        <small><a href="../assets/php/informacion y creacion/detalles grupo pasantes elecon.php">Informacion del grupo</a></small>
                                     </li>
+
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="col mb-3">
                         <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-2.jpg');">
                             <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
@@ -217,22 +208,24 @@
                                     </li>
                                     <li class="d-flex align-items-center me-3">
                                         <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-                                        <small><a href="../assets/php/informacion y creacion/detalles grupo administracion FALCON.php">Información del grupo</a></small>
+                                        <small><a href="../assets/php/informacion y creacion/detalles grupo pasantes falcon.php">Informacion del grupo</a></small>
                                     </li>
+
                                 </ul>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </main>
         </div>
     </div>
 
-        
     <!-- ARCHIVOS BOOTSTRAP JAVASCRIPT -->
     <script src="../assets/js/jquery-3.3.1.min.js"></script>
     <script src="../assets/js/popper.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
 
 </body>
+
 </html>

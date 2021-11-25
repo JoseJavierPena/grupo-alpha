@@ -2,6 +2,20 @@
 
 include '../ayuda/utilidad.php';
 
+
+
+
+session_start();
+
+include'../../../conexion db/db.php';
+
+$usuario = $_SESSION['nombre'];
+if(!isset($usuario)){
+
+    header("location:../../../logins/login.html");
+
+}
+
 session_start();
 
 if (isset($_GET['id'])) {
@@ -68,16 +82,16 @@ if (isset($_GET['id'])) {
 
             <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"> <a class="nav-link " href="../../../admin/Pasantes activos.php"> Pasantes activos </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../admin/pasantes activos.php"> Pasantes activos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../admin/informacion de evaluaciones pasantes.php"> Información de evaluaciones pasantes </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../admin/seguimiento de recursos.php"> Seguimiento de recursos </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../../../admin/recursos.html"> Recursos </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../admin/recursos.php"> Recursos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../admin/asignaciones administrador.php"> Asignaciones</a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../../../admin/grupos administrador.html"> Grupos </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/pasantes.html"> Pasantes </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../admin/grupos administrador.php"> Grupos </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/pasantes.php"> Pasantes </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../admin/admin.php">Chat</a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../../../admin/enviar correo.html"> Enviar correo </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../../../logins/login.html"> Cerrar sesión </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../admin/enviar correo.php"> Enviar correo </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../logins/cerrar.php"> Cerrar sesión </a> </li>
                 </ul>
             </div>
         </div>
@@ -89,7 +103,7 @@ if (isset($_GET['id'])) {
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../../../admin/Pasantes activos.php">
+                            <a class="nav-link active" aria-current="page" href="../../../admin/pasantes activos.php">
                                 <span data-feather="home">Pasantes activos</span>
                             </a>
                         </li>
@@ -112,30 +126,35 @@ if (isset($_GET['id'])) {
 
 
                         <li class="nav-item">
-                            <a class="nav-link" href="asignaciones administrador.php">
+                            <a class="nav-link" href="../../../admin/asignaciones administrador.php">
                                 <span data-feather="layers"></span>Asignaciones
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="grupos administrador.html">
+                            <a class="nav-link" href="../../../admin/grupos administrador.php">
                                 <span data-feather="layers"></span>Grupos
                             </a>
                         </li>
 
-                        <a class="nav-link" href="../../../pasantes/pasantes.html">
+                        <a class="nav-link" href="../../../pasantes/pasantes.php">
                             <span data-feather="layers"></span>Pasantes
                         </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../admin/chat admin.html">
+                            <a class="nav-link" href="../../../admin/chat admin.php">
                                 <span data-feather="layers"></span>Chat
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../../admin/enviar correo.php">
+                                <span data-feather="layers"></span>Eenviar correo
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../logins/login.html">
+                            <a class="nav-link" href="../../../logins/cerrar.php">
                                 <span data-feather="layers"></span>Cerrar sesión
                             </a>
                         </li>

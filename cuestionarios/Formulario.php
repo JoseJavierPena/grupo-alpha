@@ -1,6 +1,7 @@
 <?php
 
 
+
 $nombre=$_POST['nombre'];
 $apellido=$_POST['apellido'];
 $cedula=$_POST['cedula'];
@@ -9,6 +10,11 @@ $telefono=$_POST['telefono'];
 $direccion=$_POST['direccion'];
 $donde_vives=$_POST['donde_vives'];
 $correo=$_POST['correo'];
+
+
+
+
+
 //base de datos
 $conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");
 $sql = "INSERT INTO  formulario values(Id_formulario,'$nombre','$apellido','$cedula','$universidad','$telefono',
@@ -19,7 +25,7 @@ $sql = "INSERT INTO  formulario values(Id_formulario,'$nombre','$apellido','$ced
 
      echo "Datos guardados";
    
-header("location:evaluaciones diseño.php");
+header("location:evaluaciones diseño.php?nombre=$nombre&apellido=$apellido");
 
 }
 else {

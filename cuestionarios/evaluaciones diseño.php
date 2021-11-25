@@ -1,6 +1,7 @@
 <?php
 
-include("../conexion db/db.php")
+include("../conexion db/db.php");
+
 
 ?>
 <!DOCTYPE html>
@@ -28,19 +29,31 @@ include("../conexion db/db.php")
             <h2>Evaluaciones</h2>
             <p class="lead mb-5">Aquí nos suministrará su curriculum y repositorios para ver su rendimiento en programación, base de datos y análisis de sistema. </p>
 
-            <div class="form-group col-md-12">
-                <label for="Id_formulario" class="form-label"><b>¿Cuál pasante es usted?: </b></label>
-                <select name="Id_formulario" class="form-control" required>
+
+                <input type="hidden"  name="Id_formulario" value="
                     <?php
 
-                    $sql = "select * from formulario";
+                    $sql = "SELECT Id_formulario FROM formulario ORDER BY Id_formulario DESC LIMIT 1";
                     $bautor = $conexion->query($sql);
                     while ($mostrar = $bautor->fetch_array()) {
-                        echo   "<option value='" . $mostrar['Id_formulario'] . "'> " . $mostrar['1'] . " " . $mostrar['2'] . "</option>";
+                        echo   $mostrar['Id_formulario'];
                     }
                     ?>
-                </select>
-            </div>
+               ">
+
+               <div class="individuales mx-5">
+                        <h3 style="text-align: center;" >Usuario</h3>
+                        <input type="text" style="text-align: center;" readonly="readonly" name="nombre" required class="form-control" value="
+                           <?php
+
+                            $sql = "SELECT * FROM formulario ORDER BY Id_formulario DESC LIMIT 1";
+                            $bautor = $conexion->query($sql);
+                            while ($mostrar = $bautor->fetch_array()) {
+                                echo  $mostrar['1']." ".$mostrar['2'];
+                            }
+                            ?>
+                        ">
+                    </div>
 
             <div class="form-group col-md-12">
                 <label for="repositorio" class="form-label"><b>Repositorio:</b> </label>

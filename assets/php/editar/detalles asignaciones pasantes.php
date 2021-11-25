@@ -4,6 +4,17 @@ include '../ayuda/utilidad.php';
 
 session_start();
 
+include'../../../conexion db/db.php';
+
+$usuario = $_SESSION['nombre'];
+if(!isset($usuario)){
+
+    header("location:../../../logins/login.html");
+
+}
+
+session_start();
+
 if (isset($_GET['id'])) {
 
     $estudianteid = $_GET['id'];
@@ -80,11 +91,11 @@ if (isset($_GET['id'])) {
 
             <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/pasantes.html"> Pasantes </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/pasantes.php"> Pasantes </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../pasantes/asignaciones pasantes.php">Asignaciones</a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/grupos pasantes.html"> Grupo </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../pasantes/grupos pasantes.php"> Grupo </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../pasantes/chat pasantes.php"> Chat </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../../../logins/login.html">Cerrar sesión</a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../logins/cerrar.php">Cerrar sección</a> </li>
                 </ul>
             </div>
         </div>
@@ -96,7 +107,7 @@ if (isset($_GET['id'])) {
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../pasantes/pasantes.html">
+                            <a class="nav-link" href="../../../pasantes/pasantes.php">
                                 <span data-feather="layers"></span>Pasantes
                             </a>
                         </li>
@@ -108,7 +119,7 @@ if (isset($_GET['id'])) {
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../pasantes/grupos pasantes.html">
+                            <a class="nav-link" href="../../../pasantes/grupos pasantes.php">
                                 <span data-feather="layers"></span>Grupos
                             </a>
                         </li>
@@ -125,17 +136,14 @@ if (isset($_GET['id'])) {
                             </a>
                         </li>
 
+
                         <li class="nav-item ">
-                            <a class="nav-link " href="../../../logins/login.html">
-                                <span data-feather="layers "></span>Cerrar sesión
+                            <a class="nav-link " href="../../../logins/cerrar.php">
+                                <span data-feather="layers "></span>Cerrar sección
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="../../../pasantes/chat pasantes.php">
-                                <span data-feather="layers"></span>Chat
-                            </a>
-                        </li>
+                    
                     </ul>
                 </div>
             </nav>

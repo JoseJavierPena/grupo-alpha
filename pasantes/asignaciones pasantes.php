@@ -1,5 +1,19 @@
 <?php
 
+
+session_start();
+
+include'../conexion db/db.php';
+
+$usuario = $_SESSION['nombre'];
+if(!isset($usuario)){
+
+    header("location:../logins/login.html");
+
+}
+
+
+
 include '../assets/php/ayuda/utilidad.php';
 
 session_start();
@@ -52,12 +66,12 @@ if (!empty($listadoEstudiantes)) {
 
         <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"> <a class="nav-link " href="pasantes.html"> Pasantes </a> </li>
+                <li class="nav-item"> <a class="nav-link " href="pasantes.php"> Pasantes </a> </li>
                 <li class="nav-item"> <a class="nav-link " href="asignaciones pasantes.php">Asignaciones</a> </li>
-                <li class="nav-item"> <a class="nav-link " href="grupos pasantes.html"> Grupo </a> </li>
+                <li class="nav-item"> <a class="nav-link " href="grupos pasantes.php"> Grupo </a> </li>
                 <li class="nav-item"> <a class="nav-link " href="recursos pasantes.php"> Recurso</a> </li>
-                <li class="nav-item"> <a class="nav-link " href="chat pasantes.php"> Chat </a> </li>
-                <li class="nav-item"> <a class="nav-link " href="../logins/login.html">Cerrar sesión</a> </li>
+                <li class="nav-item"> <a class="nav-link " href="chat/chatpage.php"> Chat </a> </li>
+                <li class="nav-item"> <a class="nav-link " href="../logins/cerrar.php">Cerrar sección</a> </li>
             </ul>
         </div>
     </div>
@@ -67,46 +81,40 @@ if (!empty($listadoEstudiantes)) {
     <div class="row">
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
             <div class="position-sticky pt-3">
-                <ul class="nav flex-column">
+            <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="pasantes.php">
+                                <span data-feather="layers"></span>Pasantes
+                            </a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="pasantes.html">
-                            <span data-feather="layers"></span>Pasantes
-                        </a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="asignaciones pasantes.php">
+                                <span data-feather="layers"></span>Asignaciones
+                            </a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="asignaciones pasantes.php">
-                            <span data-feather="layers"></span>Asignaciones
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="grupos pasantes.html">
-                            <span data-feather="layers"></span>Grupos
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="recursos pasantes.php">
-                            <span data-feather="layers"></span>Recursos
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="chat pasantes.php">
-                            <span data-feather="layers"></span>Chat
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="../logins/login.html">
-                            <span data-feather="layers"></span>Cerrar sesión
-                        </a>
-                    </li>
-
-
-                </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="grupos pasantes.php">
+                                <span data-feather="layers"></span>Grupos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="recursos pasantes.php">
+                                <span data-feather="layers"></span>Recursos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="chat/chatpage.php">
+                                <span data-feather="layers"></span>Chat
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../logins/cerrar.php">
+                                <span data-feather="layers"></span>Cerrar sección
+                            </a>
+                        </li>
+                    </ul>
             </div>
         </nav>
 
