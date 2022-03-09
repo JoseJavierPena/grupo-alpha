@@ -23,7 +23,7 @@ if($filas['id_cargo']==1){ //administrador
 }else if($filas['id_cargo']==2){ //pasantes
     echo'<script type="text/javascript">
     alert("Ha iniciado seccion en el citio de pasantes");
-    window.location.href="../pasantes/pasantes.html"
+    window.location.href="../pasantes/pasantes.php"
     </script>';
 
 }

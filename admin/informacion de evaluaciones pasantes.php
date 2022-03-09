@@ -1,3 +1,19 @@
+<?php
+
+session_start();
+
+include'../conexion db/db.php';
+
+$usuario = $_SESSION['nombre'];
+if(!isset($usuario)){
+
+    header("location:../logins/login.html");
+
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +25,7 @@
     <meta name="generator" content="Hugo 0.88.1">
     <link rel="stylesheet" type=" text/css" href="../assets/css/bootstrap.min.css" media="screen">
     <link rel="stylesheet" type=" text/css" href="../assets/css/style Infomacion de evaluacion pasantes.css" media="screen">
+    <link rel="stylesheet"  href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
     <title>Infomación de evaluación pasantes</title>
 
     <link rel="icon" href="../assets/img/social-icon.ico">
@@ -30,16 +47,16 @@
 
             <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"> <a class="nav-link " href="Pasantes activos.php"> Pasantes activos </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="pasantes activos.php"> Pasantes activos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="informacion de evaluaciones pasantes.php"> Información de evaluaciones pasantes </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="seguimiento de recursos.php"> Seguimiento de recursos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="recursos.html"> Recursos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="asignaciones administrador.php"> Asignaciones</a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="grupos administrador.html"> Grupos </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../pasantes/pasantes.html"> Pasantes </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="chat admin.php">Chat</a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="enviar correo.html"> Enviar correo </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../logins/login.html"> Cerrar sesión </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="grupos administrador.php"> Grupos </a> </li>
+                <li class="nav-item"> <a class="nav-link " href="../pasantes/pasantes.php"> Pasantes </a> </li>
+                <li class="nav-item"> <a class="nav-link " href="chat/chatpage.php">Chat</a> </li>
+                <li class="nav-item"> <a class="nav-link " href="enviar correo.php"> Enviar correo </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../logins/cerrar.php"> Cerrar sesión </a> </li>
                 </ul>
             </div>
         </div>
@@ -52,7 +69,7 @@
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="Pasantes activos.php">
+                            <a class="nav-link active" aria-current="page" href="pasantes activos.php">
                                 <span data-feather="home">Pasantes activos</span>
                             </a>
                         </li>
@@ -81,33 +98,34 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="grupos administrador.html">
-                                <span data-feather="layers"></span>Grupos
-                            </a>
-                        </li>
+                        <a class="nav-link" href="grupos administrador.php">
+                            <span data-feather="layers"></span>Grupos
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pasantes/pasantes.php">
+                            <span data-feather="layers"></span>Pasantes
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chat/chatpage.php">
+                            <span data-feather="layers"></span>Chat
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="enviar correo.php">
+                            <span data-feather="layers"></span>Enviar correo
+                        </a>
+                    </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../pasantes/pasantes.html">
-                                <span data-feather="layers"></span>Pasantes
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="chat admin.php">
-                                <span data-feather="layers"></span>Chat
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="enviar correo.html">
-                                <span data-feather="layers"></span>Enviar correo
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="../logins/login.html">
+                            <a class="nav-link" href="../logins/cerrar.php">
                                 <span data-feather="layers"></span>Cerrar sesión
                             </a>
                         </li>
+
                     </ul>
                 </div>
             </nav>
@@ -119,7 +137,7 @@
                 <h2>Toda la información de los pasantes que completaron las evaluaciones</h2>
                 <br>
                 <div class="table-responsive">
-                    <table class="table table-striped table-sm">
+                    <table class="table table-striped table-sm" id="tablax">
                         <thead>
                             <tr>
                                 <th scope="col">ID</th>
@@ -131,7 +149,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            
                                 <?php
                                 $conexion = mysqli_connect("localhost:8111", "root", "", "pasantes alpha db");
                                 $sql = "SELECT Id,repositorio,linkedIn,portafolio,curriculum,Id_formulario  FROM evaluaciones ";
@@ -161,7 +179,37 @@
     <script src="../assets/js/jquery-3.3.1.min.js"></script>
     <script src="../assets/js/popper.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
-
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#tablax').DataTable({
+                language: {
+                    processing: "Tratamiento en curso...",
+                    search: "Buscar&nbsp;:",
+                    lengthMenu: "Agrupar de _MENU_ items",
+                    info: "Mostrando del item _START_ al _END_ de un total de _TOTAL_ items",
+                    infoEmpty: "No existen datos.",
+                    infoFiltered: "(filtrado de _MAX_ elementos en total)",
+                    infoPostFix: "",
+                    loadingRecords: "Cargando...",
+                    zeroRecords: "No se encontraron datos con tu busqueda",
+                    emptyTable: "No hay datos disponibles en la tabla.",
+                    paginate: {
+                        first: "Primero",
+                        previous: "Anterior",
+                        next: "Siguiente",
+                        last: "Ultimo"
+                    },
+                    aria: {
+                        sortAscending: ": active para ordenar la columna en orden ascendente",
+                        sortDescending: ": active para ordenar la columna en orden descendente"
+                    }
+                },
+             
+                lengthMenu: [ [10, 25, -1], [10, 25, "All"] ],
+            });
+    });
+</script>
 </body>
 
 </html>

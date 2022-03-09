@@ -1,3 +1,19 @@
+
+<?php
+
+session_start();
+
+include'../conexion db/db.php';
+
+$usuario = $_SESSION['nombre'];
+if(!isset($usuario)){
+
+    header("location:../logins/login.html");
+
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,6 +67,13 @@
             </form>
             <footer class="my-5 pt-5 text-muted text-center text-small">
                 <p class="mb-1 text-center">© 2021 Pasantes ALPHA AIlogic</p>
+                
+                <li class="nav-item">
+                            <a class="nav-link" href="../logins/cerrar.php">
+                                <span data-feather="layers"></span>Cerrar sesión
+                            </a>
+                        </li>
+
             </footer>
         </div>
     </div>

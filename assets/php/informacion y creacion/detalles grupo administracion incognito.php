@@ -1,3 +1,4 @@
+
 <?php 
 
 
@@ -11,53 +12,30 @@ if(!isset($usuario)){
     header("location:../../../logins/login.html");
 
 }
-
-
-
-include '../ayuda/utilidad recurso.php';
-
-session_start();
-
-if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['recurso']) && isset($_POST['grupo'])) {
-    $_SESSION['pasantes'] = isset($_SESSION['pasantes'])? $_SESSION['pasantes']: array();
-
-    $pasantes = $_SESSION['pasantes'];
-
-    $estudianteid = 1;
-
-    if(!empty($pasantes)) {
-        $lastElement = getLastElement($pasantes);
-
-        $estudianteid = $lastElement['id'] + 1;
-    }
-
-    array_push($pasantes, [ 'id'=>$estudianteid, 'nombre'=> $_POST['nombre'], 'descripcion' => $_POST['descripcion'], 'recurso' => $_POST['recurso'], 'grupo' => $_POST['grupo']]);
-
-    $_SESSION['pasantes'] = $pasantes;
-
-    header("Location:../../../admin/recursos.php");
-    exit();
-}
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
     <link rel="stylesheet" type=" text/css" href="../../css/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" type=" text/css" href="../../css/style asignaciones administrador.css" media="screen">
+    <link rel="stylesheet" type=" text/css" href="../../css/style grupos administrador.css" media="screen">
+    <title>Grupo FALCON</title>
 
-    <title>Agregar recurso</title>
+
 
     <link rel="icon" href="../../img/social-icon.ico">
+    <script src="https://kit.fontawesome.com/0f48d8c00d.js"></script>
+
 </head>
+
 <body>
 
-<nav class="navbar navbar-dark bg-dark  fixed-top ">
+    <nav class="navbar navbar-dark bg-dark  fixed-top ">
         <div class="container">
             <a href="#" class="navbar-brand">
                 <strong>AILogic</strong>
@@ -69,7 +47,7 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['recu
 
             <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"> <a class="nav-link " href="../../../admin/pasantes activos.php"> Pasantes activos </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../admin/Pasantes activos.php"> Pasantes activos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../admin/informacion de evaluaciones pasantes.php"> Informacion de evaluaciones pasantes </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../admin/seguimiento de recursos.php"> Seguimiento de recursos </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../admin/recursos.php"> Recursos </a> </li>
@@ -78,7 +56,7 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['recu
                     <li class="nav-item"> <a class="nav-link " href="../../../pasantes/pasantes.php"> Pasantes </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../admin/admin.php">Chat</a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../../../admin/enviar correo.php"> enviar correo </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../../../logins/cerrar.php"> Cerrar sección </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../../logins/login.php"> Cerrar sección </a> </li>
                 </ul>
             </div>
         </div>
@@ -86,12 +64,11 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['recu
 
     <div class="container-fluid mt-5">
         <div class="row">
-        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
-                        
-                    <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../../../admin/pasantes activos.php">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../../../admin/Pasantes activos.php">
                                 <span data-feather="home">Pasantes activos</span>
                             </a>
                         </li>
@@ -100,7 +77,6 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['recu
                                 <span data-feather="file"></span>Información de evaluaciones pasantes
                             </a>
                         </li>
-                        
 
                         <li class="nav-item">
                             <a class="nav-link" href="../../../admin/seguimiento de recursos.php">
@@ -136,80 +112,87 @@ if(isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['recu
                                 <span data-feather="layers"></span>Chat
                             </a>
                         </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="../../../admin/enviar correo.php">
                                 <span data-feather="layers"></span>Enviar correo
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="../../../logins/cerrar.php">
-                                <span data-feather="layers"></span>Cerrar seccion
+                                <span data-feather="layers"></span>Cerrar sección
                             </a>
-                        </li>
+                            </li>
+                      
                     </ul>
                 </div>
-            </nav>
 
+            </nav>
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">
-                        Agregar recurso
-                    </h1>
+                    <h1 class="h2">Grupo INCOGNITO</h1>
+
+                    <p>
+                        <a href="../insertar/insertar incognito.php" class="btn btn-primary my-2">
+                            <font style="vertical-align: inherit;">
+                                <font style=" vertical-align: inherit;">Registrar</font>
+                            </font>
+                        </a>
+                    </p>
                 </div>
 
-                <main role="main">
-                    <div style="margin-top: 2%;">
-                        <div class="card">
-                            <div class="card-header bg-info text-light">
-                                <a href="../../../admin/recursos.php" class="btn btn-warning">
-                                    Volver Atrás
-                                </a>
-                                Creando recurso
-                            </div>
-                            <div class="card-body">
-                                <form action="add recursos.php" method="POST">
-                                    <div class="form-group">
-                                        <label for="nombre">Título del recurso:</label>
-                                        <input type="text" class="form-control" id="nombre" name="nombre">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="descripcion">Descripción del recurso:</label>
-                                        <input type="text" class="form-control" id="descripcion" name="descripcion">
-                                    </div>
 
-                                    <div class="form-group">
-                                        <label for="grupo">Grupo al que irá el recurso:</label>
-                                        <select name="grupo" id="grupo" class="form-control">
-                                            <?php foreach($grupo as $id => $text): ?>
-                                            
-                                            <option value="<?php  echo $id; ?>">  <?php echo $text; ?></option>
-                                            
-                                            <?php endforeach; ?>
-                                        </select>
-                                    </div>
+                <h2>Miembros</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">NOMBRE</th>
+                                <th scope="col">Apellido</th>
+                                <th scope="col">Correo</th>
 
-                                    <div class="form-group">
-                                        <label for="recurso" class="form-label">Enlace del recurso:</label>
-                                        <input type="url" name="recurso" id="recurso" 
-                                        placeholder=""
-                                        value="" required="">
-                                    </div>                            
+                                <th scope="col">Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $conexion = mysqli_connect("localhost:8111", "root", "", "pasantes alpha db");
+                            $sql = "SELECT id,nombre,apellido,correo FROM grupoi";
+                            $resultado = mysqli_query($conexion, $sql);
+                            while ($mostra = mysqli_fetch_row($resultado)) {
+                            ?>
+                                <tr>
+                                    <td><?php echo $mostra['0'] ?></td>
+                                    <td><?php echo $mostra['1'] ?></td>
+                                    <td><?php echo $mostra['2'] ?></td>
+                                    <td><?php echo $mostra['3'] ?></td>
 
-                                    <button type="submit" class="btn btn-success">Guardar</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </main>
+
+
+
+                                    <td><a href="../borrar/eliminar falcon.php? id=<?php echo $mostra['0'] ?> " button class="btn btn-danger"><i class="fas fa-trash"></i></a></button></td>
+
+                                </tr>
+                            <?php
+                            }
+                            ?>
+
+
+
+
+                        </tbody>
+                    </table>
+                </div>
             </main>
         </div>
     </div>
 
-    
-                        <!-- ARCHIVOS BOOTSTRAP JAVASCRIPT -->
-                        <script src="../../../assets/js/jquery-3.3.1.min.js"></script>
-                        <script src="../../../assets/js/popper.min.js"></script>
-                        <script src="../../../assets/js/bootstrap.min.js"></script>
-
+    <!-- ARCHIVOS BOOTSTRAP JAVASCRIPT -->
+    <script src="../../../assets/js/jquery-3.3.1.min.js"></script>
+    <script src="../../../assets/js/popper.min.js"></script>
+    <script src="../../../assets/js/bootstrap.min.js"></script>
 </body>
+
 </html>

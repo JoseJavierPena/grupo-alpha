@@ -1,13 +1,13 @@
 <?php
 session_start();
-if (isset($_SESSION['name'])) {
+if (isset($_SESSION['nombre'])) {
 	include "config.php";
 
 	$sql = "SELECT * FROM `chat`";
 
 	$query = mysqli_query($conn, $sql);
 ?>
-	<meta http-equiv="refresh" content="20"> <!-- para refrescar la pagina-->
+	<meta http-equiv="refresh" content="10"> <!-- para refrescar la pagina-->
 	<script>
 		$(document).ready(function() {
 			// Set trigger and container variables
@@ -58,11 +58,11 @@ if (isset($_SESSION['name'])) {
 
             <div class="collapse navbar-collapse  d-md-none" id="menu-principal">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"> <a class="nav-link " href="../pasantes.html"> Pasantes </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../pasantes.php"> Pasantes </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../asignaciones pasantes.php">Asignaciones</a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../grupos pasantes.html"> Grupo </a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../grupos pasantes.php"> Grupo </a> </li>
                     <li class="nav-item"> <a class="nav-link " href="../chat pasantes.php"> Chat </a> </li>
-                    <li class="nav-item"> <a class="nav-link " href="../../logins/login.html">Cerrar sesión</a> </li>
+                    <li class="nav-item"> <a class="nav-link " href="../../logins/cerrar.php">Cerrar sesión</a> </li>
                 </ul>
             </div>
         </div>
@@ -74,7 +74,7 @@ if (isset($_SESSION['name'])) {
 					<div class="position-sticky pt-3">
 						<ul class="nav flex-column">
 							<l<li class="nav-item">
-								<a class="nav-link" href="../pasantes.html">
+								<a class="nav-link" href="../pasantes.php">
 									<span data-feather="layers"></span>Pasantes
 								</a>
 								</li>
@@ -86,18 +86,18 @@ if (isset($_SESSION['name'])) {
 								</li>
 
 								<li class="nav-item">
-									<a class="nav-link" href="../grupos pasantes.html">
+									<a class="nav-link" href="../grupos pasantes.php">
 										<span data-feather="layers"></span>Grupos
 									</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="../chat pasantes.php">
+									<a class="nav-link" href="chatpage.php">
 										<span data-feather="layers"></span>Chat
 									</a>
 								</li>
 
 								<li class="nav-item">
-									<a class="nav-link" href="../../logins/login.html">
+									<a class="nav-link" href="../../logins/cerrar.php">
 										<span data-feather="layers"></span>Cerrar sesión
 									</a>
 								</li>
@@ -112,7 +112,7 @@ if (isset($_SESSION['name'])) {
 
 					<div class="container">
 						<center>
-							<h2>Bienvenid@ <span style="color:#120633; font-weight: 600;"><?php echo $_SESSION['name']; ?> </span> a nuestro Chat</h2>
+							<h2>Bienvenid@ <span style="color:#120633; font-weight: 600;"><?php echo $_SESSION['nombre']; ?> </span> a nuestro Chat</h2>
 
 						</center></br>
 						<div class="display-chat" id="display-chat">
@@ -122,7 +122,7 @@ if (isset($_SESSION['name'])) {
 							?>
 									<div class="message">
 										<p>
-											<span><?php echo $row['name']; ?> :</span>
+											<span><?php echo $row['nombre']; ?> :</span>
 											<?php echo $row['message']; ?>
 										</p>
 									</div>
@@ -168,6 +168,6 @@ if (isset($_SESSION['name'])) {
 
 <?php
 } else {
-	header('location:index.html');
+	header('location:../../logins/login.html');
 }
 ?>
