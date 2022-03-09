@@ -12,8 +12,20 @@ $donde_vives=$_POST['donde_vives'];
 $correo=$_POST['correo'];
 
 
-
-
+$i;
+$campo = array(); 
+if(strlen($cedula)!=11){ 
+    array_push($campo,"la cedula debe tener 11 caracteres"); 
+} 
+if(strlen($telefono)!=10){ 
+    array_push($campo,"el telefono debe tener 10 caracteres"); 
+} 
+if(count($campo)>0){ 
+    echo"<div class='error'>"; 
+    for($i = 0; $i < count($campo); $i++ ){ 
+        echo"<li>".$campo[$i]."</i>"; 
+    } 
+}
 
 //base de datos
 $conexion=mysqli_connect("localhost:8111","root","","pasantes alpha db");

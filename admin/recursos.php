@@ -157,7 +157,7 @@
                         </font>
                     </a>
                 </p>
-                <hr class="my-4">
+                <hr class="my-4" style="background-color: blue;">
                 <div class="row">
                     <?php if(empty($listadoEstudiantes)):?>
                     <?php else:?>

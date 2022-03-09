@@ -25,7 +25,11 @@ if(!isset($usuario)){
     <link rel="stylesheet" type=" text/css" href="../assets/css/bootstrap.min.css" media="screen">
     <link rel="stylesheet" type=" text/css" href="../assets/css/style grupos pasantes.css" media="screen">
     <title>Grupos</title>
+
     <link rel="icon" href="../assets/img/social-icon.ico">
+
+    
+    
 </head>
 
 <body class="body">
@@ -103,7 +107,7 @@ if(!isset($usuario)){
 
 
                     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-                        <div class="col mb-3">
+                        <div class="col mb-3" id="alpha">
                             <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
                                 <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                                     <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Grupo ALPHA</h2>
@@ -225,6 +229,11 @@ if(!isset($usuario)){
     <script src="../assets/js/jquery-3.3.1.min.js"></script>
     <script src="../assets/js/popper.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
+
+    <script>
+   
+</script>
+ 
 
 </body>
 
